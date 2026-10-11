@@ -47,6 +47,19 @@ export function archive(db,DATA){
   db.prepare('UPDATE feedback SET event_date=?,date_precision=?,pending_summary=? WHERE id=?').run('','unknown',row.pending_summary+'；原始时间说明（包含报道时间，事件日期未独立确认）：'+row.event_date,row.id);
   db.prepare('INSERT INTO event_changes(event_id,created,action,changes,public_note) VALUES(?,?,?,?,?)').run(row.id,Date.now(),'日期字段分离','["event_date","pending_summary"]','原文时间说明保留在待核事项；不将报道时间推断为事件发生日期。');
  }
+ db.exec('CREATE TABLE IF NOT EXISTS archive_response_extractions(event_id TEXT PRIMARY KEY)');
+ for(const row of db.prepare("SELECT * FROM feedback WHERE record_type='event' AND user_id IS NULL AND guest_name IS NULL").all())if(!db.prepare('SELECT event_id FROM archive_response_extractions WHERE event_id=?').get(row.id)){
+  const edited=db.prepare("SELECT changes FROM event_changes WHERE event_id=? AND action='档案更正'").all(row.id).some(c=>JSON.parse(c.changes).includes('response_summary'));
+  if(!edited){
+   const body=row.content.split('附件索引')[0];
+   const noResponse=knownShops.includes(row.id)||/尚未取得[^。\n]*品牌回应|未取得[^。\n]*品牌回应/.test(body);
+   const sentences=body.split(/[。！？\n]/).map(t=>t.trim()).filter(t=>t&&/(?:官方|品牌|公司|官博|账号|声明|文中|截图).*(?:致歉|道歉|回应)|(?:发布|发表|删除).*(?:致歉|道歉|声明)/.test(t)&&!/(?:尚未|未取得|待核实|暂无|不能确认)/.test(t)).slice(0,3);
+   const value=noResponse?'尚未取得品牌回应（原文说明）':sentences.length?'原文记录的回应（未独立核验）：'+sentences.join('。')+'。':'尚未结构化核验回应，请结合原文及附件判断';
+   db.prepare('UPDATE feedback SET response_summary=? WHERE id=?').run(value,row.id);
+   if(value!==row.response_summary)db.prepare('INSERT INTO event_changes(event_id,created,action,changes,public_note) VALUES(?,?,?,?,?)').run(row.id,Date.now(),'回应字段归位','["response_summary"]','仅保留原文中提及的回应或未取得回应说明，事件概述保留在原正文；不自动认定回应已核实。');
+  }
+  db.prepare('INSERT INTO archive_response_extractions VALUES(?)').run(row.id);
+ }
  const dove=db.prepare("SELECT id FROM feedback WHERE brand='德芙' AND record_type='event' AND user_id IS NULL AND guest_name IS NULL AND pending_summary NOT LIKE '%日期冲突%'").all();
  for(const row of dove){const note='日期冲突待核：原站内描述rmfzw报道为2026-08-26；来源页头为2026-08-25 19:57:07；致歉截图为26-8-25 23:31。保留原文，不选择其中一个日期作为定论。';db.prepare('UPDATE feedback SET pending_summary=?,verification_status=? WHERE id=?').run(note,'disputed',row.id);db.prepare('INSERT INTO event_changes(event_id,created,action,changes,public_note) VALUES(?,?,?,?,?)').run(row.id,Date.now(),'日期冲突标注','["pending_summary","verification_status"]',note)}
  for(const row of db.prepare('SELECT id,images,videos FROM feedback').all())for(const key of [...JSON.parse(row.images),...JSON.parse(row.videos||'[]')])index(key,row.id);
