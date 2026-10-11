@@ -16,7 +16,7 @@ try{
  for(let n=0;n<205;n++)put.run('row'+n,'老品牌'+n,'历史资料'+n,'原文保留','','[]','[]','其他反馈',n,'approved',null,null);
  const records=archive(db,data),items=records.publicItems(),event=items.find(i=>i.id==='event');
  assert.equal(items.length,208,'Public archive must not silently truncate at 200');
- assert.equal(event.event_date,'2024-10-14宣传；2024-10-18回应。');assert.equal(event.event_date.includes('附件'),false);
+ assert.equal(event.event_date,'');assert.match(event.pending_summary,/2024-10-14宣传；2024-10-18回应/);assert.equal(event.event_date.includes('附件'),false);
  assert.equal(event.attachments[0].source,'https://example.org/a');assert.equal(event.attachments[1].source,'https://example.org/b');assert.equal(event.attachments[0].date,'2024-10-14');
  assert.equal(items.find(i=>i.id==='opinion').record_type,'opinion');assert.equal(items.find(i=>i.id==='opinion').editor_summary,'');
  const dove=items.find(i=>i.id==='dove');assert.equal(dove.event_date,'');assert.equal(dove.verification_status,'disputed');assert.match(dove.pending_summary,/日期冲突/);

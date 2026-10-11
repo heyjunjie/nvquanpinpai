@@ -42,6 +42,11 @@ export function archive(db,DATA){
   db.prepare('UPDATE feedback SET event_date=?,source_date=?,date_precision=?,pending_summary=?,response_summary=?,publisher_scope=? WHERE id=?').run(row.brand==='德芙'?'':timing,dates.join('；'),timing?'原文时间说明／未独立核实':'unknown',constraints||row.pending_summary,overview.includes('回应')||overview.includes('声明')||overview.includes('致歉')?overview:row.response_summary,knownShops.includes(row.id)?'shop':row.publisher_scope,row.id);
   db.prepare('INSERT INTO archive_extractions VALUES(?)').run(row.id);
  }
+ // A legacy timing paragraph mixes occurrence and reporting dates: retain it as a note, never present it as the event date.
+ for(const row of db.prepare("SELECT id,event_date,pending_summary FROM feedback WHERE date_precision='原文时间说明／未独立核实' AND event_date!=''").all()){
+  db.prepare('UPDATE feedback SET event_date=?,date_precision=?,pending_summary=? WHERE id=?').run('','unknown',row.pending_summary+'；原始时间说明（包含报道时间，事件日期未独立确认）：'+row.event_date,row.id);
+  db.prepare('INSERT INTO event_changes(event_id,created,action,changes,public_note) VALUES(?,?,?,?,?)').run(row.id,Date.now(),'日期字段分离','["event_date","pending_summary"]','原文时间说明保留在待核事项；不将报道时间推断为事件发生日期。');
+ }
  const dove=db.prepare("SELECT id FROM feedback WHERE brand='德芙' AND record_type='event' AND user_id IS NULL AND guest_name IS NULL AND pending_summary NOT LIKE '%日期冲突%'").all();
  for(const row of dove){const note='日期冲突待核：原站内描述rmfzw报道为2026-08-26；来源页头为2026-08-25 19:57:07；致歉截图为26-8-25 23:31。保留原文，不选择其中一个日期作为定论。';db.prepare('UPDATE feedback SET pending_summary=?,verification_status=? WHERE id=?').run(note,'disputed',row.id);db.prepare('INSERT INTO event_changes(event_id,created,action,changes,public_note) VALUES(?,?,?,?,?)').run(row.id,Date.now(),'日期冲突标注','["pending_summary","verification_status"]',note)}
  for(const row of db.prepare('SELECT id,images,videos FROM feedback').all())for(const key of [...JSON.parse(row.images),...JSON.parse(row.videos||'[]')])index(key,row.id);
@@ -56,7 +61,7 @@ export function archive(db,DATA){
  function initializeSubmission(id,fields){
   const parent=fields.parent_event_id||'';const reply=fields.reply_type||'';
   const type=parent?'correction':fields.record_type||'opinion';
-  db.prepare('UPDATE feedback SET record_type=?,verification_status=?,evidence_level=?,publisher_scope=?,region=?,material_status=?,date_precision=?,source_type=?,parent_event_id=?,reply_type=?,pending_summary=?,response_summary=?,topic=? WHERE id=?').run(type,'unverified',(fields.has_media?'third_party':'none'),'unknown','unknown','lead','unknown',fields.source?'用户提供来源（待核）':'未提供外部来源',parent,reply,'用户投稿，内容审核不代表事实核实','暂无已核验回应',fields.category==='广告表达'?'advertising':fields.category==='消费体验'?'experience':'other',id);
+  db.prepare('UPDATE feedback SET record_type=?,verification_status=?,evidence_level=?,publisher_scope=?,region=?,material_status=?,date_precision=?,source_type=?,parent_event_id=?,reply_type=?,pending_summary=?,response_summary=?,topic=? WHERE id=?').run(type,'unverified',(fields.has_media?'third_party':'none'),'unknown','unknown',fields.has_media?'evidence':'lead','unknown',fields.source?'用户提供来源（待核）':'未提供外部来源',parent,reply,'用户投稿，内容审核不代表事实核实','暂无已核验回应',fields.category==='广告表达'?'advertising':fields.category==='消费体验'?'experience':'other',id);
   const row=db.prepare('SELECT images,videos FROM feedback WHERE id=?').get(id);for(const key of [...JSON.parse(row.images),...JSON.parse(row.videos||'[]')])index(key,id);
  }
  function validateSubmission(f){
