@@ -40,6 +40,20 @@ try{
  assert.equal((await req('/api/feedback')).body.items[0].contributor,'未注册验收');assert.equal((await req('/api/images/'+gkey)).status,200);
  const gs=(await req('/api/stats')).body;assert.equal(gs.contributors,1);assert.equal(gs.ranking[0].guest,1);
  form.set('guest_name','验收用户');assert.equal((await req('/api/feedback',{method:'POST',body:form})).status,400);
+ const publicGuest=(await req('/api/feedback')).body.items.find(x=>x.id===gid);
+ assert.equal(publicGuest.record_type,'opinion');assert.equal(publicGuest.verification_status,'unverified');
+ assert.equal(publicGuest.attachments[0].duplicate_count,1,'Private identical uploads must not affect public counts');
+ assert.equal((await req('/api/archive/'+gid,{method:'PATCH',...json({record_type:'event'}),auth:user})).status,403);
+ assert.equal((await req('/api/archive/'+gid,{method:'PATCH',...json({record_type:'event',editor_summary:'隔离环境已整理的事件摘要',public_note:'类型更正验证'}),auth:admin})).status,200);
+ const linked=new FormData();for(const [k,v] of Object.entries({brand:'回力',title:'关联纠错验收记录',content:'这是一条仅用于隔离环境测试的关联纠错说明，来源日期仍需核验。',category:'其他反馈',guest_name:'纠错验收',consent:'yes',parent_event_id:gid,reply_type:'correction'}))linked.set(k,v);
+ const correction=await req('/api/feedback',{method:'POST',body:linked});assert.equal(correction.status,201);
+ assert.equal((await req('/api/feedback')).body.items.some(x=>x.id===correction.body.item.id),false);
+ await req('/api/admin/feedback/'+correction.body.item.id,{method:'PATCH',...json({status:'approved'}),auth:admin});
+ const published=(await req('/api/feedback')).body.items.find(x=>x.id===correction.body.item.id);assert.equal(published.parent_event_id,gid);assert.equal(published.record_type,'correction');assert.equal(published.verification_status,'unverified');
+ linked.set('parent_event_id','not-an-event');assert.equal((await req('/api/feedback',{method:'POST',body:linked})).status,400);
+ const changed=(await req('/api/feedback')).body.items.find(x=>x.id===gid);assert.equal(changed.changes.some(x=>x.public_note==='类型更正验证'),true);
+ assert.equal((await req('/api/archive/'+published.id,{method:'PATCH',...json({editor_summary:'不应允许纠错覆盖摘要'}),auth:admin})).status,400);
+ console.log('PASS: publication is not verification, private duplicate isolation, metadata permissions, linked correction validation and public change history.');
  console.log('PASS: named guest submission, required name, reserved account name, moderation, private media, approval credit and guest ranking');
  console.log('PASS: account, admin permissions, CSRF, pending image/video privacy, approval attribution/ranking, rejection/retraction, video ranges, visitor deduplication, logout.');
 }catch(e){console.error(log);throw e}finally{proc.kill();await new Promise(r=>proc.once('exit',r));fs.rmSync(data,{recursive:true,force:true});}

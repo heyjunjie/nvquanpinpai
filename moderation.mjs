@@ -1,3 +1,4 @@
+import {archive} from './archive.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -26,7 +27,8 @@ export function moderation(db,DATA,json){
  function limited(req,scope,max=20){const ip=req.headers['x-forwarded-for']?.split(',')[0].trim()||req.socket.remoteAddress,key=scope+':'+ip,now=Date.now(),r=rates.get(key)||{at:now,n:0};if(now-r.at>60000){r.at=now;r.n=0}r.n++;rates.set(key,r);if(rates.size>5000)rates.clear();return r.n>max}
  async function readJSON(req){let data='';for await(const b of req){data+=b;if(data.length>16384)throw Error('请求过大')}return JSON.parse(data||'{}')}
  if(!db.prepare('PRAGMA table_info(feedback)').all().some(c=>c.name==='guest_name'))db.exec("ALTER TABLE feedback ADD COLUMN guest_name TEXT");
- const items=(where,args=[])=>db.prepare(`SELECT feedback.*,COALESCE(users.username,feedback.guest_name,'站点整理') AS contributor FROM feedback LEFT JOIN users ON users.id=feedback.user_id ${where}`).all(...args);
+ const records=archive(db,DATA);
+ const items=(where,args=[])=>db.prepare(`SELECT feedback.*,COALESCE(users.username,feedback.guest_name,'站点整理') AS contributor FROM feedback LEFT JOIN users ON users.id=feedback.user_id ${where}`).all(...args).map(records.extras);
  async function handle(req,res,p,current){
   const reply=(status,data)=>{json(res,status,data);return true};
   if(['POST','PATCH','DELETE'].includes(req.method)){
@@ -71,10 +73,11 @@ export function moderation(db,DATA,json){
   if(p==='/api/admin/feedback'&&req.method==='GET'){if(current?.role!=='admin')return reply(403,{error:'需要管理员权限'});return reply(200,{items:items('ORDER BY created DESC')})}
   if(p.startsWith('/api/admin/feedback/')&&req.method==='PATCH'){
    if(current?.role!=='admin')return reply(403,{error:'需要管理员权限'});const id=p.slice('/api/admin/feedback/'.length),{status,note=''}=await readJSON(req);if(!['approved','rejected','pending'].includes(status)||typeof note!=='string'||note.length>1000)return reply(400,{error:'审核内容无效'});if(!db.prepare('SELECT id FROM feedback WHERE id=?').get(id))return reply(404,{error:'反馈不存在'});
-   db.exec('BEGIN IMMEDIATE');try{db.prepare('UPDATE feedback SET status=?,review_note=?,reviewed_at=? WHERE id=?').run(status,note,Date.now(),id);db.prepare('INSERT INTO review_log(feedback_id,reviewer_id,status,note,created) VALUES(?,?,?,?,?)').run(id,current.id,status,note,Date.now());db.exec('COMMIT')}catch(e){db.exec('ROLLBACK');throw e}return reply(200,{ok:true});
+   db.exec('BEGIN IMMEDIATE');try{db.prepare('UPDATE feedback SET status=?,review_note=?,reviewed_at=? WHERE id=?').run(status,note,Date.now(),id);db.prepare('INSERT INTO review_log(feedback_id,reviewer_id,status,note,created) VALUES(?,?,?,?,?)').run(id,current.id,status,note,Date.now());db.exec('COMMIT')}catch(e){db.exec('ROLLBACK');throw e}records.publication(id,status);return reply(200,{ok:true});
   }
-  if(p==='/api/feedback'&&req.method==='GET')return reply(200,{items:items("WHERE feedback.status='approved' ORDER BY created DESC LIMIT 200")});
+  if(p==='/api/feedback'&&req.method==='GET'){const all=records.publicItems();return reply(200,{items:all,total:all.length})}
+  if(p.startsWith('/api/archive/')&&req.method==='PATCH'){if(current?.role!=='admin')return reply(403,{error:'需要管理员权限'});const result=records.edit(p.slice('/api/archive/'.length),await readJSON(req));return reply(result.status,result)}
   return false;
  }
- return {session,handle,canView:(id,current)=>{const item=db.prepare('SELECT status,user_id FROM feedback WHERE id=?').get(id);return item&&(item.status==='approved'||current?.role==='admin'||current&&current.id===item.user_id)}};
+ return {session,handle,records,canView:(id,current)=>{const item=db.prepare('SELECT status,user_id FROM feedback WHERE id=?').get(id);return item&&(item.status==='approved'||current?.role==='admin'||current&&current.id===item.user_id)}};
 }
