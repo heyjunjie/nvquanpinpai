@@ -1,0 +1,21 @@
+services:
+  brand-watch:
+    build: .
+    restart: unless-stopped
+    init: true
+    mem_limit: 384m
+    cpus: 0.5
+    pids_limit: 64
+    environment:
+      DATA_DIR: /app/data
+      MAX_STORAGE_MB: 1024
+      COOKIE_SECURE: 'true'
+      NODE_OPTIONS: --max-old-space-size=192
+    volumes:
+      - ./data:/app/data
+    ports:
+      - "127.0.0.1:8787:8787"
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
