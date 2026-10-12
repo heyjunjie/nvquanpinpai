@@ -7,6 +7,7 @@ assert.match(criticalNote(event),/店铺发布不等于品牌总部/);
 assert.match(criticalNote({...event,pending_summary:'原始视频尚未取得。'}),/原视频尚未取得/);
 assert.match(criticalNote({...event,content:'完整原视频未取得，不能证明完整剧情。'}),/原视频尚未取得/);
 assert.match(criticalNote({...event,content:'尚未取得原片、完整店铺身份与品牌回应。'}),/原视频尚未取得/);
+assert.doesNotMatch(criticalNote({...event,content:'已取得原片、完整视频，来源链接待核。'}),/原视频尚未取得/);
 assert.doesNotMatch(criticalNote(event),/原视频尚未取得/,'Do not invent a missing-video claim without an existing source statement');
 assert.match(publisherText({...event,publisher_scope:'unknown'}),/待核/);
 assert.equal(publisherText({...event,attachments:[]}), '店铺账号（具体身份待核）');

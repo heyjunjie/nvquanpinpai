@@ -20,7 +20,7 @@ export function criticalNote(item){
  if(item.verification_status==='disputed')return item.pending_summary||'资料存在冲突，需核对原始来源。';
  const material=item.evidence_level==='third_party'?'第三方留存；完整原始材料仍需核验。':item.evidence_level==='none'?'尚无可公开附件，保留线索待核。':'核实依据与限制见档案。';
  const originalText=[item.content,item.pending_summary].filter(Boolean).join(' ');
- const missingVideo=/原始?视频(?:尚未取得|未取得)|完整原视频未取得|尚未取得(?:完整)?原(?:始)?(?:视频|片)|原片[、，]完整/.test(originalText)?'原视频尚未取得。':'';
+ const missingVideo=/原始?视频(?:尚未取得|未取得)|完整原视频未取得|尚未取得(?:完整)?原(?:始)?(?:视频|片)/.test(originalText)?'原视频尚未取得。':'';
  return material+missingVideo+(item.publisher_scope==='shop'?'店铺发布不等于品牌总部立场。':item.publisher_scope==='unknown'?'发布主体待核，不将转载者当作原发布者。':'');
 }
 export function recentRecords(items){return items.filter(i=>i.status==='approved'&&i.record_type==='event').slice().sort((a,b)=>b.created-a.created||a.id.localeCompare(b.id))}
