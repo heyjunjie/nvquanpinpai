@@ -14,8 +14,12 @@ assert.equal(publisherText({...event,attachments:[]}), '店铺账号（具体身
 const opinion={...event,id:'opinion',record_type:'opinion',created:50};
 const pending={...event,id:'private',status:'pending',created:60};
 const newer={...event,id:'b',created:30,event_date:'2010-01-01'};
-assert.deepEqual(recentRecords([event,opinion,pending,newer]).map(i=>i.id),['b','a'],'Recent collection uses collected time, never guessed event date or private/opinion records');
+assert.deepEqual(recentRecords([event,opinion,pending,newer]).map(i=>i.id),['a','b'],'Event occurrence dates outrank collection time; private records and opinions remain excluded');
+const unknown={...event,id:'unknown',created:100,event_date:''};
+const invalid={...event,id:'invalid',created:90,event_date:'2026-02-30'};
+assert.deepEqual(recentRecords([unknown,newer,invalid,event]).map(i=>i.id),['a','b','unknown','invalid']);
+assert.deepEqual(recentRecords([{...event,id:'year',event_date:'2025'},{...event,id:'month',event_date:'2025-06'},{...event,id:'day',event_date:'2025-06-03'}]).map(i=>i.id),['day','month','year']);
 assert.equal(criticalNote({...event,verification_status:'disputed',pending_summary:'来源日期冲突，原文保留。'}),'来源日期冲突，原文保留。');
 assert.match(criticalNote(opinion),/个人观点/);
 assert.equal(event.verification_status,'unverified');
-console.log('PASS: evidence-first presentation preserves source text, exact account attribution, disputed warnings and collected-time ordering; private records and opinions are excluded.');
+console.log('PASS: evidence-first presentation preserves source text, account attribution and disputed warnings; occurrence dates sort descending, unknown/invalid dates last, and private records/opinions are excluded.');

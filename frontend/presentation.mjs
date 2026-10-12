@@ -23,4 +23,12 @@ export function criticalNote(item){
  const missingVideo=/原始?视频(?:尚未取得|未取得)|完整原视频未取得|尚未取得(?:完整)?原(?:始)?(?:视频|片)/.test(originalText)?'原视频尚未取得。':'';
  return material+missingVideo+(item.publisher_scope==='shop'?'店铺发布不等于品牌总部立场。':item.publisher_scope==='unknown'?'发布主体待核，不将转载者当作原发布者。':'');
 }
-export function recentRecords(items){return items.filter(i=>i.status==='approved'&&i.record_type==='event').slice().sort((a,b)=>b.created-a.created||a.id.localeCompare(b.id))}
+function eventDateKey(value){
+ const match=/^(\d{4})(?:-(\d{2})(?:-(\d{2}))?)?$/.exec(String(value||'').trim());
+ if(!match)return '';
+ const [,year,month,day]=match;
+ if(+year<1000||(month&&(+month<1||+month>12)))return '';
+ if(day&&(+day<1||+day>new Date(Date.UTC(+year,+month,0)).getUTCDate()))return '';
+ return `${year}-${month||'00'}-${day||'00'}`;
+}
+export function recentRecords(items){return items.filter(i=>i.status==='approved'&&i.record_type==='event').slice().sort((a,b)=>eventDateKey(b.event_date).localeCompare(eventDateKey(a.event_date))||b.created-a.created||a.id.localeCompare(b.id))}
