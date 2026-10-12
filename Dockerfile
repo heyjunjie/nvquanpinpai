@@ -13,6 +13,7 @@ ENV RELEASE_SHA=$RELEASE_SHA
 LABEL org.opencontainers.image.revision=$RELEASE_SHA
 COPY server.mjs moderation.mjs archive.mjs package.json ./
 COPY tests ./tests
+COPY frontend/presentation.mjs ./frontend/presentation.mjs
 COPY --from=build /app/dist ./dist
 USER node
 EXPOSE 8787

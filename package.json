@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node --experimental-sqlite server.mjs",
     "build": "vite build",
-    "test": "node tests/integration.mjs && node --experimental-sqlite tests/archive.mjs",
+    "test": "node tests/integration.mjs && node --experimental-sqlite tests/archive.mjs && node tests/presentation.mjs",
     "typecheck": "tsc --noEmit"
   },
   "engines": {
