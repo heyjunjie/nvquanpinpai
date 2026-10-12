@@ -1,0 +1,35 @@
+{
+  "audit_id": "propagation-dates-20261012",
+  "events": [
+    {
+      "id": "80c837c8-2fff-51fd-9862-b3bfd7fd54ce",
+      "brand": "Dickies",
+      "title": "Dickies店铺“干嘛要退”剧情片段",
+      "event_date": "2026-10-11",
+      "date_precision": "日：已知争议传播节点；原广告首发待核",
+      "expected_date_precision": "unknown",
+      "expected_pending_sha256": "253a4069d7110c207322dd7c84a71116e32ae610c53bd406938ef9a2e334287b",
+      "source": "https://www.sina.cn/news/detail/5352747652089001.html"
+    },
+    {
+      "id": "bdec48d4-cfb5-5841-8965-ae995f076f7a",
+      "brand": "匹克",
+      "title": "匹克店铺剪吊牌相关剧情截图",
+      "event_date": "2026-10-11",
+      "date_precision": "日：已知争议传播节点；原广告首发待核",
+      "expected_date_precision": "unknown",
+      "expected_pending_sha256": "3d16d00c489821d28e6414d0612f958da15457bcb4b25a5f29947c0c78eb3b46",
+      "source": "https://www.sina.cn/news/detail/5352747652089001.html"
+    },
+    {
+      "id": "e63d1cfc-2f03-5a1a-beb2-143eedccbd04",
+      "brand": "回力",
+      "title": "回力店铺“剪吊牌阻退货”剧情争议",
+      "event_date": "2026-10-09",
+      "date_precision": "日：已知争议传播节点；原广告首发待核",
+      "expected_date_precision": "unknown",
+      "expected_pending_sha256": "ecc2b144a958d61359f370570ea0a6b0c1795321973689348e0f7e49232d0548",
+      "source": "https://www.sina.cn/news/detail/5352224652001790.html"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+import {DatabaseSync} from 'node:sqlite';
+import {applyPropagationAudit} from '../deploy/apply-propagation-dates.mjs';
+import {recentRecords} from '../frontend/presentation.mjs';
+const plan=JSON.parse(fs.readFileSync(new URL('../docs/propagation-dates-20261012.json',import.meta.url),'utf8'));
+const db=new DatabaseSync(':memory:');
+db.exec('CREATE TABLE feedback(id TEXT PRIMARY KEY,brand TEXT,title TEXT,record_type TEXT,status TEXT,event_date TEXT,date_precision TEXT,pending_summary TEXT,content TEXT); CREATE TABLE event_changes(event_id TEXT,created INTEGER,action TEXT,changes TEXT,public_note TEXT);');
+for(const r of plan.events){
+ r.expected_pending_sha256=crypto.createHash('sha256').update('原始待核').digest('hex');
+ db.prepare('INSERT INTO feedback VALUES(?,?,?,?,?,?,?,?,?)').run(r.id,r.brand,r.title,'event','approved','',r.expected_date_precision,'原始待核','原资料');
+}
+assert.equal(applyPropagationAudit(db,plan).updated,3);
+assert.equal(db.prepare('SELECT COUNT(*) n FROM event_changes').get().n,0);
+db.prepare('UPDATE feedback SET pending_summary=? WHERE id=?').run('人工修改',plan.events.at(-1).id);
+assert.throws(()=>applyPropagationAudit(db,plan,{dryRun:false}),/review required/);
+assert.equal(db.prepare("SELECT COUNT(*) n FROM feedback WHERE event_date<>''").get().n,0);
+db.prepare('UPDATE feedback SET pending_summary=? WHERE id=?').run('原始待核',plan.events.at(-1).id);
+assert.equal(applyPropagationAudit(db,plan,{dryRun:false}).updated,3);
+assert.equal(applyPropagationAudit(db,plan,{dryRun:false}).updated,0);
+const old=JSON.parse(fs.readFileSync(new URL('../docs/event-dates-20261012.json',import.meta.url),'utf8')).events;
+const updated=old.map(r=>({...r,...(plan.events.find(p=>p.id===r.id)||{}),status:'approved',record_type:'event',created:1}));
+const sorted=recentRecords(updated);
+assert.equal(sorted[2].brand,'回力');
+assert.equal(sorted[0].event_date,'2026-10-11');
+assert.equal(sorted[1].event_date,'2026-10-11');
+assert.equal(sorted.filter(r=>!r.event_date).length,5);
+assert.ok(db.prepare('SELECT * FROM feedback').all().every(r=>r.content==='原资料'&&r.date_precision.includes('原广告首发待核')));
+db.close();console.log('PASS: propagation correction, atomic rollback, dry run, idempotency, recent ordering and 5 pending.');
