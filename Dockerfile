@@ -14,6 +14,8 @@ LABEL org.opencontainers.image.revision=$RELEASE_SHA
 COPY server.mjs moderation.mjs archive.mjs package.json ./
 COPY tests ./tests
 COPY frontend/presentation.mjs ./frontend/presentation.mjs
+COPY deploy/apply-event-dates.mjs ./deploy/apply-event-dates.mjs
+COPY docs/event-dates-20261012.json ./docs/event-dates-20261012.json
 COPY --from=build /app/dist ./dist
 USER node
 EXPOSE 8787
