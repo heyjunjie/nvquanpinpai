@@ -45,7 +45,7 @@ if(pathname.startsWith('/api/images/')&&['GET','HEAD'].includes(req.method)){con
 if(pathname.startsWith('/api/'))return json(res,404,{error:'接口不存在'});
 if(!['GET','HEAD'].includes(req.method))return json(res,405,{error:'不支持此操作'});
 if(pathname==='/discovery-routes.mjs')return serve(req,res,path.join(ROOT,'frontend/routes.mjs'),'text/javascript; charset=utf-8');
-if(pathname==='/'||pathname==='/index.html'||pathname==='/admin'||/^\/(event|brand|attachment|reply|topics)(\/|$)/.test(pathname)||['/archive','/robots.txt','/sitemap.xml','/feed.xml'].includes(pathname)){
+if(pathname==='/'||pathname==='/index.html'||pathname==='/admin'||/^\/(event|brand|attachment|reply|topics)(\/|$)/.test(pathname)||['/archive','/updates','/robots.txt','/sitemap.xml','/feed.xml'].includes(pathname)){
  publicPages||=discovery({template:fs.readFileSync(path.join(ROOT,'dist/index.html'),'utf8'),getItems:mod.records.publicItems,origin:process.env.PUBLIC_SITE_URL||'https://notbuy.top',assetVersion:crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT,'dist/discovery.css'))).digest('hex').slice(0,12)});
  const page=publicPages.handle(pathname);res.writeHead(page.status,{'Content-Type':page.type,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff',...(page.noindex?{'X-Robots-Tag':'noindex, follow'}:{})});return res.end(req.method==='HEAD'?'':page.body);
 }

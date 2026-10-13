@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import {editorialBrief} from './editorial.mjs';
 
 export const archiveFields={
  record_type:['event','opinion','correction','site'],
@@ -68,7 +69,8 @@ export function archive(db,DATA){
   const parts=[...row.content.matchAll(/图(\d+)：[\s\S]*?(?=\n图\d+：|\n整理上传：|$)/g)];
   const attachments=[...JSON.parse(row.images),...JSON.parse(row.videos||'[]')].map((key,n)=>{const meta=db.prepare('SELECT sha256,size FROM attachment_index WHERE key=?').get(key);const block=parts.find(p=>Number(p[1])===n+1)?.[0]||'';return{key,caption:/说明：([^\n]+)/.exec(block)?.[1]||`附件 ${n+1} · 逐图说明待核（保留原附件索引）`,source:/来源页：(https?:\/\/[^\s]+)/.exec(block)?.[1]||'',source_type:block?'原附件索引／第三方留存': '逐图来源待核（不自动沿用事件主来源）',date:/(?:来源日期|日期依据)：([^\n]+)/.exec(block)?.[1]||'未知',...(meta||{}),duplicate_count:meta?db.prepare("SELECT COUNT(*) n FROM attachment_index JOIN feedback ON feedback.id=attachment_index.event_id WHERE sha256=? AND feedback.status='approved'").get(meta.sha256).n:1}});
   const changes=db.prepare('SELECT created,action,changes,public_note FROM event_changes WHERE event_id=? ORDER BY id').all(row.id).map(r=>({...r,changes:JSON.parse(r.changes)}));
-  return {...row,moderation_status:row.status,collected_at:row.created,attachments,changes};
+  const record={...row,moderation_status:row.status,collected_at:row.created,attachments,changes};
+  return {...record,brief:editorialBrief(record)};
  }
  const publicItems=()=>db.prepare("SELECT feedback.*,COALESCE(users.username,guest_name,'站点整理') contributor FROM feedback LEFT JOIN users ON users.id=feedback.user_id WHERE feedback.status='approved' ORDER BY feedback.created DESC,feedback.id").all().map(extras);
  function initializeSubmission(id,fields){

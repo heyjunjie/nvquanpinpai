@@ -10,6 +10,7 @@ const page=service.handle('/event/public');assert.match(page.body,/<link rel="ca
 assert.equal(service.handle('/event/secret').status,404);assert.ok(!service.handle('/event/secret').body.includes('PENDING_SECRET'));
 assert.equal(service.handle('/brand/微星/MSI').status,200);assert.equal(service.handle('/brand/OPPO').status,200);assert.equal(service.handle('/brand/does-not-exist').status,404);
 const map=service.handle('/sitemap.xml');assert.ok(!map.body.includes('secret'));assert.match(map.body,/brand\/微星|brand\/%E5%BE%AE/);assert.ok(!map.body.includes('#/'));
+assert.match(map.body,/\/updates/);const updates=service.handle('/updates');assert.equal(updates.status,200);assert.match(updates.body,/最近更新/);assert.ok(!updates.body.includes('PENDING_SECRET'));assert.ok(!updates.body.includes('/assets/app.js'));assert.match(updates.body,/2001/);
 assert.match(service.handle('/topics/history').body,/\/event\/old/);assert.ok(!service.handle('/topics/history').body.includes('/assets/app.js'));assert.ok(!service.handle('/topics/history').body.includes('id="public-records"'));
 assert.match(service.handle('/feed.xml').body,/rss version="2.0"/);assert.match(service.handle('/admin').body,/noindex,follow/);assert.equal(service.handle('/attachment/public/image').noindex,true);
 rows=[{...item,title:'</script><script>alert(1)</script>',content:'<img src=x onerror=alert(1)>',source:'javascript:alert(1)'}];

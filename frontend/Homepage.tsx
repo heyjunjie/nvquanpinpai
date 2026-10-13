@@ -1,4 +1,5 @@
 import {publicPath} from './routes.mjs';
+import RecentUpdates from './RecentUpdates';
 import {useState} from 'react';
 import {ArrowRight,ArrowUpRight,Bookmark,ChevronDown,Plus,Search,SlidersHorizontal,X} from 'lucide-react';
 import {CommunityStats} from './Community';
@@ -64,6 +65,7 @@ export default function Homepage(p:Props){
      </>}
     </div>
    </section>
+   <RecentUpdates items={hasConditions?p.shown:p.items} loading={p.loading} error={p.error}/>
    <section className="topic-digest" aria-labelledby="topic-digest-title"><div className="section-line"><h2 id="topic-digest-title">专题导读</h2><a href="/archive">完整目录<ArrowRight size={15}/></a></div><a href="/topics/store-posts"><strong>回力、匹克、Dickies：店铺争议如何核对？</strong><span>一起查图片、传播时间与发布主体<ArrowUpRight size={17}/></span></a><a href="/topics/history"><strong>旧事件回看：别把收录日当发生日</strong><span>按时间查阅历史材料<ArrowUpRight size={17}/></span></a><a href="/topics/responses"><strong>品牌回应了什么，还有哪些待核？</strong><span>回应、来源与更正放在一起看<ArrowUpRight size={17}/></span></a></section>
    <section id="recent" className="recent-section"><div className="section-line"><h2>事件时间线</h2><span className="section-count">{events.length} 条事件档案</span></div><div className="timeline-controls"><p>按发生时间倒序 · 日期待核的置后</p><label><span className="sr-only">按年份查阅</span><select value={year} onChange={e=>{setYear(e.target.value);setEventLimit(6)}}><option value="all">全部年份</option>{years.map(y=><option key={y} value={y}>{y} 年</option>)}<option value="unknown">日期待核</option></select></label></div>
     {!p.loading&&!p.error&&(timeline.length?<><div className="event-list">{timeline.slice(0,eventLimit).map((i:RecordItem)=><RecordCard item={i} api={p.api} onNavigate={p.onNavigate} key={i.id}/>)}</div>{timeline.length>eventLimit?<button className="more-records" onClick={()=>setEventLimit(n=>n+12)}>继续查看事件（还有 {timeline.length-eventLimit} 条）<ChevronDown size={17}/></button>:<p className="timeline-end">已展示当前条件下的全部 {timeline.length} 条事件</p>}</>:<div className="empty"><p>该年份或筛选条件下没有公开事件。</p><button className="text-button" onClick={()=>{setYear('all');p.onClear()}}>重置时间与筛选<ArrowRight size={16}/></button></div>)}

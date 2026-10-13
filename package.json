@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node --experimental-sqlite server.mjs",
     "build": "vite build",
-    "test": "node tests/integration.mjs && node --experimental-sqlite tests/archive.mjs && node tests/presentation.mjs && node --experimental-sqlite tests/event-dates.mjs && node --experimental-sqlite tests/propagation-dates.mjs && node tests/discovery.mjs",
+    "test": "node tests/integration.mjs && node --experimental-sqlite tests/archive.mjs && node tests/presentation.mjs && node --experimental-sqlite tests/event-dates.mjs && node --experimental-sqlite tests/propagation-dates.mjs && node tests/discovery.mjs && node tests/editorial.mjs",
     "typecheck": "tsc --noEmit",
     "pretest": "npm run build"
   },
@@ -15,10 +15,12 @@
   },
   "dependencies": {
     "lucide-react": "1.31.0",
+    "qrcode": "1.5.4",
     "react": "19.2.6",
     "react-dom": "19.2.6"
   },
   "devDependencies": {
+    "@types/qrcode": "^1.5.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "6.0.2",

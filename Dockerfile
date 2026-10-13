@@ -12,10 +12,11 @@ WORKDIR /app
 ARG RELEASE_SHA=development
 ENV RELEASE_SHA=$RELEASE_SHA
 LABEL org.opencontainers.image.revision=$RELEASE_SHA
-COPY server.mjs moderation.mjs archive.mjs discovery.mjs package.json ./
+COPY server.mjs moderation.mjs archive.mjs discovery.mjs editorial.mjs package.json ./
 COPY tests ./tests
 COPY frontend/presentation.mjs ./frontend/presentation.mjs
-COPY frontend/routes.mjs ./frontend/routes.mjs
+COPY frontend/routes.mjs frontend/reading.mjs frontend/share-card.mjs ./frontend/
+COPY docs/editorial-briefs-20261013.json ./docs/editorial-briefs-20261013.json
 COPY deploy/apply-event-dates.mjs ./deploy/apply-event-dates.mjs
 COPY docs/event-dates-20261012.json ./docs/event-dates-20261012.json
 COPY deploy/apply-propagation-dates.mjs ./deploy/apply-propagation-dates.mjs
