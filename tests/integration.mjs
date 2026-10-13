@@ -22,11 +22,18 @@ try{
  assert.equal((await req('/api/feedback',{method:'POST',body:form})).status,400);
  const submission=await req('/api/feedback',{method:'POST',body:form,auth:user});assert.equal(submission.status,201);const item=submission.body.item;assert.equal(item.status,'pending');
  assert.equal((await req('/api/feedback')).body.items.length,0);
+ assert.equal((await req('/api/citations/'+item.id)).status,404);
+ assert.equal((await req('/api/materials/'+JSON.parse(item.images)[0])).status,404);
  assert.equal((await req('/event/'+item.id)).status,404);
  for(const key of [...JSON.parse(item.images),...JSON.parse(item.videos)]){assert.equal((await req('/api/images/'+key)).status,404);assert.equal((await req('/api/images/'+key,{auth:admin})).status,200);assert.equal((await req('/api/images/'+key,{auth:user})).status,200)}
  assert.equal((await req('/api/admin/feedback/'+item.id,{method:'PATCH',...json({status:'approved'}),auth:{...admin,csrf:'bad'}})).status,403);
  assert.equal((await req('/api/admin/feedback/'+item.id,{method:'PATCH',...json({status:'approved',note:'附件与来源已检查'}),auth:admin})).status,200);
  assert.equal((await req('/api/feedback')).body.items[0].contributor,'验收用户');
+ const citation=await req('/api/citations/'+item.id+'?format=json');assert.equal(citation.status,200);assert.equal(citation.body.record.contributor,'验收用户');assert.equal(citation.body.attachments.length,2);assert.equal(citation.body.record.user_id,undefined);
+ assert.equal((await req('/api/citations/'+item.id+'?format=html')).status,400);
+ assert.equal((await req('/api/citations/'+item.id,{method:'HEAD'})).status,200);
+ const material=await req('/api/materials/'+JSON.parse(item.images)[0]);assert.equal(material.status,200);assert.equal(material.body.matches.length,1);
+ for(const url of ['/lookup?q=warrior','/cite/'+item.id,'/sources/'+encodeURIComponent(JSON.parse(item.images)[0])])assert.equal((await req(url)).status,200);
  const document=await req('/event/'+item.id);assert.equal(document.status,200);const html=new TextDecoder().decode(document.body);assert.match(html,/审核流程验收记录/);assert.ok(html.includes('https://notbuy.top/event/'+item.id));assert.match(html,/src="\/assets\//);assert.equal((await req('/event/'+item.id,{method:'HEAD'})).status,200);
  assert.equal((await req('/brand/'+encodeURIComponent('回力'))).status,200);
  assert.ok(new TextDecoder().decode((await req('/sitemap.xml')).body).includes('/event/'+item.id));
@@ -52,6 +59,8 @@ try{
  const publicGuest=(await req('/api/feedback')).body.items.find(x=>x.id===gid);
  assert.equal(publicGuest.record_type,'opinion');assert.equal(publicGuest.verification_status,'unverified');
  assert.equal(publicGuest.attachments[0].duplicate_count,1,'Private identical uploads must not affect public counts');
+ assert.equal((await req('/api/citations/'+item.id)).status,404,'Withdrawn citation downloads stop immediately');
+ assert.equal((await req('/api/materials/'+gkey)).body.matches.length,1,'Private identical uploads stay out of public trace');
  assert.equal((await req('/api/archive/'+gid,{method:'PATCH',...json({record_type:'event'}),auth:user})).status,403);
  assert.equal((await req('/api/archive/'+gid,{method:'PATCH',...json({record_type:'event',editor_summary:'隔离环境已整理的事件摘要',public_note:'类型更正验证'}),auth:admin})).status,200);
  const linked=new FormData();for(const [k,v] of Object.entries({brand:'回力',title:'关联纠错验收记录',content:'这是一条仅用于隔离环境测试的关联纠错说明，来源日期仍需核验。',category:'其他反馈',guest_name:'纠错验收',consent:'yes',parent_event_id:gid,reply_type:'correction'}))linked.set(k,v);

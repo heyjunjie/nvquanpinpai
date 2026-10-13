@@ -1,5 +1,6 @@
 import {eventSummary,publisherText,criticalNote,recentRecords} from './frontend/presentation.mjs';
 import {recentUpdates,formatUpdateTime} from './frontend/reading.mjs';
+import {researchPage} from './research-pages.mjs';
 const SITE='女拳品牌观察';
 export const topics=[
  {slug:'store-posts',title:'回力、匹克、Dickies 店铺争议：图片、时间与发布主体',description:'把三组店铺相关资料放在一起查阅：先核对截图中的账号，再看传播日期、原片缺口与品牌回应。店铺行为与总部立场分别记录。',intro:'相似的截图在传播中很容易被合并成同一件事。这份专题按事件发生或争议传播时间排列，保留每组图片的来源和主体限制。原视频尚未取得的，不把截图当成完整语境。',match:i=>['回力','匹克','Dickies'].includes(i.brand)},
@@ -27,7 +28,7 @@ export function discovery({template,getItems,getTasks=()=>[],origin='https://not
   const head=`<title>${esc(title)} | ${SITE}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${esc(canonical)}"><meta name="robots" content="${noindex?'noindex,follow':'index,follow'}"><meta property="og:type" content="website"><meta property="og:site_name" content="${SITE}"><meta property="og:locale" content="zh_CN"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${esc(canonical)}">${image?`<meta property="og:image" content="${esc(base+'/api/images/'+image)}"><meta property="og:image:alt" content="${esc(title+' · 留存材料，核实状态见原档案')}">`:''}<meta name="twitter:card" content="summary"><link rel="alternate" type="application/rss+xml" title="${SITE}公开档案更新" href="/feed.xml"><link rel="stylesheet" href="/discovery.css?v=${esc(assetVersion)}"><script type="application/ld+json">${JSON.stringify(structured).replace(/</g,'\\u003c')}</script>`;
   let html=template.replace(/<title>[\s\S]*?<\/title>/,'').replace(/<meta name="description"[^>]*>/,'').replace('</head>',head+'</head>');
   if(!app)html=html.replace(/<script\b[^>]*src=["'][^"']+["'][^>]*>[\s\S]*?<\/script>/g,'');
-  const content=`<div class="discovery-page"><header><a class="discovery-logo" href="/">${SITE}</a><nav aria-label="资料导航"><a href="/archive">全部档案</a><a href="/updates">最近更新</a><a href="/tasks">一起补证</a><a href="/topics/store-posts">店铺争议</a><a href="/topics/history">历史回看</a><a href="/feed.xml">RSS 订阅</a></nav></header><main id="main-content"><h1>${esc(title)}</h1><p class="discovery-deck">${esc(description)}</p>${body}</main><footer><p>独立消费者反馈站 · 与所列品牌无关联。收录与内容审核不代表指控成立。</p><a href="mailto:tojunjie@gmail.com">联系站长 / 提供更正</a><a href="/">回到首页提交反馈与证据</a></footer></div>`;
+  const content=`<div class="discovery-page"><header><a class="discovery-logo" href="/">${SITE}</a><nav aria-label="资料导航"><a href="/lookup">买前速查</a><a href="/archive">全部档案</a><a href="/updates">最近更新</a><a href="/tasks">一起补证</a><a href="/topics/store-posts">店铺争议</a><a href="/topics/history">历史回看</a><a href="/feed.xml">RSS 订阅</a></nav></header><main id="main-content"><h1>${esc(title)}</h1><p class="discovery-deck">${esc(description)}</p>${body}</main><footer><p>独立消费者反馈站 · 与所列品牌无关联。收录与内容审核不代表指控成立。</p><a href="mailto:tojunjie@gmail.com">联系站长 / 提供更正</a><a href="/">回到首页提交反馈与证据</a></footer></div>`;
   const bootstrap=app?`<script id="public-records" type="application/json">${JSON.stringify(items).replace(/</g,'\\u003c')}</script>`:'<script type="module" src="/discovery-visit.js"></script>';
   return html.replace('<div id="root"></div>',`<div id="root">${content}</div>${bootstrap}`);
  }
@@ -36,15 +37,16 @@ export function discovery({template,getItems,getTasks=()=>[],origin='https://not
   const items=getItems().filter(i=>i.status==='approved');
   const events=recentRecords(items),brands=[...new Set(['回力','罗蒙','Dickies','匹克','德芙','罗技','OPPO','滴露','TVB',...items.filter(i=>i.record_type!=='site').map(i=>i.brand)])].sort((a,b)=>a.localeCompare(b,'zh-CN'));
   const html=(options,status=200)=>({status,type:'text/html; charset=utf-8',body:shell({...options,items}),noindex:options.noindex});
+  const research=researchPage({pathname,query,items,origin:base});if(research)return html(research,research.status||200);
   if(pathname==='/tasks'){
    const tasks=getTasks(),kinds={original:'原始材料',date:'日期核对',identity:'发布主体',response:'回应原件'};
    const render=t=>`<li><p class="discovery-meta">${esc(t.brand)} · ${esc(kinds[t.kind])} · ${t.status==='resolved'?'已补齐材料':'等待补证'}</p><h3>${esc(t.title)}</h3><p>${esc(t.need)}</p><p><a href="${pathFor('event',t.event_id)}">关联事件：${esc(t.event_title)}</a></p>${t.status==='resolved'&&t.proof?`<p>${esc(t.resolution_note)}</p><p><a href="${pathFor('event',t.proof.id)}">查看完成依据</a> · 贡献者：${esc(t.proof.contributor)}${t.proof.guest?'（未注册署名）':''}</p><p class="discovery-meta">补齐此项材料不代表整个事件已核实。</p>`:`<p><a class="discovery-task-action" href="${pathFor('reply',t.event_id)}?task=${encodeURIComponent(t.id)}">我有这份资料</a></p>${t.contributions.length?`<p class="discovery-meta">已公开补证：${t.contributions.map(c=>`<a href="${pathFor('event',c.id)}">${esc(c.contributor)}${c.guest?'（未注册）':''}</a>`).join('、')}；仍待核对任务是否补齐。</p>`:''}`}</li>`;
    return html({path:pathname,title:'一起补证：让缺失的资料回到档案里',description:'查找需要原图、完整视频、回应原件或日期依据的具体任务。可以不注册，但必须留名；审核后公开署名与关联材料。',body:`<p>只提交你持有或能提供来源的材料。每项任务都关联具体事件，完成时附公开依据；依据撤回后重新待补。</p>${['open','resolved'].map(status=>{const rows=tasks.filter(t=>t.status===status);return `<section><h2>${status==='open'?'等待补证':'已经补齐'} <span class="discovery-meta">${rows.length} 项</span></h2>${rows.length?`<ol class="discovery-list task-list">${rows.map(render).join('')}</ol>`:`<p>${status==='open'?'目前没有待补证任务。':'尚无已完成任务。'}</p>`}</section>`}).join('')}`});
   }
   if(pathname==='/updates')return html({path:pathname,title:'最近更新：补证、回应与更正',description:'按本站更新时间查阅公开档案的新增资料、阅读摘要与更正。事件发生时间另列，不把旧事件当作新事件。',body:updatesHTML(items)});
-  if(pathname==='/robots.txt')return {status:200,type:'text/plain; charset=utf-8',body:`User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api/admin/\nDisallow: /api/mine\nDisallow: /api/session\nDisallow: /reply/\nSitemap: ${base}/sitemap.xml\n`};
+  if(pathname==='/robots.txt')return {status:200,type:'text/plain; charset=utf-8',body:`User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api/admin/\nDisallow: /api/mine\nDisallow: /api/session\nDisallow: /reply/\nDisallow: /api/citations/\nDisallow: /api/materials/\nSitemap: ${base}/sitemap.xml\n`};
   if(pathname==='/sitemap.xml') {
-   const urls=['/','/archive','/updates','/tasks',...topics.map(t=>'/topics/'+t.slug),...brands.map(b=>pathFor('brand',b)),...items.filter(i=>i.record_type!=='site').map(i=>pathFor('event',i.id))];
+   const urls=['/','/archive','/updates','/tasks','/lookup',...topics.map(t=>'/topics/'+t.slug),...brands.map(b=>pathFor('brand',b)),...items.filter(i=>i.record_type!=='site').map(i=>pathFor('event',i.id))];
    return {status:200,type:'application/xml; charset=utf-8',body:`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(p=>`<url><loc>${esc(base+p)}</loc></url>`).join('')}</urlset>`};
   }
   if(pathname==='/feed.xml') {

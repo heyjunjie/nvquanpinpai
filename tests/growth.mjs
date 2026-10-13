@@ -10,4 +10,6 @@ let s=model.summary();assert.equal(s.content[0].views,1);assert.equal(s.content[
 db.prepare("UPDATE feedback SET status='approved' WHERE id='submission'").run();assert.equal(model.summary().content[0].approved,1);
 const today=new Date(Date.now()+8*3600000).toISOString().slice(0,10),yesterday=new Date(Date.now()+8*3600000-86400000).toISOString().slice(0,10);db.prepare('INSERT INTO growth_visits VALUES(?,?,?)').run(yesterday,'reader','direct');db.prepare('INSERT INTO growth_visits VALUES(?,?,?)').run(today,'reader','weibo');assert.equal(model.summary().returning,1);
 items=[];s=model.summary();assert.equal(s.content.length,0);assert.equal(s.landings.length,0);
+assert.equal(model.record('lookup-reader','direct','view','/lookup?q=private-search-term'),true);
+assert.equal(model.summary().content[0].path,'/lookup');assert.ok(!JSON.stringify(model.summary()).includes('private-search-term'));
 db.close();console.log('PASS growth: public target allowlist, deduplication, no query storage, reviewed conversions and returning visitors');

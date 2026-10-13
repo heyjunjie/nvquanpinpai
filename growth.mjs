@@ -1,4 +1,4 @@
-const staticPages=new Map([['/','首页'],['/archive','全部档案'],['/updates','最近更新'],['/tasks','补证任务'],['/topics/store-posts','店铺争议专题'],['/topics/history','历史回看专题'],['/topics/responses','品牌回应专题']]);
+const staticPages=new Map([['/','首页'],['/lookup','买前速查'],['/archive','全部档案'],['/updates','最近更新'],['/tasks','补证任务'],['/topics/store-posts','店铺争议专题'],['/topics/history','历史回看专题'],['/topics/responses','品牌回应专题']]);
 const baseBrands=['回力','罗蒙','Dickies','匹克','德芙','罗技','OPPO','滴露','TVB'];
 export const activityActions=['view','share_click','card_download','submit_start'];
 export function growth(db,getItems){

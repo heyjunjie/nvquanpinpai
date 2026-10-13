@@ -1,0 +1,3 @@
+.lookup-entry{margin:10px 0 0;font-size:14px;line-height:1.7;color:var(--muted)}
+.lookup-entry a{display:inline-flex;align-items:center;gap:6px;min-height:36px;text-underline-offset:4px}
+.attachment-caption code{overflow-wrap:anywhere;word-break:break-all}

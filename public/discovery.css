@@ -26,3 +26,30 @@
 @media(max-width:600px){.discovery-page{padding:20px}.discovery-page h1{font-size:26px}.discovery-logo{font-size:24px}.discovery-page h2{font-size:21px}}
 
 .task-list h3{font-size:22px;line-height:1.6;margin:8px 0}.discovery-task-action{display:inline-flex;align-items:center;min-height:44px;font-weight:600}.task-list .discovery-meta a{font-size:14px}@media(max-width:600px){.task-list h3{font-size:19px}}
+
+.lookup-form{margin:28px 0 12px;max-width:680px}
+.lookup-form label,.citation-label{display:block;font-size:15px;font-weight:600;margin-bottom:8px}
+.lookup-input{display:flex;gap:12px}
+.lookup-input input{flex:1;min-width:0;border:1px solid #a7a9a0;background:#fff;padding:12px 14px;font:inherit;border-radius:2px;color:#222420;caret-color:#8b2631}
+.lookup-input input::placeholder{color:#62645e}
+.discovery-page button{min-height:46px;border:1px solid #222420;border-radius:2px;background:#222420;color:#fff;font:600 16px/1.5 'Microsoft YaHei UI','PingFang SC',sans-serif;padding:10px 20px;cursor:pointer}
+.discovery-page button:hover{background:#41433d}
+.discovery-page input:focus-visible,.discovery-page textarea:focus-visible,.discovery-page button:focus-visible,.discovery-page summary:focus-visible{outline:2px solid #8b2631;outline-offset:3px}
+.lookup-examples{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;font-size:14px}
+.lookup-examples a{display:inline-flex;align-items:center;min-height:36px}
+.lookup-result-count{margin-top:28px;font-variant-numeric:tabular-nums}
+.lookup-brand{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.lookup-brand h2{margin:0}
+.lookup-results h3{font-size:18px;line-height:1.65;margin:12px 0 8px}
+.lookup-counts{font-size:14px;color:#62645e;margin:4px 0 12px;font-variant-numeric:tabular-nums}
+.lookup-empty{padding:8px 0 28px;border-top:1px solid #d9dad4}
+.material-fingerprint{padding:18px 0;border-top:1px solid #d9dad4;border-bottom:1px solid #d9dad4;display:grid;gap:8px;font-size:14px}
+.material-fingerprint code{font-size:14px;overflow-wrap:anywhere;white-space:normal;word-break:break-all}
+.citation-snapshot{padding-bottom:12px;border-bottom:1px solid #d9dad4}
+.discovery-page textarea{display:block;box-sizing:border-box;width:100%;max-width:100%;font:15px/1.85 'Microsoft YaHei UI','PingFang SC',sans-serif;color:#222420;background:#fff;border:1px solid #a7a9a0;border-radius:2px;padding:16px;resize:vertical;caret-color:#8b2631}
+.citation-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px 16px;margin-top:12px;font-size:14px}
+.citation-downloads{display:flex;flex-wrap:wrap;gap:12px 24px;margin:16px 0}
+.citation-downloads a{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+.citation-preview summary{cursor:pointer;min-height:44px;display:list-item;align-content:center}
+.citation-preview pre{font:14px/1.85 'Microsoft YaHei UI','PingFang SC',sans-serif;white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f1eb;padding:16px;max-height:480px;overflow:auto}
+@media(max-width:600px){.lookup-input{gap:8px}.lookup-input input{padding:10px;width:0}.lookup-input button{padding:10px 14px;flex-shrink:0}.lookup-brand{gap:4px 12px}.lookup-brand .discovery-meta{flex-basis:100%}.lookup-results h3{font-size:17px}.citation-actions{align-items:flex-start;flex-direction:column}.discovery-page textarea{font-size:16px;padding:12px}}

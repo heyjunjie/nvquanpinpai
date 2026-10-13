@@ -20,6 +20,7 @@ docker run --rm "$IMAGE" node tests/integration.mjs
 docker run --rm "$IMAGE" node tests/presentation.mjs
 docker run --rm "$IMAGE" node tests/discovery.mjs
 docker run --rm "$IMAGE" node tests/editorial.mjs
+docker run --rm "$IMAGE" node tests/research.mjs
 docker run --rm "$IMAGE" node --experimental-sqlite tests/participation.mjs
 docker run --rm "$IMAGE" node --experimental-sqlite tests/growth.mjs
 docker run --rm "$IMAGE" node --experimental-sqlite tests/event-dates.mjs

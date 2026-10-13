@@ -56,6 +56,7 @@ export default function Homepage(p:Props){
    <section id="brands" className="brand-directory">
     <div className="section-line"><h2>品牌观察目录</h2><span className="section-count">{p.loading?'—':p.brands.length} 个品牌 / 机构</span></div>
     <form className="directory-search" role="search" onSubmit={goToResults}><Search size={21}/><label className="sr-only" htmlFor="brand-query">搜索品牌或事件</label><input id="brand-query" placeholder="品牌、英文别名或事件关键词" value={p.query} onChange={e=>p.onQuery(e.target.value)}/>{p.query&&<button type="button" className="icon-button" aria-label="清除搜索" onClick={()=>p.onQuery('')}><X size={18}/></button>}<button className="search-submit" type="submit">查资料<ArrowRight size={16}/></button></form>
+    <p className="lookup-entry"><a href={'/lookup'+(p.query.trim()?'?q='+encodeURIComponent(p.query.trim()):'')}>买前速查：用品牌别名快速核对事件<ArrowUpRight size={15}/></a></p>
     <div className="directory-toolbar"><div className="tabs">{['全部品牌','我的关注'].map(t=><button aria-pressed={p.filter===t} className={p.filter===t?'active':''} onClick={()=>p.onFilter(t)} key={t}>{t}{t==='我的关注'&&p.saved.length>0&&<span>{p.saved.length}</span>}</button>)}</div><Filters {...p}/></div>
     <div className="search-status" role="status">{p.loading?'正在读取公开档案…':p.error?'资料暂时无法加载':hasConditions?`匹配 ${p.matchingBrands.length} 个品牌 · ${p.shown.length} 条记录`:'按品牌查阅事件、图片、来源与回应。收录不代表指控成立。'}{hasConditions&&<button onClick={p.onClear}>清空条件<X size={13}/></button>}</div>
     <div id="directory-results" tabIndex={-1} className="directory-results">
