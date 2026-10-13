@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {DatabaseSync} from 'node:sqlite';
+import {growth} from '../growth.mjs';
+const db=new DatabaseSync(':memory:');db.exec('CREATE TABLE feedback(id TEXT PRIMARY KEY,status TEXT);CREATE TABLE growth_visits(day TEXT,visitor_id TEXT,channel TEXT);');
+let items=[{id:'event',title:'公开事件',brand:'微星/MSI',record_type:'event',status:'approved'}];const model=growth(db,()=>items);
+assert.equal(model.record('reader','weibo','view','/event/private'),false);assert.equal(model.record('reader','weibo','view','//evil.test/'),false);assert.equal(model.target('/api/admin/feedback'),null);assert.ok(model.target('/brand/'+encodeURIComponent('微星/MSI')));
+model.record('reader','weibo','view','/event/event?private=do-not-store');model.record('reader','weibo','view','/event/event');model.record('reader','google','view','/event/event');model.record('reader','weibo','card_download','/event/event');model.record('reader','weibo','submit_start','/event/event');
+db.prepare('INSERT INTO feedback VALUES(?,?)').run('submission','pending');model.submission('submission','event','weibo');
+let s=model.summary();assert.equal(s.content[0].views,1);assert.equal(s.content[0].downloads,1);assert.equal(s.content[0].submitted,1);assert.equal(s.content[0].approved,0);assert.ok(!JSON.stringify(s).includes('do-not-store'));
+db.prepare("UPDATE feedback SET status='approved' WHERE id='submission'").run();assert.equal(model.summary().content[0].approved,1);
+const today=new Date(Date.now()+8*3600000).toISOString().slice(0,10),yesterday=new Date(Date.now()+8*3600000-86400000).toISOString().slice(0,10);db.prepare('INSERT INTO growth_visits VALUES(?,?,?)').run(yesterday,'reader','direct');db.prepare('INSERT INTO growth_visits VALUES(?,?,?)').run(today,'reader','weibo');assert.equal(model.summary().returning,1);
+items=[];s=model.summary();assert.equal(s.content.length,0);assert.equal(s.landings.length,0);
+db.close();console.log('PASS growth: public target allowlist, deduplication, no query storage, reviewed conversions and returning visitors');

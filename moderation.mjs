@@ -1,5 +1,7 @@
 import {archive} from './archive.mjs';
 import {channels} from './frontend/routes.mjs';
+import {participation} from './participation.mjs';
+import {growth,activityActions} from './growth.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -30,6 +32,9 @@ export function moderation(db,DATA,json){
  if(!db.prepare('PRAGMA table_info(feedback)').all().some(c=>c.name==='guest_name'))db.exec("ALTER TABLE feedback ADD COLUMN guest_name TEXT");
  const records=archive(db,DATA);
  db.exec('CREATE TABLE IF NOT EXISTS growth_visits(day TEXT NOT NULL,visitor_id TEXT NOT NULL,channel TEXT NOT NULL,PRIMARY KEY(day,visitor_id,channel))');
+ const tasks=participation(db,records.publicItems),activity=growth(db,records.publicItems);
+ const measurable=(req,current)=>current?.role!=='admin'&&!/bot|crawler|spider|headless/i.test(req.headers['user-agent']||'');
+ function visitor(req){const ip=req.headers['x-forwarded-for']?.split(',')[0].trim()||req.socket.remoteAddress,agent=(req.headers['user-agent']||'unknown').slice(0,512);const key=crypto.createHmac('sha256',visitorSecret).update(JSON.stringify([ip,agent])).digest('hex');return db.prepare('SELECT visitor_id FROM visitor_keys WHERE key=?').get(key)?.visitor_id}
  const items=(where,args=[])=>db.prepare(`SELECT feedback.*,COALESCE(users.username,feedback.guest_name,'站点整理') AS contributor FROM feedback LEFT JOIN users ON users.id=feedback.user_id ${where}`).all(...args).map(records.extras);
  async function handle(req,res,p,current){
   const reply=(status,data)=>{json(res,status,data);return true};
@@ -52,6 +57,18 @@ export function moderation(db,DATA,json){
    const token=crypto.randomBytes(32).toString('hex'),csrf=crypto.randomBytes(24).toString('hex');db.prepare('DELETE FROM sessions WHERE expires<?').run(Date.now());db.prepare('INSERT INTO sessions VALUES(?,?,?,?)').run(sha(token),user.id,csrf,Date.now()+7*86400000);res.setHeader('Set-Cookie',cookie(req,'bw_session',token,7*86400));return reply(200,{user:{username:user.username,role:user.role},csrf});
   }
   if(p==='/api/session'&&req.method==='DELETE'){db.prepare('DELETE FROM sessions WHERE token=?').run(sha(cookies(req).bw_session||''));res.setHeader('Set-Cookie',cookie(req,'bw_session','',0));return reply(200,{ok:true})}
+  if(p==='/api/tasks'&&req.method==='GET')return reply(200,{items:tasks.publicItems()});
+  if(p==='/api/admin/tasks'){
+   if(current?.role!=='admin')return reply(403,{error:'需要管理员权限'});
+   if(req.method==='GET')return reply(200,{items:tasks.adminItems()});
+   if(req.method==='POST'){const result=tasks.create(await readJSON(req));return reply(result.status,result)}
+  }
+  if(p.startsWith('/api/admin/tasks/')&&req.method==='PATCH'){if(current?.role!=='admin')return reply(403,{error:'需要管理员权限'});const result=tasks.update(p.slice('/api/admin/tasks/'.length),await readJSON(req));return reply(result.status,result)}
+  if(p==='/api/engagement'&&req.method==='POST'){
+   if(limited(req,'engagement',120))return reply(429,{error:'请求过于频繁'});
+   const body=await readJSON(req);if(!activityActions.includes(body.action)||!activity.target(body.path))return reply(400,{error:'统计对象无效'});
+   const recorded=measurable(req,current)&&activity.record(visitor(req),channels.includes(body.channel)?body.channel:'direct',body.action,body.path);return reply(200,{ok:true,recorded:!!recorded});
+  }
   if(p==='/api/stats'&&req.method==='GET'){
    const ranking=db.prepare("SELECT COALESCE(users.username,guest_name) username,CASE WHEN user_id IS NULL THEN 1 ELSE 0 END guest,COUNT(*) contributions FROM feedback LEFT JOIN users ON users.id=feedback.user_id WHERE status='approved' AND (user_id IS NOT NULL OR guest_name IS NOT NULL) GROUP BY CASE WHEN user_id IS NOT NULL THEN 'user:'||user_id ELSE 'guest:'||lower(guest_name) END ORDER BY contributions DESC,MIN(feedback.created) ASC").all();
    return reply(200,{visitors:db.prepare('SELECT COUNT(*) n FROM visitors').get().n,started:db.prepare('SELECT MIN(first_seen) d FROM visitors').get().d,contributors:ranking.length,approved:ranking.reduce((n,r)=>n+r.contributions,0),ranking:ranking.slice(0,10)});
@@ -68,7 +85,7 @@ export function moderation(db,DATA,json){
     const visitorId=known?.visitor_id||(db.prepare('SELECT id FROM visitors WHERE id=?').get(sha(id))?.id)||sha(id);
     db.prepare('INSERT OR IGNORE INTO visitors VALUES(?,?)').run(visitorId,Date.now());
     db.prepare('INSERT OR IGNORE INTO visitor_keys VALUES(?,?)').run(fingerprint,visitorId);
-    if(current?.role!=='admin'&&!/bot|crawler|spider|headless/i.test(agent))db.prepare('INSERT OR IGNORE INTO growth_visits VALUES(?,?,?)').run(new Date(Date.now()+8*3600000).toISOString().slice(0,10),visitorId,channel);
+    if(measurable(req,current)){db.prepare('INSERT OR IGNORE INTO growth_visits VALUES(?,?,?)').run(new Date(Date.now()+8*3600000).toISOString().slice(0,10),visitorId,channel);if(body.path)activity.record(visitorId,channel,'view',body.path)}
     db.exec('COMMIT');
    }catch(e){db.exec('ROLLBACK');throw e}
    return reply(200,{ok:true});
@@ -78,6 +95,7 @@ export function moderation(db,DATA,json){
    const since=new Date(Date.now()+8*3600000-29*86400000).toISOString().slice(0,10);
    return reply(200,{started:db.prepare('SELECT MIN(day) day FROM growth_visits').get().day,since,timezone:'Asia/Shanghai',channels:db.prepare('SELECT channel,COUNT(DISTINCT visitor_id) visitors,COUNT(*) daily_visits FROM growth_visits WHERE day>=? GROUP BY channel ORDER BY visitors DESC,channel').all(since),daily:db.prepare('SELECT day,COUNT(DISTINCT visitor_id) visitors FROM growth_visits WHERE day>=? GROUP BY day ORDER BY day DESC').all(since),total:db.prepare('SELECT COUNT(DISTINCT visitor_id) n FROM growth_visits WHERE day>=?').get(since).n});
   }
+  if(p==='/api/admin/content-stats'&&req.method==='GET'){if(current?.role!=='admin')return reply(403,{error:'需要管理员权限'});return reply(200,activity.summary())}
   if(p==='/api/mine'&&req.method==='GET'){if(!current)return reply(401,{error:'请先登录'});return reply(200,{items:items('WHERE feedback.user_id=? ORDER BY created DESC',[current.id])})}
   if(p==='/api/admin/feedback'&&req.method==='GET'){if(current?.role!=='admin')return reply(403,{error:'需要管理员权限'});return reply(200,{items:items('ORDER BY created DESC')})}
   if(p.startsWith('/api/admin/feedback/')&&req.method==='PATCH'){
@@ -88,5 +106,5 @@ export function moderation(db,DATA,json){
   if(p.startsWith('/api/archive/')&&req.method==='PATCH'){if(current?.role!=='admin')return reply(403,{error:'需要管理员权限'});const result=records.edit(p.slice('/api/archive/'.length),await readJSON(req));return reply(result.status,result)}
   return false;
  }
- return {session,handle,records,canView:(id,current)=>{const item=db.prepare('SELECT status,user_id FROM feedback WHERE id=?').get(id);return item&&(item.status==='approved'||current?.role==='admin'||current&&current.id===item.user_id)}};
+ return {session,handle,records,tasks,attributeSubmission:(id,fields,req,current)=>{tasks.link(id,fields.task_id);if(measurable(req,current))activity.submission(id,fields.parent_event_id,channels.includes(fields.visit_channel)?fields.visit_channel:'direct')},canView:(id,current)=>{const item=db.prepare('SELECT status,user_id FROM feedback WHERE id=?').get(id);return item&&(item.status==='approved'||current?.role==='admin'||current&&current.id===item.user_id)}};
 }

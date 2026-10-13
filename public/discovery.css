@@ -24,3 +24,5 @@
 .discovery-page footer {border-top:1px solid #d9dad4;margin-top:40px;padding-top:20px;font-size:14px}
 .discovery-page footer a {display:inline-block;margin:8px 24px 8px 0}
 @media(max-width:600px){.discovery-page{padding:20px}.discovery-page h1{font-size:26px}.discovery-logo{font-size:24px}.discovery-page h2{font-size:21px}}
+
+.task-list h3{font-size:22px;line-height:1.6;margin:8px 0}.discovery-task-action{display:inline-flex;align-items:center;min-height:44px;font-weight:600}.task-list .discovery-meta a{font-size:14px}@media(max-width:600px){.task-list h3{font-size:19px}}

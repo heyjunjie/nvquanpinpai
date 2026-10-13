@@ -1,0 +1,15 @@
+[
+ {"id":"warrior-original","event_id":"e63d1cfc-2f03-5a1a-beb2-143eedccbd04","title":"寻找回力店铺剧情的完整原片","need":"需要完整视频、原账号主页与原帖链接；尽量保留前后剧情、发布日期及账号认证信息。转载截图可作线索，请说明它与原帖的关系。","kind":"original","priority":2},
+ {"id":"peak-original","event_id":"bdec48d4-cfb5-5841-8965-ae995f076f7a","title":"寻找匹克店铺剧情原片及发布账号","need":"请提供完整原片及匹克汇鑫洋服饰专卖店的原始发布链接，保留 AI 生成提示与发布时间。拼图中其他账号须分别注明，不据此推断同一运营方。","kind":"original","priority":2},
+ {"id":"dickies-identity","event_id":"80c837c8-2fff-51fd-9862-b3bfd7fd54ce","title":"补全 Dickies 截图中的店铺身份","need":"现存截图中的账号名称不完整。需要完整账号名、主页或原帖链接、完整视频和可核对的日期；请保留截图上下文。","kind":"identity","priority":2},
+ {"id":"dove-response","event_id":"2e8bd5f7-11f4-5381-813b-5fca52f754dc","title":"核对德芙回应原件与时间冲突","need":"请补充品牌声明原链接或完整原件，保留发布时间、账号信息与时区；说明它与现有报道日期的对应关系，不仅提供裁切后的时间数字。","kind":"response","priority":2},
+ {"id":"logitech-response","event_id":"3c284ca7-a397-52b9-a2bc-d425a1ddfe82","title":"补充罗技降价广告的声明原链接","need":"需要事件所涉广告的完整原件、发布账号与品牌回应原链接。请把品牌官方说明、店铺或代理商说明分别标明。","kind":"response","priority":1},
+ {"id":"oppo-response","event_id":"f4ee7fb0-68a1-5465-9c12-4851ddffbce8","title":"补充 OPPO 母亲节文案与回应原件","need":"请提供相关官方帖文和回应的完整留存或原链接，包含发布账号、日期与上下文；区分广告原文、媒体转述和网友解读。","kind":"response","priority":1},
+ {"id":"meijian-response","event_id":"a3b40841-c69a-5984-8f5e-8a74043ffdab","title":"补充梅见挂签事件的原始声明","need":"需要完整挂签实物或官方原图，以及致歉声明的原帖或可核对留存，保留日期。背景对照与具体被投诉表达请分别说明。","kind":"response","priority":1},
+ {"id":"dettol-original","event_id":"93982681-fd39-5da2-a056-d1ed26f7681d","title":"寻找滴露两性剧情广告完整视频","need":"请提供包含结尾和反转情节的完整原片、原账号和发布日期，并附回应来源。短切片不足以还原完整剧情，请明确材料是否完整。","kind":"original","priority":2},
+ {"id":"dji-date","event_id":"565e24e6-bdf5-5093-a6be-a49acdc56c82","title":"核对大疆 Mini 相关账号帖文时间","need":"请寻找原帖或同期留存，能同时显示具体表达、发布账号与日期。报道日期与帖文首发日期分别注明；无法确认时保留线索。","kind":"date","priority":1},
+ {"id":"meituan-date","event_id":"d2475c29-c6c7-5ba1-94bf-e3de3e193373","title":"核对美团买药汤品广告的原始日期","need":"此条是背景对照。请提供父母汤品广告的原帖或同期材料，保留账号、完整内容和日期；不要把本站收录时间用作发生时间。","kind":"date","priority":1},
+ {"id":"abc-date","event_id":"5c0a9556-f3d3-5914-a123-005753964d4c","title":"寻找 ABC 店铺文案的原帖日期","need":"请补充相关店铺文案原链接或同期完整截图，包含账号和发布时间。店铺身份与品牌总部关系需要单独依据。","kind":"date","priority":1},
+ {"id":"yolo-date","event_id":"4a257144-d46f-56ee-b26f-a99727d467d7","title":"核对 YOLO VI 七夕营销回应时间","need":"请寻找原始营销内容与回应的同期链接或留存，明确是哪一年、哪个账号发布，并保留完整表达；不能仅凭七夕主题推定年份。","kind":"date","priority":1},
+ {"id":"logitech-gift-date","event_id":"e9cd5eef-0f03-531b-9d37-5321da2c2376","title":"核对罗技礼物广告的原始发布时间","need":"需要“让老公听话”相关广告的原账号、完整原图或视频和日期依据。请与另一条降价广告分别核对，不合并日期或主体。","kind":"date","priority":1}
+]
