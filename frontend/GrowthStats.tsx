@@ -1,0 +1,7 @@
+import {useEffect,useState} from 'react';
+const channelNames:Record<string,string>={direct:'直接 / 来源未知',google:'Google 搜索',bing:'Bing 搜索',baidu:'百度搜索',weibo:'微博',xiaohongshu:'小红书',douyin:'抖音',bilibili:'哔哩哔哩',wechat:'微信',x:'X / Twitter',github:'GitHub',referral:'其他外部来源'};
+export default function GrowthStats({api}:{api:string}) {
+ const [data,setData]=useState<any>(null),[error,setError]=useState(''),[revision,setRevision]=useState(0);
+ useEffect(()=>{setError('');fetch(api+'/api/admin/growth').then(async r=>{const d=await r.json();if(!r.ok)throw Error(d.error||'加载失败');setData(d)}).catch(e=>setError(e.message))},[api,revision]);
+ return <details className="growth-stats"><summary>流量来源 · 近 30 天</summary><p>按上海时区和服务器访客标识去重。来源由引流链接或浏览器提供，是估算值；不同渠道的人数不能相加。管理员和常见爬虫不纳入此表。</p>{error?<p role="alert">{error}</p>:data?<><p>近 30 天去重访客 <strong>{data.total}</strong> 人 · 开始记录：{data.started||'等待首个访问'}</p>{data.channels.length?<table><thead><tr><th>来源</th><th>去重人数</th><th>累计访问人天</th></tr></thead><tbody>{data.channels.map((row:any)=><tr key={row.channel}><th scope="row">{channelNames[row.channel]||row.channel}</th><td>{row.visitors}</td><td>{row.daily_visits}</td></tr>)}</tbody></table>:<p>新渠道统计尚无数据；之前的累计访客仍保留在首页。</p>}<details><summary>查看每日去重访客</summary><ul>{data.daily.map((row:any)=><li key={row.day}>{row.day}：{row.visitors} 人</li>)}</ul></details></>:<p role="status">正在读取来源统计…</p>}<button className="text-button" onClick={()=>setRevision(n=>n+1)}>刷新来源统计</button><p>同一访客同日同渠道重复打开只记一次。不保存原始 IP、完整引荐网址或搜索词；没有来源信息时归为“直接 / 来源未知”。</p></details>;
+}

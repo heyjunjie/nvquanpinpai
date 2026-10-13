@@ -1,0 +1,23 @@
+import assert from 'node:assert/strict';
+import {discovery} from '../discovery.mjs';
+import {currentRoute,publicPath,routePath,visitChannel} from '../frontend/routes.mjs';
+const template='<!doctype html><head><title>old</title><meta name="description" content="old"><script type="module" crossorigin src="/assets/app.js"></script></head><body><div id="root"></div></body>';
+const item={id:'public',brand:'回力',title:'回力店铺资料与回应',content:'事件概述\n留存截图，原始发布仍待核。',images:'["public/image"]',videos:'[]',status:'approved',record_type:'event',event_date:'2026-10-09',created:1780000000000,verification_status:'unverified',evidence_level:'third_party',publisher_scope:'shop',response_summary:'暂无已核验回应',source:'https://example.com/?a=1&b=2'};
+let rows=[item,{...item,id:'secret',title:'PENDING_SECRET',status:'pending'},{...item,id:'old',brand:'微星/MSI',event_date:'2001',images:'[]'}];
+const service=discovery({template,getItems:()=>rows});
+const root=service.handle('/');assert.equal(root.status,200);assert.match(root.body,/事件概述|留存截图/);assert.match(root.body,/href="\/event\/public"/);assert.ok(!root.body.includes('PENDING_SECRET'));assert.match(root.body,/id="public-records"/);
+const page=service.handle('/event/public');assert.match(page.body,/<link rel="canonical" href="https:\/\/notbuy.top\/event\/public"/);assert.match(page.body,/og:image/);assert.match(page.body,/原始发布仍待核/);assert.ok(page.body.indexOf('<figure>')<page.body.indexOf('<h2>事件经过'));
+assert.equal(service.handle('/event/secret').status,404);assert.ok(!service.handle('/event/secret').body.includes('PENDING_SECRET'));
+assert.equal(service.handle('/brand/微星/MSI').status,200);assert.equal(service.handle('/brand/OPPO').status,200);assert.equal(service.handle('/brand/does-not-exist').status,404);
+const map=service.handle('/sitemap.xml');assert.ok(!map.body.includes('secret'));assert.match(map.body,/brand\/微星|brand\/%E5%BE%AE/);assert.ok(!map.body.includes('#/'));
+assert.match(service.handle('/topics/history').body,/\/event\/old/);assert.ok(!service.handle('/topics/history').body.includes('/assets/app.js'));assert.ok(!service.handle('/topics/history').body.includes('id="public-records"'));
+assert.match(service.handle('/feed.xml').body,/rss version="2.0"/);assert.match(service.handle('/admin').body,/noindex,follow/);assert.equal(service.handle('/attachment/public/image').noindex,true);
+rows=[{...item,title:'</script><script>alert(1)</script>',content:'<img src=x onerror=alert(1)>',source:'javascript:alert(1)'}];
+const escaped=service.handle('/event/public').body;assert.ok(!escaped.includes('</script><script>alert'));assert.ok(!escaped.includes('<img src=x'));assert.ok(!escaped.includes('href="javascript:'));assert.match(escaped,/\\u003c\/script/);
+rows=[{...item,status:'rejected'}];assert.equal(service.handle('/event/public').status,404);assert.ok(!service.handle('/sitemap.xml').body.includes('/event/public'));
+assert.deepEqual(currentRoute({pathname:'/event/a',hash:''}),{type:'event',value:'a'});assert.deepEqual(currentRoute({pathname:'/',hash:'#/brand/%E5%BE%AE%E6%98%9F%2FMSI'}),{type:'brand',value:'微星/MSI'});assert.equal(publicPath('brand','微星/MSI'),'/brand/%E5%BE%AE%E6%98%9F%2FMSI');assert.equal(routePath('#/event/a'),'/event/a');assert.equal(routePath('//evil.example'),'/');
+assert.equal(visitChannel('https://notbuy.top/event/a?utm_source=weibo'),'weibo');assert.equal(visitChannel('https://notbuy.top/','https://www.google.com/search?q=private'),'google');assert.equal(visitChannel('https://notbuy.top/','https://notbuy.top/topics/history'),'direct');assert.equal(visitChannel('https://notbuy.top/','https://notgoogle.com/'),'referral');assert.equal(visitChannel('https://notbuy.top/?utm_source=arbitrary'),'referral');
+console.log('PASS discovery: public HTML, canonical URLs, feed, sitemap, escaping, withdrawal, legacy routing and attribution');
+
+assert.equal(visitChannel('https://notbuy.top/event/a','https://notbuy.top/topics/store-posts','weibo'),'weibo');
+assert.equal(visitChannel('https://notbuy.top/event/a?utm_source=google','','weibo'),'google');

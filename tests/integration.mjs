@@ -22,14 +22,23 @@ try{
  assert.equal((await req('/api/feedback',{method:'POST',body:form})).status,400);
  const submission=await req('/api/feedback',{method:'POST',body:form,auth:user});assert.equal(submission.status,201);const item=submission.body.item;assert.equal(item.status,'pending');
  assert.equal((await req('/api/feedback')).body.items.length,0);
+ assert.equal((await req('/event/'+item.id)).status,404);
  for(const key of [...JSON.parse(item.images),...JSON.parse(item.videos)]){assert.equal((await req('/api/images/'+key)).status,404);assert.equal((await req('/api/images/'+key,{auth:admin})).status,200);assert.equal((await req('/api/images/'+key,{auth:user})).status,200)}
  assert.equal((await req('/api/admin/feedback/'+item.id,{method:'PATCH',...json({status:'approved'}),auth:{...admin,csrf:'bad'}})).status,403);
  assert.equal((await req('/api/admin/feedback/'+item.id,{method:'PATCH',...json({status:'approved',note:'附件与来源已检查'}),auth:admin})).status,200);
  assert.equal((await req('/api/feedback')).body.items[0].contributor,'验收用户');
+ const document=await req('/event/'+item.id);assert.equal(document.status,200);const html=new TextDecoder().decode(document.body);assert.match(html,/审核流程验收记录/);assert.ok(html.includes('https://notbuy.top/event/'+item.id));assert.match(html,/src="\/assets\//);assert.equal((await req('/event/'+item.id,{method:'HEAD'})).status,200);
+ assert.equal((await req('/brand/'+encodeURIComponent('回力'))).status,200);
+ assert.ok(new TextDecoder().decode((await req('/sitemap.xml')).body).includes('/event/'+item.id));
+ assert.equal((await req('/api/admin/growth')).status,403);assert.equal((await req('/api/admin/growth',{auth:user})).status,403);
+ await req('/api/visit',{method:'POST',...json({channel:'weibo'})});await req('/api/visit',{method:'POST',...json({channel:'weibo'})});
+ const growth=(await req('/api/admin/growth',{auth:admin})).body;assert.equal(growth.channels.find(r=>r.channel==='weibo').visitors,1);assert.equal(growth.channels.find(r=>r.channel==='weibo').daily_visits,1);assert.equal(growth.total,1);
+ await req('/api/visit',{method:'POST',...json({channel:'google'})});assert.equal((await req('/api/admin/growth',{auth:admin})).body.total,1);
+
  const stats=(await req('/api/stats')).body;assert.equal(stats.contributors,1);assert.equal(stats.approved,1);assert.equal(stats.ranking[0].contributions,1);
  const key=JSON.parse(item.videos)[0];assert.equal((await req('/api/images/'+key,{headers:{Range:'bytes=0-31'}})).status,206);
  const visit=await req('/api/visit',{method:'POST'});await req('/api/visit',{method:'POST',headers:{Cookie:visit.cookie.split(';')[0]}});assert.equal((await req('/api/stats')).body.visitors,1);await req('/api/visit',{method:'POST'});await req('/api/visit',{method:'POST'});assert.equal((await req('/api/stats')).body.visitors,1);
- for(const status of ['rejected','pending']){assert.equal((await req('/api/admin/feedback/'+item.id,{method:'PATCH',...json({status,note:'隔离测试'}),auth:admin})).status,200);assert.equal((await req('/api/feedback')).body.items.length,0);assert.equal((await req('/api/images/'+key)).status,404);assert.equal((await req('/api/stats')).body.contributors,0)}
+ for(const status of ['rejected','pending']){assert.equal((await req('/api/admin/feedback/'+item.id,{method:'PATCH',...json({status,note:'隔离测试'}),auth:admin})).status,200);assert.equal((await req('/api/feedback')).body.items.length,0);assert.equal((await req('/api/images/'+key)).status,404);assert.equal((await req('/event/'+item.id)).status,404);assert.ok(!new TextDecoder().decode((await req('/sitemap.xml')).body).includes('/event/'+item.id));assert.equal((await req('/api/stats')).body.contributors,0)}
  assert.equal((await req('/api/mine',{auth:user})).body.items[0].status,'pending');
  await req('/api/session',{method:'DELETE',auth:user});assert.equal((await req('/api/mine',{auth:user})).status,401);
  form.set('guest_name','未注册验收');

@@ -97,6 +97,8 @@ Evidence is the imagery: existing uploaded documents, screenshots and videos ret
 
 Source authority: `frontend/main.tsx` loads `style.css` before `phase-two.css`; this document records their resulting cascade, sampled against `Homepage.tsx`, `SiteHeader.tsx`, `EvidenceReader.tsx`, `App.tsx`, `Community.tsx`, `ArchiveUI.tsx` and `ImagePreview.tsx`. Product commitments and the surface contract supply the approved world, not additional token values.
 
+Extension evidence: `discovery.mjs`, `public/discovery.css`, `frontend/GrowthStats.tsx` and the topic-digest additions in `Homepage.tsx` / `phase-two.css` extend this same world with standalone archive/topic reading and an administrator source table. They introduce no new raster assets, palette primitives or font families.
+
 ## Colors
 
 The palette is paper-like and quiet, with an oxblood accent for actionable elements and selected states.
@@ -133,6 +135,8 @@ These are intentional installed-font stacks for Chinese Read/Operate content. No
 
 **The Read and Operate Rule.** Serif marks editorial structure; sans-serif carries records, numeric values and controls.
 
+Standalone discovery pages use the same font pairing with a local reading scale: 16px/1.85 body, 34px/1.5 main heading, 23px/1.6 section headings and 14px metadata. The masthead is 28px/700 with 1.5 line-height. At 600px and below, these headings become 26px and 21px, and the masthead becomes 24px. Headings balance wrapping; paragraphs are capped at 72ch. These are scoped reading-page variants, not replacements for the homepage type ramp.
+
 ## Layout
 
 The page container is centered with a 1336px maximum outer width and 28px horizontal padding. The sticky masthead is 76px high. The introductory strip uses two equal columns, a 44px gap and 32px/30px top/bottom padding; its height follows text, rather than a fixed 150px contract sketch.
@@ -144,6 +148,8 @@ At 850px and below, navigation moves to an explicit menu and the sidebar follows
 Event rows normally pair an 84px date column with content and a 100px media column. Dates move above content at 1100px, return to a 90px date column in the stacked 601–850px layout, and move above again on phones. Phone media widths are 82px, then 68px at 360px; image heights are 118px, then 104px. Large section separations use 42px top margin plus 22px top padding, reduced to 32px/20px on phones.
 
 The statistics order is cumulative visitors, contributors, approved contributions; the latter spans the full metrics width. Chart and ranking are disclosure content. Numbers come from the server and must never be fixed to screenshot examples.
+
+Standalone archive and topic pages use one centered reading column, capped at 980px with 28px padding, reduced to 20px at 600px. The header has content-driven height and 24px bottom padding. Text navigation wraps with 12px row and 24px column gaps. Topic entries are full-width ruled rows with 24px vertical padding; the footer is separated by a fine rule, 40px top margin and 20px top padding. This surface has no statistics sidebar. The homepage topic digest sits after the brand directory and before the event timeline with 32px top and 40px bottom margins.
 
 ## Elevation & Depth
 
@@ -185,6 +191,16 @@ Opening a dialog locks background scroll, marks non-dialog root children inert, 
 Images and videos use contain sizing. The reader bed is `min(48dvh,460px)` high, or 36dvh with a 210px minimum on phones. Thumbnail buttons are 70×76px, then 58×64px on phones, in a horizontally scrolling strip. Images precede videos; previous/next controls disable at bounds. The selected thumbnail has a pressed state. Source captions and disclosure remain associated with each attachment. Failed media has a retry state; absent media has explanatory text.
 
 The image preview starts fit-to-window without upscaling, offers width-fit and native size, zooms in .25 increments from .5 to 4 relative to the selected fit mode, and permits scrolling at enlarged sizes. Its toolbar wraps on narrow screens. Original-image download and close remain explicit controls.
+
+### Topic digest and standalone reading
+The homepage digest presents three plain linked rows under a section heading and a full-directory link. Each row uses 18px vertical padding and a fine bottom rule, an 18px/1.7 bold sans-serif title (17px on phones), and a 14px muted description with 6px top spacing and an outlined SVG arrow. Hover changes the title to oxblood; existing link focus rings apply. Rows navigate to standalone topic URLs.
+
+Standalone pages retain the paper, ink, muted metadata and oxblood hover/focus palette using literal values in their own stylesheet. Their text navigation and linked serif record headings use ordinary document links. Date, record type and verification status precede each title; a summary is followed by publisher and contributor context. The response topic adds a response section and a native disclosure for unresolved details. Empty lists carry explanatory text. Images and videos on discovery-rendered records preserve proportions with a 100% maximum width, 70vh maximum height and contain sizing; original text preserves line breaks. This document-link surface and the interactive evidence reader share the same world but have distinct navigation behavior.
+
+### Administrator source statistics
+A native, initially closed disclosure introduces the last-30-days source report. Its container uses 24px vertical margin, 20px vertical padding and fine top/bottom rules; the summary is 20px/700 sans-serif. The full-width collapsed-border table uses tabular numerals, left-aligned source row headings, right-aligned numbers and fine horizontal rules. Cells use 12px/8px padding, reduced to 10px/4px and 14px type at 600px. There is no new chart or color scale.
+
+The report shows source, deduplicated visitors and cumulative visitor-days. A second native disclosure holds daily values; a text action refreshes the report. Loading uses a status region, failure an alert, and no-data states retain explanation. Attribution limitations and the non-additive nature of channel counts stay next to the table. Values remain server-driven; this table is distinct from the public lifetime visitor count.
 
 ## Do's and Don'ts
 

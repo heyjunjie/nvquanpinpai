@@ -1,4 +1,5 @@
 import {archive} from './archive.mjs';
+import {channels} from './frontend/routes.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -28,6 +29,7 @@ export function moderation(db,DATA,json){
  async function readJSON(req){let data='';for await(const b of req){data+=b;if(data.length>16384)throw Error('请求过大')}return JSON.parse(data||'{}')}
  if(!db.prepare('PRAGMA table_info(feedback)').all().some(c=>c.name==='guest_name'))db.exec("ALTER TABLE feedback ADD COLUMN guest_name TEXT");
  const records=archive(db,DATA);
+ db.exec('CREATE TABLE IF NOT EXISTS growth_visits(day TEXT NOT NULL,visitor_id TEXT NOT NULL,channel TEXT NOT NULL,PRIMARY KEY(day,visitor_id,channel))');
  const items=(where,args=[])=>db.prepare(`SELECT feedback.*,COALESCE(users.username,feedback.guest_name,'站点整理') AS contributor FROM feedback LEFT JOIN users ON users.id=feedback.user_id ${where}`).all(...args).map(records.extras);
  async function handle(req,res,p,current){
   const reply=(status,data)=>{json(res,status,data);return true};
@@ -55,6 +57,7 @@ export function moderation(db,DATA,json){
    return reply(200,{visitors:db.prepare('SELECT COUNT(*) n FROM visitors').get().n,started:db.prepare('SELECT MIN(first_seen) d FROM visitors').get().d,contributors:ranking.length,approved:ranking.reduce((n,r)=>n+r.contributions,0),ranking:ranking.slice(0,10)});
   }
   if(p==='/api/visit'&&req.method==='POST'){
+   const body=await readJSON(req),channel=channels.includes(body?.channel)?body.channel:'direct';
    let id=cookies(req).bw_visitor;if(!/^[a-f0-9]{48}$/.test(id||'')){if(limited(req,'visit',60))return reply(429,{error:'请求过于频繁'});id=crypto.randomBytes(24).toString('hex');res.setHeader('Set-Cookie',cookie(req,'bw_visitor',id,365*86400));}
    const ip=req.headers['x-forwarded-for']?.split(',')[0].trim()||req.socket.remoteAddress;
    const agent=(req.headers['user-agent']||'unknown').slice(0,512);
@@ -65,9 +68,15 @@ export function moderation(db,DATA,json){
     const visitorId=known?.visitor_id||(db.prepare('SELECT id FROM visitors WHERE id=?').get(sha(id))?.id)||sha(id);
     db.prepare('INSERT OR IGNORE INTO visitors VALUES(?,?)').run(visitorId,Date.now());
     db.prepare('INSERT OR IGNORE INTO visitor_keys VALUES(?,?)').run(fingerprint,visitorId);
+    if(current?.role!=='admin'&&!/bot|crawler|spider|headless/i.test(agent))db.prepare('INSERT OR IGNORE INTO growth_visits VALUES(?,?,?)').run(new Date(Date.now()+8*3600000).toISOString().slice(0,10),visitorId,channel);
     db.exec('COMMIT');
    }catch(e){db.exec('ROLLBACK');throw e}
    return reply(200,{ok:true});
+  }
+  if(p==='/api/admin/growth'&&req.method==='GET'){
+   if(current?.role!=='admin')return reply(403,{error:'需要管理员权限'});
+   const since=new Date(Date.now()+8*3600000-29*86400000).toISOString().slice(0,10);
+   return reply(200,{started:db.prepare('SELECT MIN(day) day FROM growth_visits').get().day,since,timezone:'Asia/Shanghai',channels:db.prepare('SELECT channel,COUNT(DISTINCT visitor_id) visitors,COUNT(*) daily_visits FROM growth_visits WHERE day>=? GROUP BY channel ORDER BY visitors DESC,channel').all(since),daily:db.prepare('SELECT day,COUNT(DISTINCT visitor_id) visitors FROM growth_visits WHERE day>=? GROUP BY day ORDER BY day DESC').all(since),total:db.prepare('SELECT COUNT(DISTINCT visitor_id) n FROM growth_visits WHERE day>=?').get(since).n});
   }
   if(p==='/api/mine'&&req.method==='GET'){if(!current)return reply(401,{error:'请先登录'});return reply(200,{items:items('WHERE feedback.user_id=? ORDER BY created DESC',[current.id])})}
   if(p==='/api/admin/feedback'&&req.method==='GET'){if(current?.role!=='admin')return reply(403,{error:'需要管理员权限'});return reply(200,{items:items('ORDER BY created DESC')})}
