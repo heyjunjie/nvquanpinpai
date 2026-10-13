@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "microsoft yahei",
+        "files": [
+          "frontend/style.css"
+        ],
+        "createdAt": "2026-10-13T01:40:28.591Z",
+        "reason": "Codex: legacy body font is overridden by phase-two.css, imported last by frontend/main.tsx; the effective body stack matches DESIGN.md."
+      }
+    ]
+  }
+}
