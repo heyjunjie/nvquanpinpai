@@ -32,3 +32,6 @@ function eventDateKey(value){
  return `${year}-${month||'00'}-${day||'00'}`;
 }
 export function recentRecords(items){return items.filter(i=>i.status==='approved'&&i.record_type==='event').slice().sort((a,b)=>eventDateKey(b.event_date).localeCompare(eventDateKey(a.event_date))||b.created-a.created||a.id.localeCompare(b.id))}
+export function filterTimeline(items,year='all'){
+ return recentRecords(items).filter(i=>year==='all'||(year==='unknown'?!eventDateKey(i.event_date):eventDateKey(i.event_date).slice(0,4)===year));
+}

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {eventSummary,publisherText,criticalNote,recentRecords} from '../frontend/presentation.mjs';
+import {eventSummary,publisherText,criticalNote,recentRecords,filterTimeline} from '../frontend/presentation.mjs';
 const event={id:'a',brand:'回力',status:'approved',record_type:'event',created:20,event_date:'2020-01-01',evidence_level:'third_party',publisher_scope:'shop',verification_status:'unverified',attachments:[{caption:'界面显示@回力路优专卖店。'}],content:'事件概述\n只引用已有的具体经过。\n发生与报道时间\n报道时间待核。\n附件索引\n图1：附件说明。'};
 assert.equal(eventSummary(event),'只引用已有的具体经过。');
 assert.equal(publisherText(event),'回力路优专卖店（截图所示）');
@@ -22,4 +22,7 @@ assert.deepEqual(recentRecords([{...event,id:'year',event_date:'2025'},{...event
 assert.equal(criticalNote({...event,verification_status:'disputed',pending_summary:'来源日期冲突，原文保留。'}),'来源日期冲突，原文保留。');
 assert.match(criticalNote(opinion),/个人观点/);
 assert.equal(event.verification_status,'unverified');
+assert.deepEqual(filterTimeline([event,newer,unknown,invalid,opinion,pending],'2020').map(i=>i.id),['a']);
+assert.deepEqual(filterTimeline([event,newer,unknown,invalid,opinion,pending],'unknown').map(i=>i.id),['unknown','invalid']);
+assert.deepEqual(filterTimeline([event,newer,unknown],'1999'),[]);
 console.log('PASS: evidence-first presentation preserves source text, account attribution and disputed warnings; occurrence dates sort descending, unknown/invalid dates last, and private records/opinions are excluded.');

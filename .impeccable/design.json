@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-13T01:32:28.051Z",
+  "title": "Design System: 女拳品牌观察",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "oklch(15.00% 0.00264 106.45)",
+          "oklch(26.43% 0.00264 106.45)",
+          "oklch(37.86% 0.00264 106.45)",
+          "oklch(49.29% 0.00264 106.45)",
+          "oklch(60.71% 0.00264 106.45)",
+          "oklch(72.14% 0.00264 106.45)",
+          "oklch(83.57% 0.00264 106.45)",
+          "oklch(95.00% 0.00264 106.45)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Inset Paper",
+        "tonalRamp": [
+          "oklch(15.00% 0.00531 106.50)",
+          "oklch(26.43% 0.00531 106.50)",
+          "oklch(37.86% 0.00531 106.50)",
+          "oklch(49.29% 0.00531 106.50)",
+          "oklch(60.71% 0.00531 106.50)",
+          "oklch(72.14% 0.00531 106.50)",
+          "oklch(83.57% 0.00531 106.50)",
+          "oklch(95.00% 0.00531 106.50)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.00790 128.81)",
+          "oklch(26.43% 0.00790 128.81)",
+          "oklch(37.86% 0.00790 128.81)",
+          "oklch(49.29% 0.00790 128.81)",
+          "oklch(60.71% 0.00790 128.81)",
+          "oklch(72.14% 0.00790 128.81)",
+          "oklch(83.57% 0.00790 128.81)",
+          "oklch(95.00% 0.00790 128.81)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Quiet Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.00965 121.80)",
+          "oklch(26.43% 0.00965 121.80)",
+          "oklch(37.86% 0.00965 121.80)",
+          "oklch(49.29% 0.00965 121.80)",
+          "oklch(60.71% 0.00965 121.80)",
+          "oklch(72.14% 0.00965 121.80)",
+          "oklch(83.57% 0.00965 121.80)",
+          "oklch(95.00% 0.00965 121.80)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Fine Rule",
+        "tonalRamp": [
+          "oklch(15.00% 0.00817 114.24)",
+          "oklch(26.43% 0.00817 114.24)",
+          "oklch(37.86% 0.00817 114.24)",
+          "oklch(49.29% 0.00817 114.24)",
+          "oklch(60.71% 0.00817 114.24)",
+          "oklch(72.14% 0.00817 114.24)",
+          "oklch(83.57% 0.00817 114.24)",
+          "oklch(95.00% 0.00817 114.24)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Oxblood",
+        "tonalRamp": [
+          "oklch(15.00% 0.13538 19.00)",
+          "oklch(26.43% 0.13538 19.00)",
+          "oklch(37.86% 0.13538 19.00)",
+          "oklch(49.29% 0.13538 19.00)",
+          "oklch(60.71% 0.13538 19.00)",
+          "oklch(72.14% 0.13538 19.00)",
+          "oklch(83.57% 0.13538 19.00)",
+          "oklch(95.00% 0.13538 19.00)"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Deep Oxblood",
+        "tonalRamp": [
+          "oklch(15.00% 0.11344 18.68)",
+          "oklch(26.43% 0.11344 18.68)",
+          "oklch(37.86% 0.11344 18.68)",
+          "oklch(49.29% 0.11344 18.68)",
+          "oklch(60.71% 0.11344 18.68)",
+          "oklch(72.14% 0.11344 18.68)",
+          "oklch(83.57% 0.11344 18.68)",
+          "oklch(95.00% 0.11344 18.68)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Editorial introduction",
+        "purpose": "Chinese serif introductory heading; scales at 1100, 600 and 360px."
+      },
+      "headline": {
+        "displayName": "Section heading",
+        "purpose": "Editorial hierarchy."
+      },
+      "title": {
+        "displayName": "Record title",
+        "purpose": "Sans-serif event title."
+      },
+      "body": {
+        "displayName": "Reading and controls",
+        "purpose": "Chinese UI sans-serif; detailed records increase line-height."
+      },
+      "label": {
+        "displayName": "Metadata",
+        "purpose": "Secondary context and numeric labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "transient-toast",
+        "value": "0 12px 32px #0006",
+        "purpose": "Inherited floating status-message depth; not directory/card elevation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-state",
+        "value": "color .16s,background-color .16s",
+        "purpose": "Button state changes."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transition:none!important;animation:none!important;scroll-behavior:auto",
+        "purpose": "Applied through prefers-reduced-motion:reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-min",
+        "value": "1500px"
+      },
+      {
+        "name": "compact-desktop-max",
+        "value": "1100px"
+      },
+      {
+        "name": "stacked-max",
+        "value": "850px"
+      },
+      {
+        "name": "phone-max",
+        "value": "600px"
+      },
+      {
+        "name": "narrow-phone-max",
+        "value": "360px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Contribution and submission action.",
+      "html": "<button class=\"ds-primary\">提交反馈</button>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 18px;border:0;border-radius:3px;background:var(--accent);color:#fff;font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:color .16s,background-color .16s}.ds-primary:hover{background:#6e1d26}.ds-primary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Text action",
+      "kind": "button",
+      "refersTo": "button-text",
+      "description": "Secondary contextual action.",
+      "html": "<button class=\"ds-text\">重新加载统计</button>",
+      "css": ".ds-text{background:none;border:0;color:var(--accent);min-height:44px;padding:10px 0;font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:13px;cursor:pointer;transition:color .16s,background-color .16s}.ds-text:focus-visible{outline:2px solid var(--accent);outline-offset:4px}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Search action",
+      "kind": "button",
+      "refersTo": "button-search",
+      "description": "Ink-filled directory search submission.",
+      "html": "<button class=\"ds-search-action\">查资料</button>",
+      "css": ".ds-search-action{background:var(--ink);color:#fff;border:0;min-height:44px;padding:10px 16px;font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:15px;cursor:pointer;transition:color .16s,background-color .16s}.ds-search-action:hover{background:var(--accent)}.ds-search-action:focus-visible{outline:2px solid var(--accent);outline-offset:4px}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Directory search",
+      "kind": "input",
+      "description": "Visible search enclosure and focus-within state.",
+      "html": "<label class=\"ds-search\"><input aria-label=\"搜索品牌或事件\" placeholder=\"品牌、英文别名或事件关键词\"/></label>",
+      "css": ".ds-search{display:flex;border:1px solid #8b8e84;padding:5px 5px 5px 15px;background:#fff}.ds-search:focus-within{outline:2px solid var(--accent);outline-offset:2px}.ds-search input{width:100%;min-width:0;height:44px;border:0;background:transparent;outline:0;padding:8px 0;color:var(--ink);font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:15px}.ds-search input::placeholder{color:var(--muted)}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Directory tabs",
+      "kind": "nav",
+      "description": "Pressed-state filters with ink underlining.",
+      "html": "<nav class=\"ds-tabs\" aria-label=\"品牌目录\"><button aria-pressed=\"true\">全部品牌</button><button aria-pressed=\"false\">我的关注</button></nav>",
+      "css": ".ds-tabs{display:flex;gap:18px;flex-wrap:wrap}.ds-tabs button{padding:8px 0;min-height:44px;background:none;color:var(--muted);font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:14px;border:0;border-bottom:2px solid transparent;border-radius:0;cursor:pointer}.ds-tabs button[aria-pressed=true]{color:var(--ink);border-color:var(--ink);font-weight:700}.ds-tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Removable filter",
+      "kind": "chip",
+      "refersTo": "filter-chip",
+      "description": "Active condition that remains visible outside the filter disclosure.",
+      "html": "<button class=\"ds-chip\" aria-label=\"取消地区：海外\">海外<svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></button>",
+      "css": ".ds-chip{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:5px 10px;min-height:36px;font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:12px;cursor:pointer}.ds-chip:focus-visible{outline:2px solid var(--accent);outline-offset:4px}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Directory row",
+      "kind": "card",
+      "refersTo": "directory-row",
+      "description": "Flat ruled entry with a brand title and readable summary.",
+      "html": "<article class=\"ds-row\"><h3><button>品牌资料</button></h3><span>品牌类别</span><p>查看事件、图片、来源与回应。</p><small>公开记录 · 来源可查</small></article>",
+      "css": ".ds-row{padding:15px 0 17px;border-bottom:1px solid var(--line);border-radius:0;background:none;color:var(--ink);font-family:'Microsoft YaHei UI','PingFang SC',sans-serif}.ds-row h3{font-size:21px;line-height:1.4;margin:0}.ds-row h3 button{border:0;background:none;padding:0;font:inherit;color:inherit;min-height:44px;text-align:left;cursor:pointer}.ds-row h3 button:hover{text-decoration:underline;text-underline-offset:5px}.ds-row h3 button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}.ds-row>span{color:var(--muted);font-size:12px}.ds-row p{font-size:14px;line-height:1.7}.ds-row small{font-size:11px;line-height:1.6;color:var(--muted)}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Serious Newspaper Archive",
+    "overview": "White paper, near-black ink, quiet grey rules and restrained oxblood actions make an archive meant to be read and checked. Chinese serif headings provide editorial hierarchy; sans-serif copy and controls keep dense records usable. This describes the implemented Read surface and its account, submission and moderation Operate surfaces.\n\nEvidence is the imagery: existing uploaded documents, screenshots and videos retain their proportions and accompanying attribution. There are no newly commissioned raster assets or image-generation comps. Attachment metadata carries provenance; sample review images are not reusable decorative assets.",
+    "keyCharacteristics": [
+      "Flat directory rows separated by rules.",
+      "Serif editorial hierarchy with sans-serif reading and controls.",
+      "Source context stays beside evidence.",
+      "Progressive disclosure preserves reading continuity."
+    ],
+    "rules": [
+      {
+        "name": "The Action Accent Rule",
+        "body": "Use oxblood to identify actions and selection; content hierarchy rests on ink, type and rules.",
+        "section": "colors"
+      },
+      {
+        "name": "The Read and Operate Rule",
+        "body": "Serif marks editorial structure; sans-serif carries records, numeric values and controls.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Reading Rule",
+        "body": "Keep directory and event surfaces flat; reserve overlay depth for a temporary reading or status layer.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the Read and Operate type pairing and the source-aware evidence captions.",
+      "Do use fine rules and whitespace to organize dense reading surfaces.",
+      "Do retain visible keyboard focus, inert backgrounds and return context in layered readers.",
+      "Do keep statistics server-driven and after the reading column on narrow screens."
+    ],
+    "donts": [
+      "Don't introduce decorative card shadows or side accents into the flat reading surfaces.",
+      "Don't replace evidence media with decorative imagery or crop away source context in the reader.",
+      "Don't turn hidden legacy eyebrows into a visible house style.",
+      "Don't treat screenshot counts or device-specific font rendering as fixed design tokens."
+    ]
+  }
+}

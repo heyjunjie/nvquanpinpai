@@ -9,3 +9,7 @@ backups/
 *.pem
 *.key
 *.zip
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/build/
+.impeccable/config.local.json
