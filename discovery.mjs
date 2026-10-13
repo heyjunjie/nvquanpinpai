@@ -1,10 +1,11 @@
 import {eventSummary,publisherText,criticalNote,recentRecords} from './frontend/presentation.mjs';
 import {recentUpdates,formatUpdateTime} from './frontend/reading.mjs';
 import {researchPage} from './research-pages.mjs';
+import {globalPages} from './global-pages.mjs';
 const SITE='女拳品牌观察';
 export const topics=[
  {slug:'store-posts',title:'回力、匹克、Dickies 店铺争议：图片、时间与发布主体',description:'把三组店铺相关资料放在一起查阅：先核对截图中的账号，再看传播日期、原片缺口与品牌回应。店铺行为与总部立场分别记录。',intro:'相似的截图在传播中很容易被合并成同一件事。这份专题按事件发生或争议传播时间排列，保留每组图片的来源和主体限制。原视频尚未取得的，不把截图当成完整语境。',match:i=>['回力','匹克','Dickies'].includes(i.brand)},
- {slug:'history',title:'品牌广告争议历史时间线：旧事件与来源回看',description:'回看本站已公开的 2024 年以前品牌事件，区分发生、报道与收录日期，并逐条查阅图片和回应。',intro:'旧材料重新传播，不等于新的品牌表态。这里仅列发生时间可定位到 2024 年以前的公开档案；日期待核的条目留在完整目录，不人为补齐年月日。海外历史研究仍在核验，完成核验与发布审核后再进入事件档案。',match:i=>/^\d{4}/.test(i.event_date||'')&&Number(i.event_date.slice(0,4))<2024},
+ {slug:'history',title:'品牌广告争议历史时间线：旧事件与来源回看',description:'回看本站已公开的 2024 年以前品牌事件，区分发生、报道与收录日期，并逐条查阅图片和回应。',intro:'旧材料重新传播，不等于新的品牌表态。这里仅列发生时间可定位到 2024 年以前的公开档案；日期待核的条目留在完整目录，不人为补齐年月日。海外案例保留当地市场、来源语言与回应记录，缺少原件的继续标为待补。',match:i=>/^\d{4}/.test(i.event_date||'')&&Number(i.event_date.slice(0,4))<2024},
  {slug:'responses',title:'品牌回应怎么查：回应记录、纠错与待核事项',description:'逐条查阅已公开档案里的品牌回应及待核事项；没有找到回应，不等于品牌明确拒绝道歉。',intro:'回应是否来自品牌本人、回应了什么、是否撤回或道歉，是三个不同的问题。以下按事件时间列出已有记录，回应原文与来源以对应档案为准。没有核实的部分继续标注，不用“沉默”推断“拒绝道歉”。',match:i=>!!i.response_summary}
 ];
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -19,16 +20,18 @@ function briefHTML(brief){
  return `<section><h2>30 秒看懂这份资料</h2><p>${esc(brief.summary)}</p><dl><dt>时间怎么读</dt><dd>${esc(brief.date_note)}</dd><dt>发布主体</dt><dd>${esc(brief.publisher_note)}</dd></dl><h3>现有材料记载了什么</h3><ul>${brief.facts.map(p=>`<li>${esc(p.text)} ${refs(p)}</li>`).join('')}</ul><h3>品牌回应</h3><p>${esc(brief.response.text)} ${refs(brief.response)}</p><h3>还不能确定的部分</h3><ul>${brief.uncertainties.map(s=>`<li>${esc(s)}</li>`).join('')}</ul><p class="discovery-meta">${esc(brief.note)} 摘要整理：${esc(formatUpdateTime(brief.edited_at))}</p></section>`;
 }
 function updatesHTML(items,limit=100){const rows=recentUpdates(items,limit);return rows.length?`<ol class="discovery-list update-list">${rows.map(u=>`<li><p class="discovery-meta"><time datetime="${new Date(u.at).toISOString()}">${esc(formatUpdateTime(u.at))}</time> · ${esc(u.label)}</p><h2><a href="${pathFor('event',u.event_id)}">${esc(u.title)}</a></h2><p>${esc(u.note)}</p><p class="discovery-meta">事件时间：${esc(u.event_date)} · 与本站更新时间分别记录</p></li>`).join('')}</ol>`:'<p>尚无可公开的更新记录。</p>'}
-export function discovery({template,getItems,getTasks=()=>[],origin='https://notbuy.top',assetVersion='1'}) {
+export function discovery({template,getItems,getTasks=()=>[],getStats=()=>null,origin='https://notbuy.top',assetVersion='1'}) {
  const siteURL=new URL(origin);if(!['https:','http:'].includes(siteURL.protocol))throw Error('Invalid public origin');
  const base=siteURL.origin;
  function shell({title,description,path='/',body,noindex=false,app=false,image='',items=[]}) {
   const canonical=base+path;
   const structured={'@context':'https://schema.org','@type':path==='/'?'WebSite':'WebPage',name:title,description,url:canonical,inLanguage:'zh-CN',isPartOf:{'@type':'WebSite',name:SITE,url:base+'/'}};
   const head=`<title>${esc(title)} | ${SITE}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${esc(canonical)}"><meta name="robots" content="${noindex?'noindex,follow':'index,follow'}"><meta property="og:type" content="website"><meta property="og:site_name" content="${SITE}"><meta property="og:locale" content="zh_CN"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${esc(canonical)}">${image?`<meta property="og:image" content="${esc(base+'/api/images/'+image)}"><meta property="og:image:alt" content="${esc(title+' · 留存材料，核实状态见原档案')}">`:''}<meta name="twitter:card" content="summary"><link rel="alternate" type="application/rss+xml" title="${SITE}公开档案更新" href="/feed.xml"><link rel="stylesheet" href="/discovery.css?v=${esc(assetVersion)}"><script type="application/ld+json">${JSON.stringify(structured).replace(/</g,'\\u003c')}</script>`;
-  let html=template.replace(/<title>[\s\S]*?<\/title>/,'').replace(/<meta name="description"[^>]*>/,'').replace('</head>',head+'</head>');
+  const english=['/archive','/updates','/tasks','/lookup'].includes(path)?'/en'+path:/^\/(event|brand|attachment)\//.test(path)?'/en'+path:'';
+  const alternates=english?`<link rel="alternate" hreflang="zh-CN" href="${esc(canonical)}"><link rel="alternate" hreflang="en" href="${esc(base+english)}"><link rel="alternate" hreflang="x-default" href="${esc(canonical)}">`:'';
+  let html=template.replace(/<title>[\s\S]*?<\/title>/,'').replace(/<meta name="description"[^>]*>/,'').replace('</head>',head+alternates+'</head>');
   if(!app)html=html.replace(/<script\b[^>]*src=["'][^"']+["'][^>]*>[\s\S]*?<\/script>/g,'');
-  const content=`<div class="discovery-page"><header><a class="discovery-logo" href="/">${SITE}</a><nav aria-label="资料导航"><a href="/lookup">买前速查</a><a href="/archive">全部档案</a><a href="/updates">最近更新</a><a href="/tasks">一起补证</a><a href="/topics/store-posts">店铺争议</a><a href="/topics/history">历史回看</a><a href="/feed.xml">RSS 订阅</a></nav></header><main id="main-content"><h1>${esc(title)}</h1><p class="discovery-deck">${esc(description)}</p>${body}</main><footer><p>独立消费者反馈站 · 与所列品牌无关联。收录与内容审核不代表指控成立。</p><a href="mailto:tojunjie@gmail.com">联系站长 / 提供更正</a><a href="/">回到首页提交反馈与证据</a></footer></div>`;
+  const content=`<div class="discovery-page"><header><a class="discovery-logo" href="/">${SITE}</a><nav aria-label="资料导航"><a href="/lookup">买前速查</a><a href="/global">全球观察</a>${english?`<a href="${esc(english)}" lang="en">English</a>`:''}<a href="/archive">全部档案</a><a href="/updates">最近更新</a><a href="/tasks">一起补证</a><a href="/topics/store-posts">店铺争议</a><a href="/topics/history">历史回看</a><a href="/feed.xml">RSS 订阅</a></nav></header><main id="main-content"><h1>${esc(title)}</h1><p class="discovery-deck">${esc(description)}</p>${body}</main><footer><p>独立消费者反馈站 · 与所列品牌无关联。收录与内容审核不代表指控成立。</p><a href="mailto:tojunjie@gmail.com">联系站长 / 提供更正</a><a href="/">回到首页提交反馈与证据</a></footer></div>`;
   const bootstrap=app?`<script id="public-records" type="application/json">${JSON.stringify(items).replace(/</g,'\\u003c')}</script>`:'<script type="module" src="/discovery-visit.js"></script>';
   return html.replace('<div id="root"></div>',`<div id="root">${content}</div>${bootstrap}`);
  }
@@ -37,6 +40,11 @@ export function discovery({template,getItems,getTasks=()=>[],origin='https://not
   const items=getItems().filter(i=>i.status==='approved');
   const events=recentRecords(items),brands=[...new Set(['回力','罗蒙','Dickies','匹克','德芙','罗技','OPPO','滴露','TVB',...items.filter(i=>i.record_type!=='site').map(i=>i.brand)])].sort((a,b)=>a.localeCompare(b,'zh-CN'));
   const html=(options,status=200)=>({status,type:'text/html; charset=utf-8',body:shell({...options,items}),noindex:options.noindex});
+  if(pathname==='/global'||pathname==='/en'||pathname.startsWith('/en/')){
+   const page=globalPages({items,tasks:getTasks(),stats:getStats(),base,assetVersion,pathname,search:query});
+   if(page)return {status:page.status,type:'text/html; charset=utf-8',body:page.html,noindex:page.noindex};
+   return html({path:pathname,title:'记录未公开或链接无效',description:'此记录暂不可访问。',noindex:true,body:'<a href="/en">Return to the global directory</a>'},404);
+  }
   const research=researchPage({pathname,query,items,origin:base});if(research)return html(research,research.status||200);
   if(pathname==='/tasks'){
    const tasks=getTasks(),kinds={original:'原始材料',date:'日期核对',identity:'发布主体',response:'回应原件'};
@@ -44,9 +52,9 @@ export function discovery({template,getItems,getTasks=()=>[],origin='https://not
    return html({path:pathname,title:'一起补证：让缺失的资料回到档案里',description:'查找需要原图、完整视频、回应原件或日期依据的具体任务。可以不注册，但必须留名；审核后公开署名与关联材料。',body:`<p>只提交你持有或能提供来源的材料。每项任务都关联具体事件，完成时附公开依据；依据撤回后重新待补。</p>${['open','resolved'].map(status=>{const rows=tasks.filter(t=>t.status===status);return `<section><h2>${status==='open'?'等待补证':'已经补齐'} <span class="discovery-meta">${rows.length} 项</span></h2>${rows.length?`<ol class="discovery-list task-list">${rows.map(render).join('')}</ol>`:`<p>${status==='open'?'目前没有待补证任务。':'尚无已完成任务。'}</p>`}</section>`}).join('')}`});
   }
   if(pathname==='/updates')return html({path:pathname,title:'最近更新：补证、回应与更正',description:'按本站更新时间查阅公开档案的新增资料、阅读摘要与更正。事件发生时间另列，不把旧事件当作新事件。',body:updatesHTML(items)});
-  if(pathname==='/robots.txt')return {status:200,type:'text/plain; charset=utf-8',body:`User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api/admin/\nDisallow: /api/mine\nDisallow: /api/session\nDisallow: /reply/\nDisallow: /api/citations/\nDisallow: /api/materials/\nSitemap: ${base}/sitemap.xml\n`};
+  if(pathname==='/robots.txt')return {status:200,type:'text/plain; charset=utf-8',body:`User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api/admin/\nDisallow: /api/mine\nDisallow: /api/session\nDisallow: /reply/\nDisallow: /en/reply/\nDisallow: /api/citations/\nDisallow: /api/materials/\nSitemap: ${base}/sitemap.xml\n`};
   if(pathname==='/sitemap.xml') {
-   const urls=['/','/archive','/updates','/tasks','/lookup',...topics.map(t=>'/topics/'+t.slug),...brands.map(b=>pathFor('brand',b)),...items.filter(i=>i.record_type!=='site').map(i=>pathFor('event',i.id))];
+   const urls=['/','/global','/en','/archive','/updates','/tasks','/lookup','/en/archive','/en/updates','/en/tasks','/en/lookup',...topics.map(t=>'/topics/'+t.slug),...brands.map(b=>pathFor('brand',b)),...brands.map(b=>'/en'+pathFor('brand',b)),...items.filter(i=>i.record_type!=='site').flatMap(i=>[pathFor('event',i.id),'/en'+pathFor('event',i.id)])];
    return {status:200,type:'application/xml; charset=utf-8',body:`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(p=>`<url><loc>${esc(base+p)}</loc></url>`).join('')}</urlset>`};
   }
   if(pathname==='/feed.xml') {

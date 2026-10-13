@@ -25,6 +25,8 @@ docker run --rm "$IMAGE" node --experimental-sqlite tests/participation.mjs
 docker run --rm "$IMAGE" node --experimental-sqlite tests/growth.mjs
 docker run --rm "$IMAGE" node --experimental-sqlite tests/event-dates.mjs
 docker run --rm "$IMAGE" node --experimental-sqlite tests/propagation-dates.mjs
+docker run --rm "$IMAGE" node --experimental-sqlite tests/global-data.mjs
+docker run --rm "$IMAGE" node tests/global-pages.mjs
 docker inspect brand-watch > "$BACKUP/container.json"
 docker cp brand-watch:/app/dist "$BACKUP/runtime-dist"
 docker stop brand-watch > /dev/null

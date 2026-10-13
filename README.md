@@ -4,6 +4,10 @@
 
 访问主站可查看品牌事件、图片与视频证据，并提交署名反馈。
 
+**全球站点：[中文全球目录](https://notbuy.top/global) · [English](https://notbuy.top/en) · [英文全部档案](https://notbuy.top/en/archive)**
+
+首期发布29条海外事件、对照与线索，覆盖6个国家，另1条地区待核；按国家、议题、回应与材料用途组合筛选，新增55项关联补证任务。原图／原片缺失明确提示，账户或免注册署名均可提交图片、视频。旧中文档案未翻译时显示原文标签，不宣称全量已译。[海外清单与来源边界](docs/GLOBAL-CONTENT-20261013.md) · [全球站点实施](docs/GLOBAL-SITE-20261013.md)。
+
 首页提供直接搜索和事件图片预览，正文保留主体关系、核实状态及原始材料缺口。完整第二阶段方案与验收标准见 [实施记录](docs/PHASE2.md)，验证结果见 [第二阶段验收](docs/PHASE2-ACCEPTANCE.md)。
 
 **[2026-10-13 布局改版](docs/REDESIGN-20261013.md)**：品牌目录前置，事件按年份查阅，统计在桌面侧栏、手机正文后显示；同页资料阅读器支持图片、视频和适窗预览。界面规范见 [DESIGN.md](DESIGN.md)。
@@ -12,7 +16,7 @@
 
 **[重点档案与分享资料卡](docs/EDITORIAL-20261013.md)**：首批八条带来源的阅读摘要，竖版/横版 PNG 与事件二维码；[最近更新](https://notbuy.top/updates) 单列补证、更正及摘要整理时间。
 
-**[关注更新与一起补证](docs/PARTICIPATION-20261013.md)**：品牌未读提醒、单品牌 RSS、[13 项补证任务](https://notbuy.top/tasks)及审核后署名；后台查看页面、分享、下载、投稿和回访效果。
+**[关注更新与一起补证](docs/PARTICIPATION-20261013.md)**：品牌未读提醒、单品牌 RSS、[公开补证任务](https://notbuy.top/tasks)及审核后署名；后台查看页面、分享、下载、投稿和回访效果。
 
 **[买前速查与引用工具](docs/RESEARCH-TOOLS-20261013.md)**：[按品牌或别名速查](https://notbuy.top/lookup)，事件支持复制引用、下载 Markdown / JSON；附件指纹可查看相同文件的公开关联及逐图来源。
 
@@ -28,7 +32,7 @@
 
 部署流程、精确版本和隔离恢复演练见 [部署说明](docs/DEPLOYMENT.md)。软件测试运行 `npm run typecheck && npm test && npm run build`。第三方截图与用户投稿不包含在代码开源授权中。
 
-面向中国大陆市场的品牌消费争议开源收集项目，旨在保障男性消费者的知情权与选择权。记录具体事件及公开表达，保留来源、日期、完整语境、品牌回应、证据层级和纠错入口；收录不表示指控成立，网传标签不能代替证据。海外案例应单列补充，不计为大陆核心案例。
+面向全球消费者的品牌消费争议开源档案，关注男性消费者的知情权与选择权。记录具体事件及公开表达，保留来源、日期、完整语境、品牌回应、证据层级和纠错入口；收录不表示指控成立，网传标签不能代替证据。投放或争议市场单列，不将当地运营商、合作方或店铺行为自动等同全球总部政策。
 
 ## 已有品牌与事件清单
 
@@ -110,3 +114,10 @@ npm start
 ## 许可证
 
 软件代码使用 [MIT](LICENSE)。第三方截图、商标、广告文案、转载材料及用户投稿的权利仍归相应权利人，**不包含在软件MIT授权中**。部署者自行处理内容授权、纠错和删除请求。依赖遵循各自许可证。
+
+
+## English
+
+NotBuy is an independent consumer archive focused on brand expression disputes and male consumer interests. [English portal](https://notbuy.top/en) · [Evidence gaps](https://notbuy.top/en/tasks).
+
+Publication is not a finding of wrongdoing. Complaints, responses, regulator decisions, source accessibility and unresolved questions remain separate. The first release includes Chinese and English navigation, filtering, reading and contribution flows. Newly curated overseas records have editorial English summaries; older Chinese records may remain untranslated and are labelled accordingly. Named guests can submit without registering; all contributions and media are private until moderated. MIT covers software code only, excluding third-party content.

@@ -1,0 +1,1711 @@
+{
+  "schema": 1,
+  "checked_at": "2026-10-13",
+  "cases": [
+    {
+      "key": "david-protein-devour-2026",
+      "brand": "David（蛋白棒）",
+      "brand_en": "David (protein bars)",
+      "brand_type_zh": "食品 / 蛋白棒",
+      "brand_type_en": "Food / protein bars",
+      "market": "US",
+      "language": "en",
+      "event_date": "2026-01",
+      "date_precision_zh": "宣传及争议月份；不是独立核验的首发日。",
+      "date_precision_en": "Campaign and dispute month; exact first release not independently verified.",
+      "title_zh": "David“Men disappoint”广告争议",
+      "title_en": "David 'Men disappoint' advertising controversy",
+      "summary_zh": "Devour宣传以男性令人失望与产品令人满意作对比。Creative Bloq的设计评论记录了“贬低男性”批评；媒体所存广告说明可读。",
+      "summary_en": "Devour contrasted disappointing men with a satisfying product. Creative Bloq's design commentary records criticism of alleged man-bashing and retains an ad-image caption.",
+      "response_class": "unknown",
+      "response_zh": "本轮未取得针对此文案的正式品牌回应。",
+      "response_en": "No formal brand response to this wording obtained in this review.",
+      "decision_zh": "未取得监管裁决；这里记录争议，不作违规判定。",
+      "decision_en": "No regulatory ruling obtained; this record documents a controversy without finding a breach.",
+      "pending_zh": "品牌原帖、完整物料、首发日和回应仍待补。与David & Goliath服饰品牌分开。",
+      "pending_en": "Original posts, complete material, first release date and response remain missing. Separate from clothing brand David & Goliath.",
+      "sources": [
+        {
+          "url": "https://www.creativebloq.com/design/advertising/unpacking-the-tired-straight-male-fantasy-of-david-protein-bar-ads",
+          "label_zh": "Creative Bloq：2026-01-19设计评论",
+          "label_en": "Creative Bloq design commentary, 19 January 2026",
+          "access_zh": "已读取报道正文及广告图说明；属媒体留存，未直接核验品牌原帖。",
+          "access_en": "Article and image caption read; media retention, not direct verification of the brand post."
+        }
+      ],
+      "verification_status": "partial",
+      "evidence_level": "third_party",
+      "material_status": "evidence",
+      "publisher_scope": "headquarters",
+      "category_zh": "贬损男性文案争议",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "original-ad",
+          "title_zh": "补品牌原帖与完整广告",
+          "title_en": "Find the brand post and full ad",
+          "need_zh": "提供品牌账号链接或可核验存档，保留账号、时间和上下文。",
+          "need_en": "Provide the brand-account link or verifiable archive with account, timestamp and context.",
+          "kind": "original"
+        },
+        {
+          "key": "brand-response",
+          "title_zh": "补正式回应",
+          "title_en": "Find a formal response",
+          "need_zh": "提交品牌对本次文案的完整回应及发布日期。",
+          "need_en": "Submit the brand's complete response to this wording and its publication date.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "nexon-maplestory-gesture-2023",
+      "brand": "Nexon / 冒险岛",
+      "brand_en": "Nexon / MapleStory",
+      "brand_type_zh": "游戏",
+      "brand_type_en": "Video games",
+      "market": "KR",
+      "language": "ko",
+      "event_date": "2023-11-26",
+      "date_precision_zh": "官方致歉公告日期；不是宣传片首发日。",
+      "date_precision_en": "Date of official apology notice, not the video's first release.",
+      "title_zh": "冒险岛宣传动画手势争议",
+      "title_en": "MapleStory animation hand-gesture dispute",
+      "summary_zh": "部分观众将动画帧解释为辱男符号，Nexon撤下影片。制作公司Ppuri否认蓄意植入政治符号；相关归因存在争议。",
+      "summary_en": "Some viewers interpreted animation frames as a misandrist symbol; Nexon removed the video. Studio Ppuri denied deliberately inserting political symbols. The attribution remains disputed.",
+      "response_class": "apologized",
+      "response_zh": "官方11月26日公告标题明确致歉；正文未返回。同期报道同时留存Nexon致歉和Ppuri否认。",
+      "response_en": "Official 26 November notice title apologizes; body was not returned. Contemporary reporting retains both Nexon's apology and Ppuri's denial.",
+      "decision_zh": "未取得监管裁决；这里记录争议，不作违规判定。",
+      "decision_en": "No regulatory ruling obtained; this record documents a controversy without finding a breach.",
+      "pending_zh": "原片、完整官方公告及后续反证待补。致歉与删片不证明制作人员具有辱男意图。",
+      "pending_en": "Original video, full official notice and subsequent counter-evidence needed. Apology and removal do not establish an animator's alleged intent.",
+      "sources": [
+        {
+          "url": "https://m.maplestory.nexon.com/News/Notice/Notice/142800",
+          "label_zh": "冒险岛官方：2023-11-26致歉公告",
+          "label_en": "MapleStory official apology notice, 26 November 2023",
+          "access_zh": "已读取官方公告标题和日期；正文未返回，不声称已核验完整声明。",
+          "access_en": "Official title and date read; body not returned, so the complete statement is not verified."
+        },
+        {
+          "url": "https://www.koreajoongangdaily.com/business/online-game-promo-removed-after-hateful-feminist-gesture-accusations/12150887",
+          "label_zh": "Korea JoongAng Daily：同期报道",
+          "label_en": "Korea JoongAng Daily contemporaneous report",
+          "access_zh": "已读取报道正文，含Nexon回应和Ppuri否认；引述属于第三方报道。",
+          "access_en": "Body read, including Nexon response and Ppuri denial; quotations are retained by a third party."
+        }
+      ],
+      "verification_status": "disputed",
+      "evidence_level": "original",
+      "material_status": "evidence",
+      "publisher_scope": "headquarters",
+      "category_zh": "手势归因争议",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "full-notice",
+          "title_zh": "补完整官方公告",
+          "title_en": "Recover the complete notice",
+          "need_zh": "补官方公告正文和可核验的时间信息，不只提交标题截图。",
+          "need_en": "Recover the official notice body and verifiable timing, not just a title screenshot.",
+          "kind": "response"
+        },
+        {
+          "key": "context-and-counterevidence",
+          "title_zh": "补原片及反证",
+          "title_en": "Add original video and counter-evidence",
+          "need_zh": "提供完整视频、帧上下文及后续调查或澄清来源。",
+          "need_en": "Provide the complete video, frame context and subsequent investigation or clarification sources.",
+          "kind": "original"
+        }
+      ]
+    },
+    {
+      "key": "starbucks-rtd-dongsuh-2021",
+      "brand": "星巴克RTD（东食品运营）",
+      "brand_en": "Starbucks RTD (operated by Dongsuh Foods)",
+      "brand_type_zh": "即饮咖啡",
+      "brand_type_en": "Ready-to-drink coffee",
+      "market": "KR",
+      "language": "ko",
+      "event_date": "2021-07-25",
+      "date_precision_zh": "7月26日报道记载的账号发帖日；未取回原帖。",
+      "date_precision_en": "Account posting date reported on 26 July; original post not recovered.",
+      "title_zh": "韩国星巴克RTD手影图争议",
+      "title_en": "Korean Starbucks RTD hand-shadow image dispute",
+      "summary_zh": "东食品运营的Starbucks RTD账号手影取咖啡图片遭到辱男手势指控。发布责任属于韩国即饮产品运营主体，不能归到星巴克全球总部或韩国门店业务。",
+      "summary_en": "A hand-shadow coffee image on the Dongsuh-operated Starbucks RTD account drew gesture accusations. Publication belongs to the Korean RTD operator, not Starbucks global headquarters or Korean café operations.",
+      "response_class": "apologized",
+      "response_zh": "同期报道记载删图并致歉，同时说明是夏季取咖啡的手影，没有相关意图。",
+      "response_en": "Contemporaneous reporting records removal and apology, alongside an explanation that the shadow depicted reaching for coffee in summer without the alleged intent.",
+      "decision_zh": "未取得监管裁决；这里记录争议，不作违规判定。",
+      "decision_en": "No regulatory ruling obtained; this record documents a controversy without finding a breach.",
+      "pending_zh": "已删除原帖、声明原帖及授权关系待补；手影相似不能证明歧视意图。",
+      "pending_en": "Deleted original post, original statement and authorization relationship need verification; resemblance does not prove discriminatory intent.",
+      "sources": [
+        {
+          "url": "https://www.newstomato.com/ReadNews.aspx?no=1062016",
+          "label_zh": "NewsTomato：2021-07-26报道",
+          "label_en": "NewsTomato report, 26 July 2021",
+          "access_zh": "已读取正文及原图、声明截图说明；未取回已删除原帖。",
+          "access_en": "Body and captions for post/statement screenshots read; deleted original post not recovered."
+        }
+      ],
+      "verification_status": "disputed",
+      "evidence_level": "third_party",
+      "material_status": "evidence",
+      "publisher_scope": "partner",
+      "category_zh": "手势归因争议",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "rtd-original",
+          "title_zh": "补RTD账号原始材料",
+          "title_en": "Recover RTD account material",
+          "need_zh": "提供原图和完整声明存档，保留Starbucks RTD账号信息。",
+          "need_en": "Provide archives of original image and full statement preserving Starbucks RTD account details.",
+          "kind": "original"
+        },
+        {
+          "key": "operator-identity",
+          "title_zh": "补发布主体与授权",
+          "title_en": "Verify operator and authorization",
+          "need_zh": "提交东食品当时运营即饮产品账号及品牌授权的可核验依据。",
+          "need_en": "Supply verifiable evidence of Dongsuh's operation of the RTD account and brand authorization at the time.",
+          "kind": "identity"
+        }
+      ]
+    },
+    {
+      "key": "gs25-camping-poster-2021",
+      "brand": "GS25 / GS Retail",
+      "brand_en": "GS25 / GS Retail",
+      "brand_type_zh": "便利店",
+      "brand_type_en": "Convenience stores",
+      "market": "KR",
+      "language": "ko",
+      "event_date": "2021-05",
+      "date_precision_zh": "争议月份；原海报首发日待核。",
+      "date_precision_en": "Dispute month; original poster release date remains unverified.",
+      "title_zh": "GS25露营促销海报手势争议",
+      "title_en": "GS25 camping-promotion poster gesture dispute",
+      "summary_zh": "露营海报手形被部分消费者指为辱男符号；手势意图尚未独立证实。",
+      "summary_en": "Some consumers alleged that a camping poster's hand shape was a misandrist symbol; intent is unproven.",
+      "response_class": "apologized",
+      "response_zh": "SBS同期文字稿记载致歉并修改设计。",
+      "response_en": "SBS's contemporary transcript records an apology and redesign.",
+      "decision_zh": "未取得监管裁决；这里记录争议，不作违规判定。",
+      "decision_en": "No regulatory ruling obtained; this record documents a controversy without finding a breach.",
+      "pending_zh": "原海报各版、原始声明及首发日待补。",
+      "pending_en": "Poster versions, original statement and first release date needed.",
+      "sources": [
+        {
+          "url": "https://news.sbs.co.kr/news/endPage.do?news_id=N1006310838",
+          "label_zh": "SBS：2021-05-07采访与报道",
+          "label_en": "SBS report and interviews, 7 May 2021",
+          "access_zh": "已读取同期电视新闻文字稿；原广告、企业原声明未独立取回。",
+          "access_en": "Contemporaneous TV transcript read; original ads and corporate statements not independently recovered."
+        },
+        {
+          "url": "https://view.asiae.co.kr/en/article/2021050720003505381",
+          "label_zh": "Asia Business Daily：2021年手势争议",
+          "label_en": "Asia Business Daily on the 2021 gesture disputes",
+          "access_zh": "已访问新闻页；作为辅助来源，核心回应以SBS文字稿为据。",
+          "access_en": "News page accessed as supporting context; SBS transcript supports the response classification."
+        }
+      ],
+      "verification_status": "disputed",
+      "evidence_level": "third_party",
+      "material_status": "evidence",
+      "publisher_scope": "headquarters",
+      "category_zh": "手势归因争议",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "poster-versions",
+          "title_zh": "补海报各版本",
+          "title_en": "Recover poster versions",
+          "need_zh": "提交完整海报及修改前后版本，保留原账号、发布时间。",
+          "need_en": "Submit complete original and revised posters with account and publication times.",
+          "kind": "original"
+        },
+        {
+          "key": "gs25-statement",
+          "title_zh": "补致歉原文",
+          "title_en": "Recover the apology",
+          "need_zh": "提供企业完整致歉声明及时间。",
+          "need_en": "Provide the company's complete apology and timestamp.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "genesis-bbq-gesture-2021",
+      "brand": "Genesis BBQ",
+      "brand_en": "Genesis BBQ",
+      "brand_type_zh": "餐饮 / 炸鸡",
+      "brand_type_en": "Food service / fried chicken",
+      "market": "KR",
+      "language": "ko",
+      "event_date": "2021-05",
+      "date_precision_zh": "争议月份；5月7日为同期报道节点。",
+      "date_precision_en": "Dispute month; 7 May is the reporting date.",
+      "title_zh": "BBQ海报与菜单手势争议",
+      "title_en": "BBQ poster and menu gesture dispute",
+      "summary_zh": "持食物手形遭到辱男指控；指控与意图证明分开记录。",
+      "summary_en": "Food-holding hand shapes drew accusations; allegations and proof of intent are separate.",
+      "response_class": "apologized",
+      "response_zh": "SBS记载品牌致歉并删除图片。",
+      "response_en": "SBS records an apology and image removal.",
+      "decision_zh": "未取得监管裁决；这里记录争议，不作违规判定。",
+      "decision_en": "No regulatory ruling obtained; this record documents a controversy without finding a breach.",
+      "pending_zh": "完整物料、原始声明与首发日期待补。",
+      "pending_en": "Full material, original statement and first release dates needed.",
+      "sources": [
+        {
+          "url": "https://news.sbs.co.kr/news/endPage.do?news_id=N1006310838",
+          "label_zh": "SBS：2021-05-07采访与报道",
+          "label_en": "SBS report and interviews, 7 May 2021",
+          "access_zh": "已读取同期电视新闻文字稿；原广告、企业原声明未独立取回。",
+          "access_en": "Contemporaneous TV transcript read; original ads and corporate statements not independently recovered."
+        }
+      ],
+      "verification_status": "disputed",
+      "evidence_level": "third_party",
+      "material_status": "evidence",
+      "publisher_scope": "headquarters",
+      "category_zh": "手势归因争议",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "bbq-material",
+          "title_zh": "补完整海报和菜单",
+          "title_en": "Recover full poster and menu",
+          "need_zh": "提交完整版本和出处，避免仅截取手形。",
+          "need_en": "Submit complete versions and provenance, avoiding isolated hand crops.",
+          "kind": "original"
+        },
+        {
+          "key": "bbq-response",
+          "title_zh": "补品牌声明",
+          "title_en": "Recover brand statement",
+          "need_zh": "提供完整删图、致歉或澄清原文及时间。",
+          "need_en": "Provide complete removal, apology or clarification text with timing.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "kyochon-gesture-2021",
+      "brand": "校村炸鸡",
+      "brand_en": "Kyochon Chicken",
+      "brand_type_zh": "餐饮 / 炸鸡",
+      "brand_type_en": "Food service / fried chicken",
+      "market": "KR",
+      "language": "ko",
+      "event_date": "2021-05",
+      "date_precision_zh": "争议月份；5月7日为报道节点。",
+      "date_precision_en": "Dispute month; 7 May is the reporting date.",
+      "title_zh": "校村社媒持鸡肉手势争议",
+      "title_en": "Kyochon social-media gesture dispute",
+      "summary_zh": "社媒两指持鸡肉画面受到指控，意图未获证实。",
+      "summary_en": "Two-finger chicken images drew accusations; intent is unproven.",
+      "response_class": "defended",
+      "response_zh": "SBS采访记载否认相关意图，并为避免争议删图。",
+      "response_en": "An SBS interview records denial of intent and removal to avoid controversy.",
+      "decision_zh": "未取得监管裁决；这里记录争议，不作违规判定。",
+      "decision_en": "No regulatory ruling obtained; this record documents a controversy without finding a breach.",
+      "pending_zh": "原图片、发帖日和完整企业回应待补；删图不是承认指控。",
+      "pending_en": "Original images, post dates and full response needed; removal is not admission.",
+      "sources": [
+        {
+          "url": "https://news.sbs.co.kr/news/endPage.do?news_id=N1006310838",
+          "label_zh": "SBS：2021-05-07采访与报道",
+          "label_en": "SBS report and interviews, 7 May 2021",
+          "access_zh": "已读取同期电视新闻文字稿；原广告、企业原声明未独立取回。",
+          "access_en": "Contemporaneous TV transcript read; original ads and corporate statements not independently recovered."
+        }
+      ],
+      "verification_status": "disputed",
+      "evidence_level": "third_party",
+      "material_status": "evidence",
+      "publisher_scope": "headquarters",
+      "category_zh": "手势归因争议",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "kyochon-original",
+          "title_zh": "补社媒完整原帖",
+          "title_en": "Recover full social posts",
+          "need_zh": "提交完整图文、账号和时间信息。",
+          "need_en": "Submit complete images/text, account and timestamps.",
+          "kind": "original"
+        },
+        {
+          "key": "kyochon-response",
+          "title_zh": "补完整回应",
+          "title_en": "Recover full response",
+          "need_zh": "提交可核验的企业否认、删图或后续澄清原文。",
+          "need_en": "Submit verifiable denial, removal explanation or subsequent clarification.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "musinsa-card-gesture-2021",
+      "brand": "MUSINSA",
+      "brand_en": "MUSINSA",
+      "brand_type_zh": "服饰电商",
+      "brand_type_en": "Fashion e-commerce",
+      "market": "KR",
+      "language": "ko",
+      "event_date": "2021-05",
+      "date_precision_zh": "争议月份；合作图首发日待核。",
+      "date_precision_en": "Dispute month; collaboration-image release date remains unverified.",
+      "title_zh": "MUSINSA银行卡合作图手势争议",
+      "title_en": "MUSINSA card-collaboration gesture dispute",
+      "summary_zh": "合作宣传图的手形引发指控，尚无意图证据。",
+      "summary_en": "A collaboration image's hand shape drew accusations; intent is unproven.",
+      "response_class": "defended",
+      "response_zh": "SBS记载依据推荐素材制作，并否认歧视或仇恨。",
+      "response_en": "SBS records an explanation based on recommended images and denial of discrimination or hate.",
+      "decision_zh": "未取得监管裁决；这里记录争议，不作违规判定。",
+      "decision_en": "No regulatory ruling obtained; this record documents a controversy without finding a breach.",
+      "pending_zh": "设计原档、完整物料及首发时间待补。",
+      "pending_en": "Design originals, complete material and release timing needed.",
+      "sources": [
+        {
+          "url": "https://news.sbs.co.kr/news/endPage.do?news_id=N1006310838",
+          "label_zh": "SBS：2021-05-07采访与报道",
+          "label_en": "SBS report and interviews, 7 May 2021",
+          "access_zh": "已读取同期电视新闻文字稿；原广告、企业原声明未独立取回。",
+          "access_en": "Contemporaneous TV transcript read; original ads and corporate statements not independently recovered."
+        }
+      ],
+      "verification_status": "disputed",
+      "evidence_level": "third_party",
+      "material_status": "evidence",
+      "publisher_scope": "headquarters",
+      "category_zh": "合作宣传手势争议",
+      "topic": "partnership",
+      "needs": [
+        {
+          "key": "musinsa-design",
+          "title_zh": "补合作物料与设计出处",
+          "title_en": "Recover material and design provenance",
+          "need_zh": "提供完整合作宣传图、素材出处和首发记录。",
+          "need_en": "Provide full collaboration image, asset provenance and release record.",
+          "kind": "original"
+        },
+        {
+          "key": "musinsa-statement",
+          "title_zh": "补完整否认声明",
+          "title_en": "Recover full denial",
+          "need_zh": "提供企业完整回应原文和发布日期。",
+          "need_en": "Provide full original company response and publication date.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "philadelphia-dads-asa-2019",
+      "brand": "Philadelphia / Mondelez UK",
+      "brand_en": "Philadelphia / Mondelez UK",
+      "brand_type_zh": "食品 / 奶酪",
+      "brand_type_en": "Food / soft cheese",
+      "market": "GB",
+      "language": "en-GB",
+      "event_date": "2019-06-14",
+      "date_precision_zh": "ASA记录的电视广告所见日，不保证是首次投放；裁决日另为8月14日。",
+      "date_precision_en": "ASA's observed TV-ad date, not necessarily first placement; ruling issued separately on 14 August.",
+      "title_zh": "Philadelphia爸爸照顾婴儿广告：投诉获支持",
+      "title_en": "Philadelphia childcare ad: complaints upheld",
+      "summary_zh": "广告中的两位父亲吃东西时分心，婴儿随餐厅传送带移动。投诉认为这强化男性不擅育儿的刻板印象。",
+      "summary_en": "Two fathers become distracted by food while their babies move on a restaurant conveyor. Complainants objected to a stereotype of men as ineffective caregivers.",
+      "response_class": "defended",
+      "response_zh": "Mondelez答辩称是产品令人分心的幽默，父亲积极参与育儿，并非因性别而无能。",
+      "response_en": "Mondelez argued that the humour concerned an appealing product, and the fathers actively cared for children rather than being incompetent because of gender.",
+      "decision_zh": "ASA于2019-08-14支持投诉，认定强化有害育儿刻板印象；要求广告不得再以原形式出现。",
+      "decision_en": "ASA upheld complaints on 14 August 2019, finding a harmful childcare stereotype; the ad must not reappear in its current form.",
+      "pending_zh": "裁决限于该英国广告。原视频及后续改版待补，不能扩展为集团所有品牌。",
+      "pending_en": "Ruling covers this UK ad. Original video and subsequent revisions needed; findings do not extend to all group brands.",
+      "sources": [
+        {
+          "url": "https://www.asa.org.uk/rulings/mondelez-uk-ltd-G19-1023670.html",
+          "label_zh": "ASA：Mondelez UK裁决，2019-08-14",
+          "label_en": "ASA ruling: Mondelez UK, 14 August 2019",
+          "access_zh": "已读取原始监管正文，包括广告、投诉、答辩、认定和处理要求。",
+          "access_en": "Original regulatory body read, including ad, complaint, advertiser defence, assessment and action."
+        }
+      ],
+      "verification_status": "verified",
+      "evidence_level": "original",
+      "material_status": "evidence",
+      "publisher_scope": "headquarters",
+      "category_zh": "监管认定：有害刻板印象",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "philadelphia-video",
+          "title_zh": "补完整原广告与后续改版",
+          "title_en": "Recover original and revised ads",
+          "need_zh": "提供品牌或播出平台的完整视频及可核验日期。",
+          "need_en": "Provide full videos from brand or broadcaster with verifiable dates.",
+          "kind": "original"
+        }
+      ]
+    },
+    {
+      "key": "gillette-we-believe-2019",
+      "brand": "吉列 / Gillette",
+      "brand_en": "Gillette",
+      "brand_type_zh": "日化 / 剃须用品",
+      "brand_type_en": "Personal care / shaving",
+      "market": "US",
+      "language": "en",
+      "event_date": "2019-01-14",
+      "date_precision_zh": "署名品牌新闻稿的发布日，及所述影片上线节点。",
+      "date_precision_en": "Date of attributed brand release and film launch described there.",
+      "title_zh": "吉列“We Believe”男性责任广告争议",
+      "title_en": "Gillette 'We Believe' masculinity campaign dispute",
+      "summary_zh": "广告讨论欺凌、骚扰和男性责任，得到支持，也遭把男性集体负面化的批评和抵制。反骚扰立场本身不构成对男性的贬损结论。",
+      "summary_en": "The ad addressed bullying, harassment and men's responsibility. It drew support and accusations of collectively portraying men negatively. Opposition to harassment is not itself a finding of male denigration.",
+      "response_class": "defended",
+      "response_zh": "品牌新闻稿表示相信男性的积极潜力，并坚持鼓励尊重、责任和榜样。本轮未取得明确拒绝道歉原话。",
+      "response_en": "The brand release affirmed men's positive potential and promoted respect, accountability and role modelling. No explicit refusal to apologize obtained.",
+      "decision_zh": "未取得监管裁决；这里记录争议，不作违规判定。",
+      "decision_en": "No regulatory ruling obtained; this record documents a controversy without finding a breach.",
+      "pending_zh": "原Business Wire页、完整原片及品牌后续回应待补；不能把财务减值无证据归因于此广告。",
+      "pending_en": "Original Business Wire page, complete film and later responses needed; no unsupported causal link to financial impairment.",
+      "sources": [
+        {
+          "url": "https://www.placera.se/pressmeddelanden/separating-the-men-from-the-boys-gillette-campaign-inspires-men-to-re-examine-what-it-means-to-be-their-best-2019-01-14/",
+          "label_zh": "Placera：Business Wire署名品牌新闻稿转载",
+          "label_en": "Placera: syndicated Business Wire brand release",
+          "access_zh": "已读取署名新闻稿转载正文；这是转载页，不是原Business Wire页面。",
+          "access_en": "Attributed syndicated release read; this is a republication, not the original Business Wire page."
+        },
+        {
+          "url": "https://www.abc.net.au/news/2019-01-16/gillette-toxic-masculinity-advertisement-courts-talk-of-boycotts/10718004",
+          "label_zh": "ABC：2019-01-16广告争议报道",
+          "label_en": "ABC report on the ad dispute, 16 January 2019",
+          "access_zh": "已读取正文，包括反对意见、支持意见和品牌立场；属于第三方报道。",
+          "access_en": "Body read, including opposition, support and brand position; third-party reporting."
+        }
+      ],
+      "verification_status": "disputed",
+      "evidence_level": "third_party",
+      "material_status": "evidence",
+      "publisher_scope": "headquarters",
+      "category_zh": "男性形象与社会议题争议",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "gillette-original",
+          "title_zh": "补品牌原片及原新闻稿",
+          "title_en": "Recover original film and release",
+          "need_zh": "提供品牌上传视频及原新闻稿链接或可信存档。",
+          "need_en": "Provide brand-uploaded video and original release link or trustworthy archive.",
+          "kind": "original"
+        },
+        {
+          "key": "gillette-followup",
+          "title_zh": "补后续正式回应",
+          "title_en": "Recover subsequent response",
+          "need_zh": "提供针对批评的品牌完整后续声明，区分宣传初衷与争议后回应。",
+          "need_en": "Provide complete subsequent response, distinguishing launch rationale from reaction to criticism.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "brewdog-pink-ipa-2018",
+      "brand": "BrewDog",
+      "brand_en": "BrewDog",
+      "brand_type_zh": "酒类 / 啤酒",
+      "brand_type_en": "Alcohol / beer",
+      "market": "GB",
+      "language": "en-GB",
+      "event_date": "2018-03-06",
+      "date_precision_zh": "官方博客搜索索引记载的活动宣布日；酒吧优惠自3月8日，诉讼在2019年。",
+      "date_precision_en": "Announcement date in official-blog search index; bar offer began 8 March, litigation followed in 2019.",
+      "title_zh": "BrewDog Pink IPA性别差价活动与诉讼",
+      "title_en": "BrewDog Pink IPA gender-pricing campaign and lawsuit",
+      "summary_zh": "品牌以薪酬差距为活动理由，对自我认同为女性的顾客提供折扣。2019年同期报道记载男性消费者就购买待遇提起诉讼并胜诉。",
+      "summary_en": "The campaign offered a discount to customers identifying as female to highlight pay inequality. Contemporary reporting in 2019 records a male customer's successful challenge to his purchasing treatment.",
+      "response_class": "defended",
+      "response_zh": "官方索引称是讽刺性营销；2018年采访中创始人承认表达失效、可能换一种做法，同时坚持初衷。2019年报道另留存品牌对差价的解释。",
+      "response_en": "Official index describes satire. In a 2018 interview founders acknowledged failed communication and possible changes while retaining their intention. A 2019 report also retains the pricing defence.",
+      "decision_zh": "同期报道转述法官认定该消费者遭性别歧视。原判决未取回，因此不把自动摘要当判决全文，也不补充精确判决日期。",
+      "decision_en": "Contemporary reporting attributes a sex-discrimination finding to the judge. Original judgment missing; an automated summary is not treated as the judgment or basis for an exact decision date.",
+      "pending_zh": "完整官方活动页、原判决及后续回应待补；反思或辩解不等于明确拒绝道歉。",
+      "pending_en": "Complete campaign page, original judgment and subsequent response needed; reflection or defence is not explicit refusal to apologize.",
+      "sources": [
+        {
+          "url": "https://efp.brewdog.com/es/blog/pink-ipa",
+          "label_zh": "BrewDog官方博客：Pink IPA，2018-03-06",
+          "label_en": "BrewDog official blog: Pink IPA, 6 March 2018",
+          "access_zh": "仅取得官方来源搜索索引正文；直接打开失败，未取得完整原页。",
+          "access_en": "Official-source search-index text only; direct opening failed and complete original page was not obtained."
+        },
+        {
+          "url": "https://www.the-independent.com/life-style/brewdog-man-sues-court-case-pink-ipa-beer-for-girls-gender-pay-gap-a8963521.html",
+          "label_zh": "The Independent：2019年诉讼报道",
+          "label_en": "The Independent report on the 2019 lawsuit",
+          "access_zh": "已读取同期报道正文，含法官裁判语句；报道不等于原判决全文。",
+          "access_en": "Contemporaneous article read, including reported judicial remarks; it is not the full original judgment."
+        },
+        {
+          "url": "https://www.morningadvertiser.co.uk/Article/2018/04/06/BrewDog-bosses-admit-regrets-over-Pink-IPA-stunt/",
+          "label_zh": "Morning Advertiser：2018-04-06创始人采访",
+          "label_en": "Morning Advertiser founder interview, 6 April 2018",
+          "access_zh": "已读取具名问答报道；对执行效果的反思与坚持初衷同时保留。",
+          "access_en": "Named interview report read; both criticism of execution and continued support for the intention retained."
+        },
+        {
+          "url": "https://www.bailii.org/ew/cases/Misc/2019/16.html",
+          "label_zh": "BAILII：Bower v BrewDog判决原文线索",
+          "label_en": "BAILII lead for Bower v BrewDog judgment",
+          "access_zh": "直接访问失败；本轮未取得该判决原文，不据此补充法律认定或精确判决日期。",
+          "access_en": "Direct access failed; original judgment not obtained, so no additional legal finding or exact decision date is inferred."
+        }
+      ],
+      "verification_status": "partial",
+      "evidence_level": "third_party",
+      "material_status": "evidence",
+      "publisher_scope": "headquarters",
+      "category_zh": "性别差价与消费待遇争议",
+      "topic": "experience",
+      "needs": [
+        {
+          "key": "brewdog-judgment",
+          "title_zh": "补判决全文",
+          "title_en": "Recover original judgment",
+          "need_zh": "提交Bower v BrewDog原判决全文、案号及裁判日期。",
+          "need_en": "Submit original Bower v BrewDog judgment, case reference and decision date.",
+          "kind": "original"
+        },
+        {
+          "key": "brewdog-original",
+          "title_zh": "补活动原页及回应",
+          "title_en": "Recover campaign and responses",
+          "need_zh": "提交完整活动页和后续回应原文，保留时间，勿以自动摘要替代。",
+          "need_en": "Submit full campaign page and later original responses with timing, not automated summaries.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "vogue-india-my-choice-2015",
+      "brand": "Vogue India",
+      "brand_en": "Vogue India",
+      "brand_type_zh": "媒体 / 时尚杂志",
+      "brand_type_en": "Media / fashion magazine",
+      "market": "IN",
+      "language": "en-IN",
+      "event_date": "2015-03",
+      "date_precision_zh": "影片上线与争议月份；介绍页3月30日、报道所述首发节点不同，保留月份。",
+      "date_precision_en": "Film/dispute month; 30 March introduction and reported release nodes differ, so month retained.",
+      "title_zh": "Vogue India“My Choice”选择与婚外关系表述争议",
+      "title_en": "Vogue India 'My Choice' choice and relationship wording dispute",
+      "summary_zh": "影片关于婚内外性关系的选择表述，引发双重标准、鼓励婚外关系和反男性批评，也得到支持。Vogue官方介绍把影片定位为女性自主议题。",
+      "summary_en": "The film's wording on sex within or outside marriage drew criticism about double standards, adultery and alleged anti-male framing, alongside support. Vogue's introduction frames it as women's autonomy.",
+      "response_class": "defended",
+      "response_zh": "导演在2015年4月的回应中称影片被误解，否认鼓励词句中的行为；这是导演回应，不冒充所有出品方共同声明。",
+      "response_en": "In April 2015 the director said the film was misunderstood and did not advocate the stated actions. This is his response, not a joint statement by every producer.",
+      "decision_zh": "未取得监管裁决；这里记录争议，不作违规判定。",
+      "decision_en": "No regulatory ruling obtained; this record documents a controversy without finding a breach.",
+      "pending_zh": "完整原片、品牌或出品方后续声明及确切首发日待补；不牵连出演者的其他代言品牌。",
+      "pending_en": "Complete film, later brand/producer statements and exact first release date needed; other brands endorsed by participants are not implicated.",
+      "sources": [
+        {
+          "url": "https://www.vogue.in/content/watch-deepika-padukone-my-choice-new-vogueempower-film",
+          "label_zh": "Vogue India：影片官方介绍，2015-03-30",
+          "label_en": "Vogue India official introduction, 30 March 2015",
+          "access_zh": "已读取品牌原介绍正文；网页日期不等于影片首次上线日。",
+          "access_en": "Official introduction read; page date is not necessarily the film's first release date."
+        },
+        {
+          "url": "https://www.business-standard.com/article/pti-stories/deepika-s-my-choice-video-gets-a-male-version-115033101178_1.html",
+          "label_zh": "Business Standard：PTI同期争议报道",
+          "label_en": "Business Standard: contemporaneous PTI report",
+          "access_zh": "已读取PTI报道正文；其中批评是受访者和评论者观点。",
+          "access_en": "PTI article read; criticisms are attributed opinions, not findings."
+        },
+        {
+          "url": "https://indianexpress.com/article/entertainment/bollywood/misunderstanding-made-my-choice-explosively-viral-homi-adajania/",
+          "label_zh": "Indian Express：导演回应，2015-04-10",
+          "label_en": "Indian Express: director response, 10 April 2015",
+          "access_zh": "已读取IANS报道中导演Facebook回应；未直接取回Facebook原帖。",
+          "access_en": "IANS report retaining director's Facebook response read; original Facebook post not recovered."
+        }
+      ],
+      "verification_status": "disputed",
+      "evidence_level": "original",
+      "material_status": "evidence",
+      "publisher_scope": "headquarters",
+      "category_zh": "自主议题与双重标准争议",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "vogue-first-release",
+          "title_zh": "补原片与首发时间",
+          "title_en": "Recover original release timing",
+          "need_zh": "提供影片原上传页面、上传时间和完整影片，不用介绍页日期代替。",
+          "need_en": "Provide original upload page, timestamp and full film, not the introduction page date.",
+          "kind": "date"
+        },
+        {
+          "key": "vogue-publisher-response",
+          "title_zh": "补发布方完整回应",
+          "title_en": "Recover publisher response",
+          "need_zh": "提供Vogue或出品方后续回应原文，明确主体与日期。",
+          "need_en": "Provide subsequent Vogue/producer response, identifying speaker and date.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "samsung-evolutionary-husband-2013",
+      "brand": "三星 / Samsung",
+      "brand_en": "Samsung",
+      "brand_type_zh": "电子产品 / 电视",
+      "brand_type_en": "Electronics / television",
+      "market": "ZZ",
+      "language": "en",
+      "event_date": "2013-05",
+      "date_precision_zh": "同期报道月份；具体首发和投放地区待核。",
+      "date_precision_en": "Contemporaneous report month; exact release and placement markets unverified.",
+      "title_zh": "三星“Evolutionary Husband”丈夫形象广告争议",
+      "title_en": "Samsung 'Evolutionary Husband' portrayal dispute",
+      "summary_zh": "Evolution Kit广告把沙发上的懒散丈夫“升级”为高效做家务的人，受到男性刻板印象批评。葡语报道提到美国讨论，不能据此填成巴西投放。",
+      "summary_en": "An Evolution Kit ad transforms an idle husband into an efficient houseworker, drawing stereotype criticism. A Portuguese report mentions US debate but does not establish Brazilian placement.",
+      "response_class": "unknown",
+      "response_zh": "本轮未取得三星针对此争议的正式回应。",
+      "response_en": "No formal Samsung response to this dispute obtained in this review.",
+      "decision_zh": "未取得监管裁决；这里记录争议，不作违规判定。",
+      "decision_en": "No regulatory ruling obtained; this record documents a controversy without finding a breach.",
+      "pending_zh": "品牌原视频、投放市场、首发日及回应待核。语言字段指报道所述广告语言线索，仍须原片核验。",
+      "pending_en": "Brand video, placement market, first release and response needed. Language indicates the reported English ad lead and still requires original-video verification.",
+      "sources": [
+        {
+          "url": "https://exame.com/marketing/samsung-ressuscita-guerra-dos-sexos-na-publicidade/",
+          "label_zh": "Exame：2013-05-22广告评论",
+          "label_en": "Exame ad commentary, 22 May 2013",
+          "access_zh": "已读取葡语同期正文；报道提到美国讨论，不足以证明投放市场或巴西投放。",
+          "access_en": "Portuguese contemporaneous body read; discussion in the US does not establish the ad's market or Brazilian placement."
+        }
+      ],
+      "verification_status": "partial",
+      "evidence_level": "third_party",
+      "material_status": "evidence",
+      "publisher_scope": "unknown",
+      "category_zh": "家务刻板印象争议",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "samsung-material",
+          "title_zh": "补完整品牌原视频",
+          "title_en": "Recover full brand video",
+          "need_zh": "提供品牌原上传页面及完整片段。",
+          "need_en": "Provide original brand upload page and complete video.",
+          "kind": "original"
+        },
+        {
+          "key": "samsung-market-date",
+          "title_zh": "补投放主体、市场与日期",
+          "title_en": "Verify publisher, market and date",
+          "need_zh": "提供当时投放地区、发布主体和首发日期的依据。",
+          "need_en": "Provide evidence for placement market, publishing entity and first release date.",
+          "kind": "identity"
+        },
+        {
+          "key": "samsung-response",
+          "title_zh": "补正式回应",
+          "title_en": "Recover formal response",
+          "need_zh": "提交三星对本条广告争议的完整声明；无材料则保持未知。",
+          "need_en": "Submit full Samsung statement on this ad dispute; otherwise keep unknown.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "huggies-dad-test-2012",
+      "brand": "好奇 / Huggies（Kimberly-Clark）",
+      "brand_en": "Huggies / Kimberly-Clark",
+      "brand_type_zh": "母婴 / 纸尿裤",
+      "brand_type_en": "Baby care / diapers",
+      "market": "US",
+      "language": "en",
+      "event_date": "2012-03",
+      "date_precision_zh": "广告、投诉和整改月份；ABC报道日为3月14日。",
+      "date_precision_en": "Ad, complaint and revision month; ABC report dated 14 March.",
+      "title_zh": "好奇“Dad Test”爸爸育儿广告争议与整改",
+      "title_en": "Huggies 'Dad Test' dispute and campaign revisions",
+      "summary_zh": "广告描绘父亲看球而忽视婴儿尿布，受到爸爸群体的刻板印象批评。ABC同期报道留存品牌发言及修改结果。",
+      "summary_en": "Ads showed fathers absorbed in sports while neglecting babies' diapers, prompting criticism from fathers. ABC retains attributed brand comments and reported revisions.",
+      "response_class": "unknown",
+      "response_zh": "品牌承认原意未传达，表示听取意见，撤换Facebook片段并计划修改电视广告，说明父亲同样关爱孩子。现有正文未出现明确道歉措辞。",
+      "response_en": "Brand acknowledged failed communication, listened to feedback, replaced Facebook clips and planned TV revisions, stating fathers care as much as mothers. Accessible text contains no explicit apology.",
+      "decision_zh": "未取得监管裁决；这里记录争议，不作违规判定。",
+      "decision_en": "No regulatory ruling obtained; this record documents a controversy without finding a breach.",
+      "pending_zh": "原始广告、完整声明和改版视频待补。回应已可查，unknown仅表示道歉/拒绝类别无法按现有措辞确认。",
+      "pending_en": "Original ads, full statement and revised videos needed. A response is documented; unknown means apology/refusal cannot be classified from the wording obtained.",
+      "sources": [
+        {
+          "url": "https://abcnews.com/blogs/lifestyle/2012/03/huggies-pulls-ads-after-dads-insulted",
+          "label_zh": "ABC News：2012-03-14报道与品牌声明",
+          "label_en": "ABC News report and brand statement, 14 March 2012",
+          "access_zh": "已读取正文及具名品牌发言；声明原帖和完整广告仍未取回。",
+          "access_en": "Body and attributed brand spokesperson statement read; original statement post and complete ads still missing."
+        }
+      ],
+      "verification_status": "partial",
+      "evidence_level": "third_party",
+      "material_status": "evidence",
+      "publisher_scope": "headquarters",
+      "category_zh": "育儿刻板印象与整改",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "huggies-before-after",
+          "title_zh": "补原片和改版片",
+          "title_en": "Recover original and revised videos",
+          "need_zh": "提供完整修改前后视频、品牌声明及各自时间。",
+          "need_en": "Provide complete before/after videos, brand statement and their timestamps.",
+          "kind": "original"
+        }
+      ]
+    },
+    {
+      "key": "kitply-newlyweds-2008",
+      "brand": "Kitply",
+      "brand_en": "Kitply",
+      "brand_type_zh": "家居建材 / 胶合板",
+      "brand_type_en": "Home materials / plywood",
+      "market": "IN",
+      "language": "en-IN",
+      "event_date": "2008-09",
+      "date_precision_zh": "同期投诉和品牌回应月份；9月16日是报道日，首投日待核。",
+      "date_precision_en": "Complaint/response month; 16 September is report date, first placement unverified.",
+      "title_zh": "Kitply新婚妻子掌掴丈夫广告投诉",
+      "title_en": "Kitply newlywed-slapping ad complaint",
+      "summary_zh": "广告以床板响声引出妻子掌掴丈夫。男性组织投诉其把针对男性的家暴娱乐化；投诉内容不能代替监管认定。",
+      "summary_en": "The ad used a creaking bed to prompt a wife slapping her husband. Men's groups complained it trivialized domestic violence against men; their complaint is not a regulatory finding.",
+      "response_class": "defended",
+      "response_zh": "Daijiworld转述DNA采访：Kitply具名运营经理表示不认为广告冒犯，收到投诉后会开会讨论。尚未取得最终决定。",
+      "response_en": "Daijiworld's DNA report quotes a named Kitply operations manager who did not consider the ad offensive and said complaints would be discussed; final decision not obtained.",
+      "decision_zh": "仅核实同期报道中的投诉和答辩；未取得ASCI裁定，不能写成投诉获支持或禁播。",
+      "decision_en": "Only complaint and defence in contemporary reporting verified; no ASCI adjudication obtained, so no upheld finding or ban asserted.",
+      "pending_zh": "完整原片、投诉原件、ASCI处理及企业最终回应待补。",
+      "pending_en": "Full ad, complaint original, ASCI disposition and company's final response needed.",
+      "sources": [
+        {
+          "url": "https://daijiworld.com/news/newsDisplay?newsID=51232",
+          "label_zh": "Daijiworld / DNA：2008-09-16投诉及具名回应",
+          "label_en": "Daijiworld / DNA: complaint and named response, 16 September 2008",
+          "access_zh": "已读取同期报道正文，包含Kitply具名经理回应；投诉原件和裁定未取回。",
+          "access_en": "Contemporaneous article read, including a named Kitply manager's response; complaint original and adjudication not recovered."
+        }
+      ],
+      "verification_status": "partial",
+      "evidence_level": "third_party",
+      "material_status": "evidence",
+      "publisher_scope": "headquarters",
+      "category_zh": "男性受暴与家庭暴力表达争议",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "kitply-ad-complaint",
+          "title_zh": "补原片与投诉原件",
+          "title_en": "Recover ad and complaint",
+          "need_zh": "提供完整品牌广告和投诉原件，保留出处及时间。",
+          "need_en": "Provide complete brand ad and complaint original with provenance and timing.",
+          "kind": "original"
+        },
+        {
+          "key": "kitply-final-response",
+          "title_zh": "补最终回应或裁定",
+          "title_en": "Recover final response or decision",
+          "need_zh": "提供ASCI处理文件及企业后续正式决定，不能以投诉报道代替。",
+          "need_en": "Provide ASCI disposition and subsequent company decision, not just complaint reporting.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "mfi-toilet-seat-2007",
+      "brand": "MFI",
+      "brand_en": "MFI",
+      "brand_type_zh": "家居零售",
+      "brand_type_en": "Home retail",
+      "market": "GB",
+      "language": "en-GB",
+      "event_date": "2007",
+      "date_precision_zh": "广告和监管处理年份；同期报道9月27日，首投月日待核。",
+      "date_precision_en": "Ad and regulatory-action year; contemporary report 27 September, first-placement date unknown.",
+      "title_zh": "MFI妻子掌掴丈夫广告：投诉获支持",
+      "title_en": "MFI wife-slapping-husband ad: complaints upheld",
+      "summary_zh": "广告把马桶盖争执和妻子掌掴丈夫作为展厅里的家庭情景。ASA 2007年报确认该掌掴广告投诉获支持。",
+      "summary_en": "A showroom-family ad used a toilet-seat argument and a wife slapping her husband. ASA's 2007 annual report confirms upheld complaints about the slapping ad.",
+      "response_class": "unknown",
+      "response_zh": "本轮未取得MFI完整品牌答辩或后续回应。",
+      "response_en": "Complete MFI advertiser defence or subsequent response not obtained.",
+      "decision_zh": "ASA年报称可能造成冒犯、被视作纵容暴力；同期行业报道记载该广告被禁。原个案裁决仍待补。",
+      "decision_en": "ASA annual report cites likely offence and apparent condoning of violence; contemporary trade reporting records a ban. Original case ruling still needed.",
+      "pending_zh": "完整原广告、旧裁决全文、首投日及企业回应待补；历史条目不说明品牌当前经营状况。",
+      "pending_en": "Complete ad, old ruling body, first placement and response needed; historical record makes no claim about current business status.",
+      "sources": [
+        {
+          "url": "https://www.asa.org.uk/static/uploaded/586344a1-3ddb-4da2-884244d2de55e4dd.pdf",
+          "label_zh": "ASA 2007年报：MFI，PDF第15页",
+          "label_en": "ASA 2007 Annual Report: MFI, PDF page 15",
+          "access_zh": "已读取官方PDF文字；年报摘要确认投诉获支持，不等于完整个案裁决。",
+          "access_en": "Official PDF text read; annual summary confirms upheld complaints, not the full case ruling."
+        },
+        {
+          "url": "https://www.marketingweek.com/asa-bans-mfi-ad-showing-wife-hitting-hubby-in-toilet-seat-row/",
+          "label_zh": "Marketing Week：2007-09-27报道",
+          "label_en": "Marketing Week report, 27 September 2007",
+          "access_zh": "已读取同期正文；精确首投日和企业完整回应仍缺。",
+          "access_en": "Contemporaneous body read; exact first placement and complete advertiser response remain missing."
+        }
+      ],
+      "verification_status": "partial",
+      "evidence_level": "original",
+      "material_status": "evidence",
+      "publisher_scope": "headquarters",
+      "category_zh": "监管认定：暴力表达",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "mfi-ruling-ad",
+          "title_zh": "补旧裁决与原广告",
+          "title_en": "Recover old ruling and ad",
+          "need_zh": "提交完整个案裁决及可核验原广告。",
+          "need_en": "Submit complete case ruling and verifiable original ad.",
+          "kind": "original"
+        },
+        {
+          "key": "mfi-response",
+          "title_zh": "补企业答辩或后续回应",
+          "title_en": "Recover advertiser response",
+          "need_zh": "提供企业当时完整答辩或整改声明及时间。",
+          "need_en": "Provide complete contemporary defence or corrective statement with date.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "fosters-commitment-asa-2019",
+      "brand": "Foster’s / Heineken UK",
+      "brand_en": "Foster's / Heineken UK",
+      "brand_type_zh": "酒类 / 啤酒",
+      "brand_type_en": "Alcohol / beer",
+      "market": "GB",
+      "language": "en-GB",
+      "event_date": "2019-06",
+      "date_precision_zh": "ASA记录的广播广告所闻月份；裁决另为2019-09-18。",
+      "date_precision_en": "Month the radio ad was heard according to ASA; ruling separately dated 18 September 2019.",
+      "title_zh": "Foster’s同居建议广告：投诉不成立",
+      "title_en": "Foster's moving-in advice ad: complaints not upheld",
+      "summary_zh": "广播广告给不愿马上与女友同居的男性提供荒诞建议。投诉认为描绘男性怕承诺、女性急于安定；本条作为驳回对照。",
+      "summary_en": "A radio ad gave absurd advice to a man delaying moving in with his girlfriend. Complaints alleged stereotypes about commitment-phobic men and eager-to-settle women; retained as a dismissal comparison.",
+      "response_class": "defended",
+      "response_zh": "Heineken称情节围绕特定关系中的重大决定，荒诞笑点不指向所有男性或女性。",
+      "response_en": "Heineken argued it concerned a particular relationship and major decision, with absurd humour not generalizing to all men or women.",
+      "decision_zh": "ASA于2019-09-18不支持投诉：焦点是一个人物和夸张建议，没有把特征普遍归于一种性别；无需进一步处理。",
+      "decision_en": "ASA did not uphold complaints on 18 September 2019: focus was one character and exaggerated advice, not traits uniquely associated with either gender; no further action.",
+      "pending_zh": "原广播音频及后续物料待补。驳回结论限于该广告，不能外推为所有类似文案均合规。",
+      "pending_en": "Original radio audio and later material needed. Dismissal covers this ad, not every similar message.",
+      "sources": [
+        {
+          "url": "https://www.asa.org.uk/rulings/heineken-enterprise-ltd-G19-1024641.html",
+          "label_zh": "ASA：Foster’s裁决，2019-09-18",
+          "label_en": "ASA ruling: Foster's, 18 September 2019",
+          "access_zh": "已读取原始监管正文，投诉、品牌答辩及驳回理由完整可读。",
+          "access_en": "Original regulatory body read; complaint, advertiser defence and dismissal reasoning accessible."
+        }
+      ],
+      "verification_status": "verified",
+      "evidence_level": "original",
+      "material_status": "background",
+      "publisher_scope": "headquarters",
+      "category_zh": "监管驳回对照",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "fosters-original-audio",
+          "title_zh": "补完整广播原音频",
+          "title_en": "Recover original radio audio",
+          "need_zh": "提供广播或品牌可核验的完整音频及日期。",
+          "need_en": "Provide full verifiable broadcaster/brand audio and date.",
+          "kind": "original"
+        }
+      ]
+    },
+    {
+      "key": "youi-boyfriend-2024",
+      "brand": "Youi",
+      "brand_en": "Youi",
+      "brand_type_zh": "保险",
+      "brand_type_en": "Insurance",
+      "market": "AU",
+      "language": "en-AU",
+      "event_date": "",
+      "date_precision_zh": "广告首播日期未取得；2024-11-20是索引中的裁定日。",
+      "date_precision_en": "First broadcast date missing; 20 November 2024 is the indexed decision date.",
+      "title_zh": "Youi男友比价广告：官方索引线索",
+      "title_en": "Youi boyfriend-shopping ad: official-index lead",
+      "summary_zh": "官方索引描述孩子把保险比价比作姨妈找男友。当前可读的审查段讨论对女性的贬损指控，本轮未核实针对男性的投诉，仅作为一般性别争议对照线索。",
+      "summary_en": "Official index compares insurance shopping with an aunt finding a boyfriend. The accessible assessment discusses alleged vilification of women; no anti-male complaint was verified. Included only as a general-gender comparison lead.",
+      "response_class": "unknown",
+      "response_zh": "未取得完整广告方答辩或后续回应。",
+      "response_en": "Complete advertiser defence or subsequent response not obtained.",
+      "decision_zh": "案卷0301-24索引标注2024-11-20、Dismissed（驳回）；全文未取回，不补写驳回理由。",
+      "decision_en": "Case 0301-24 index lists 20 November 2024 and Dismissed; full body missing, so dismissal reasoning is not supplied.",
+      "pending_zh": "完整官方PDF、投诉和答辩、原片及首播时间待补。需先核实投诉对象，不能发布成已确认的反男性案例。",
+      "pending_en": "Full official PDF, complaint/defence, original ad and first broadcast needed. Verify the complaint's subject before treating this as an anti-male case.",
+      "sources": [
+        {
+          "url": "https://adstandards.com.au/wp-content/uploads/2024/12/0301-24.pdf",
+          "label_zh": "Ad Standards案卷0301-24（索引线索）",
+          "label_en": "Ad Standards case 0301-24 (index lead)",
+          "access_zh": "仅读取官方PDF搜索索引，包括2024-11-20及Dismissed；直接打开失败，全文未取回。",
+          "access_en": "Official PDF search index only, including 20 November 2024 and Dismissed; direct opening failed, full text missing."
+        }
+      ],
+      "verification_status": "unverified",
+      "evidence_level": "none",
+      "material_status": "lead",
+      "publisher_scope": "headquarters",
+      "category_zh": "一般性别争议对照索引线索",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "youi-case-pdf",
+          "title_zh": "补官方案卷全文",
+          "title_en": "Recover official case PDF",
+          "need_zh": "提交0301-24完整官方PDF，先核实投诉对象及全文；现有审查索引讨论女性。",
+          "need_en": "Submit complete official 0301-24 PDF, verifying the complaint's subject and full body; accessible assessment index discusses women.",
+          "kind": "original"
+        },
+        {
+          "key": "youi-first-broadcast",
+          "title_zh": "补原广告和首播时间",
+          "title_en": "Recover ad and first broadcast",
+          "need_zh": "提供完整广告及可核验首播时间；不用裁定日代替。",
+          "need_en": "Provide complete ad and verifiable first broadcast date; do not use decision date instead.",
+          "kind": "date"
+        }
+      ]
+    },
+    {
+      "key": "buxton-gender-asa-2019",
+      "brand": "Buxton / Nestlé UK",
+      "brand_en": "Buxton / Nestlé UK",
+      "brand_type_zh": "饮品 / 饮用水",
+      "brand_type_en": "Drinks / bottled water",
+      "market": "GB",
+      "language": "en-GB",
+      "event_date": "2019-06-15",
+      "date_precision_zh": "ASA记录的电视广告所见日；裁决另为2019-08-14。",
+      "date_precision_en": "ASA's observed TV-ad date; ruling separately issued 14 August 2019.",
+      "title_zh": "Buxton男女活动广告：投诉不成立",
+      "title_en": "Buxton activity-portrayal ad: complaints not upheld",
+      "summary_zh": "广告描绘女芭蕾舞者、男鼓手和男划艇者。投诉认为不同性别活动形成有害刻板印象；作为审查未违规的对照条目。",
+      "summary_en": "The ad featured a female ballet dancer, male drummer and male rower. Complaints challenged gender-associated activities; retained as a comparison where review found no breach.",
+      "response_class": "defended",
+      "response_zh": "Nestlé称人物由克服困难的经历定义，活动并非某性别专属。",
+      "response_en": "Nestlé argued characters were defined by overcoming difficulties and activities were not exclusive to a gender.",
+      "decision_zh": "ASA于2019-08-14不支持投诉，认为广告强调同等努力、技能与难度，没有强化有害性别刻板印象；无需进一步处理。",
+      "decision_en": "ASA did not uphold complaints on 14 August 2019, finding emphasis on equal drive, skill and difficulty rather than harmful stereotypes; no further action.",
+      "pending_zh": "原视频待补；不把有投诉写成有违规，也不据驳回结果推断所有广告都合规。",
+      "pending_en": "Original video needed; complaint is not breach, and dismissal is not general clearance of all advertising.",
+      "sources": [
+        {
+          "url": "https://www.asa.org.uk/rulings/nestl-uk-ltd.html",
+          "label_zh": "ASA：Buxton裁决，2019-08-14",
+          "label_en": "ASA ruling: Buxton, 14 August 2019",
+          "access_zh": "已读取原始监管正文，含广告所见日期、品牌答辩和投诉不成立结论。",
+          "access_en": "Original regulatory body read, including observed ad date, advertiser defence and not-upheld finding."
+        }
+      ],
+      "verification_status": "verified",
+      "evidence_level": "original",
+      "material_status": "background",
+      "publisher_scope": "headquarters",
+      "category_zh": "监管驳回对照",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "buxton-video",
+          "title_zh": "补完整广告原视频",
+          "title_en": "Recover complete original video",
+          "need_zh": "提供品牌或播出平台完整视频及时间。",
+          "need_en": "Provide complete brand/broadcaster video and date.",
+          "kind": "original"
+        }
+      ]
+    },
+    {
+      "key": "diet-coke-break-1994",
+      "brand": "Diet Coke / 可口可乐",
+      "brand_en": "Diet Coke / Coca-Cola",
+      "brand_type_zh": "饮品 / 碳酸饮料",
+      "brand_type_en": "Drinks / soft drinks",
+      "market": "US",
+      "language": "en",
+      "event_date": "1994",
+      "date_precision_zh": "品牌2023年官方回顾确认1994年广告节点；不是争议或首播的精确日期。",
+      "date_precision_en": "Brand's 2023 retrospective confirms a 1994 campaign node, not an exact dispute or premiere date.",
+      "title_zh": "Diet Coke Break男性形象讨论",
+      "title_en": "Diet Coke Break male-imagery discussion",
+      "summary_zh": "1994年系列引发双重标准讨论。2023年品牌回顾确认工人版广告的年份，并继续致敬该系列。",
+      "summary_en": "The 1994 campaign prompted double-standard debate. A 2023 brand retrospective confirms the construction-worker ad's year and revisits the series.",
+      "response_class": "defended",
+      "response_zh": "2013年负责人否认物化，强调平等。该回应不回填为1994年回应。",
+      "response_en": "A 2013 executive defended it as equality, denying objectification. That later response is not attributed to 1994.",
+      "decision_zh": "未取得本节点监管裁定；属于男性形象讨论，不直接定性为辱男。",
+      "decision_en": "No regulatory ruling obtained for this node; discussion of male imagery, not a finding of misandry.",
+      "pending_zh": "1994年原片、首播记录及当年回应待补。2013年与2023年为后续节点，延续宣传不等于明确拒绝道歉。",
+      "pending_en": "Original 1994 film, premiere record and contemporary response needed. Later 2013/2023 nodes and campaign continuation are not explicit refusal to apologize.",
+      "sources": [
+        {
+          "url": "https://www.coca-cola.com/gb/en/media-center/diet-break-is-back-kate-moss-makeover",
+          "label_zh": "可口可乐英国：2023年系列回顾与新广告",
+          "label_en": "Coca-Cola GB: 2023 campaign retrospective and new ad",
+          "access_zh": "已读取品牌原文；确认1994年广告节点，不能代替1994年完整广告原片。",
+          "access_en": "Brand original read; confirms 1994 campaign node but is not the complete original 1994 ad."
+        },
+        {
+          "url": "https://www.washingtonpost.com/archive/lifestyle/1994/02/26/advertisings-lust-horizon/1d11b98c-874f-4258-92aa-5d964718ebc0/",
+          "label_zh": "Washington Post：1994年评论（外部阅读）",
+          "label_en": "Washington Post 1994 commentary (external reading)",
+          "access_zh": "已访问文章；链接供阅读，目录仅简要标注其提出双重标准讨论。",
+          "access_en": "Article accessed; linked for reading, with only a brief note that it discusses double standards."
+        },
+        {
+          "url": "https://www.theguardian.com/media/2013/jan/28/diet-coke-hunk-ad-campaign",
+          "label_zh": "The Guardian：2013年具名负责人回应",
+          "label_en": "The Guardian: named executive response in 2013",
+          "access_zh": "已读取2013年回应；不将其回填成1994年当时回应。",
+          "access_en": "2013 response read; not attributed to the original 1994 period."
+        }
+      ],
+      "verification_status": "partial",
+      "evidence_level": "original",
+      "material_status": "background",
+      "publisher_scope": "headquarters",
+      "category_zh": "男性物化与双重标准讨论",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "diet-coke-1994-original",
+          "title_zh": "补1994年原片和首播",
+          "title_en": "Recover 1994 film and premiere",
+          "need_zh": "提供原版完整广告、首播资料和市场信息，勿混用后续版本。",
+          "need_en": "Provide complete original ad, premiere evidence and market information; do not mix later versions.",
+          "kind": "original"
+        },
+        {
+          "key": "diet-coke-contemporary-response",
+          "title_zh": "补当时回应",
+          "title_en": "Recover contemporaneous response",
+          "need_zh": "提供1994年品牌正式回应；2013年后续回应单独注明。",
+          "need_en": "Provide a formal brand response from 1994; identify later 2013 responses separately.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "lee-stiletto-1997",
+      "brand": "Lee / Lee Apparel",
+      "brand_en": "Lee / Lee Apparel",
+      "brand_type_zh": "服饰 / 牛仔裤",
+      "brand_type_en": "Clothing / jeans",
+      "market": "GB",
+      "language": "en-GB",
+      "event_date": "1997",
+      "date_precision_zh": "ASA 2001年报回顾确认广告年份；1997年具体裁定和首投日未取得。",
+      "date_precision_en": "ASA 2001 retrospective confirms campaign year; exact 1997 ruling and first-placement dates missing.",
+      "title_zh": "Lee高跟鞋踩男性广告：投诉不成立",
+      "title_en": "Lee stiletto ad: complaints not upheld",
+      "summary_zh": "高跟鞋踩在俯卧男性身上的广告引发性别贬损、暴力投诉。ASA官方年报确认1997年案例投诉未获支持。",
+      "summary_en": "An ad showing a stiletto on a prone man prompted gender-denigration and violence complaints. ASA's annual report confirms the 1997 case was not upheld.",
+      "response_class": "defended",
+      "response_zh": "同期报道记载Lee以幽默及女性力量作辩护。未取得明确拒绝道歉原话。",
+      "response_en": "Contemporary reporting attributes a humour and girl-power defence to Lee. No explicit refusal to apologize obtained.",
+      "decision_zh": "ASA 2001年报回顾将该广告评为幽默，投诉不成立。此为官方年报记录，未取得1997年个案全文。",
+      "decision_en": "ASA's 2001 retrospective describes humour and not-upheld complaints. This is an official annual record, not the missing full 1997 ruling.",
+      "pending_zh": "原始完整广告、具体首投与裁定日期、品牌答辩原文待补。历史规则判断不自动代表今天的规则。",
+      "pending_en": "Complete original ad, first-placement/ruling dates and original defence needed. Historical assessment does not automatically represent today's rules.",
+      "sources": [
+        {
+          "url": "https://www.asa.org.uk/static/uploaded/98324c2b-e144-42db-be499bff3ead89d2.pdf",
+          "label_zh": "ASA 2001年报：1997年Lee广告回顾",
+          "label_en": "ASA 2001 Annual Report: retrospective on Lee's 1997 ad",
+          "access_zh": "已读取官方PDF的1997年、幽默评价和投诉不成立文字；未取得1997年个案全文。",
+          "access_en": "Official PDF text confirms 1997, humour assessment and not-upheld result; original 1997 case body missing."
+        },
+        {
+          "url": "https://www.wired.com/1997/11/girl-power/",
+          "label_zh": "WIRED：1997-11-11广告描述",
+          "label_en": "WIRED ad description, 11 November 1997",
+          "access_zh": "已读取同期报道中广告情节；未直接取得品牌完整物料。",
+          "access_en": "Contemporaneous ad description read; complete brand material not obtained."
+        },
+        {
+          "url": "https://www.independent.co.uk/news/girl-power-has-it-simply-gone-too-far-1293544.html",
+          "label_zh": "The Independent：1997年答辩记录",
+          "label_en": "The Independent: 1997 defence record",
+          "access_zh": "已访问同期正文；仅简要保留品牌幽默辩护，不复制文章。",
+          "access_en": "Contemporaneous body accessed; only brief attribution of the humour defence retained."
+        }
+      ],
+      "verification_status": "partial",
+      "evidence_level": "original",
+      "material_status": "background",
+      "publisher_scope": "headquarters",
+      "category_zh": "监管驳回对照：男性受暴表达",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "lee-original",
+          "title_zh": "补完整原广告与旧裁决",
+          "title_en": "Recover original ad and old ruling",
+          "need_zh": "提供完整广告及1997年个案裁决，保留出处与日期。",
+          "need_en": "Provide complete ad and original 1997 ruling with provenance and dates.",
+          "kind": "original"
+        },
+        {
+          "key": "lee-defence",
+          "title_zh": "补品牌答辩原文",
+          "title_en": "Recover original defence",
+          "need_zh": "提交Lee当时完整答辩或正式回应原文。",
+          "need_en": "Submit complete contemporary Lee defence or formal response.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "nissan-micra-crotch-1997",
+      "brand": "日产 / Nissan Micra",
+      "brand_en": "Nissan / Micra",
+      "brand_type_zh": "汽车",
+      "brand_type_en": "Automotive",
+      "market": "GB",
+      "language": "en-GB",
+      "event_date": "1997",
+      "date_precision_zh": "1997-11-13同期报道记载已发生的争议；不作首投日。",
+      "date_precision_en": "Contemporary 13 November 1997 report describes an existing dispute; not first-placement date.",
+      "title_zh": "日产Micra借车与伤害暗示广告争议",
+      "title_en": "Nissan Micra borrowing-and-injury poster dispute",
+      "summary_zh": "海报以男性捂住裆部的画面提示借车前征求许可，受到性别贬损和暴力暗示投诉。",
+      "summary_en": "A poster showed a man clutching his crotch alongside a warning to ask before borrowing the car, prompting denigration and violence complaints.",
+      "response_class": "unknown",
+      "response_zh": "未取得可归属于日产的完整品牌回应。",
+      "response_en": "No complete response attributable to Nissan obtained.",
+      "decision_zh": "Marketing Week同期报道转述ASA未禁止该广告、未认为可能严重或广泛冒犯；两案原裁决未取回。",
+      "decision_en": "Contemporary Marketing Week reporting says ASA did not ban the ad or find likely serious or widespread offence; original case ruling not obtained.",
+      "pending_zh": "完整海报、投放日、原裁决及品牌回应待补。未查到回应不能写成拒绝道歉。",
+      "pending_en": "Complete poster, placement date, original ruling and brand response needed. Missing response does not establish refusal to apologize.",
+      "sources": [
+        {
+          "url": "https://www.marketingweek.com/asa-blasts-rise-of-girl-power-ads/",
+          "label_zh": "Marketing Week：1997-11-13两品牌争议报道",
+          "label_en": "Marketing Week report on the two brands, 13 November 1997",
+          "access_zh": "已读取同期正文；报道转述监管结果，未取回两案原始裁决。",
+          "access_en": "Contemporaneous body read; reported regulatory outcome, not original rulings for either case."
+        }
+      ],
+      "verification_status": "partial",
+      "evidence_level": "third_party",
+      "material_status": "background",
+      "publisher_scope": "headquarters",
+      "category_zh": "历史投诉与驳回报道",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "nissan-original-ruling",
+          "title_zh": "补海报及原裁决",
+          "title_en": "Recover poster and original ruling",
+          "need_zh": "提供完整原海报与ASA原裁决，避免仅据旧报道补理由。",
+          "need_en": "Provide complete original poster and ASA ruling; do not infer additional reasoning from old reporting.",
+          "kind": "original"
+        },
+        {
+          "key": "nissan-response",
+          "title_zh": "补品牌正式回应",
+          "title_en": "Recover formal response",
+          "need_zh": "提供日产当时对该广告的完整答辩或后续声明。",
+          "need_en": "Provide Nissan's complete contemporary defence or subsequent statement.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "wallis-dressed-to-kill-1997",
+      "brand": "Wallis",
+      "brand_en": "Wallis",
+      "brand_type_zh": "服饰",
+      "brand_type_en": "Clothing",
+      "market": "GB",
+      "language": "en-GB",
+      "event_date": "1997",
+      "date_precision_zh": "1997-11-13为同期报道日期；广告首投日待核。",
+      "date_precision_en": "13 November 1997 is report date; first-placement date unknown.",
+      "title_zh": "Wallis“Dressed to kill”男性事故广告争议",
+      "title_en": "Wallis 'Dressed to kill' accident-ad dispute",
+      "summary_zh": "广告以服装吸引男性注意并导致事故为情节，受到性别贬损和暴力投诉。",
+      "summary_en": "Ads used men distracted by clothing and suffering accidents, prompting denigration and violence complaints.",
+      "response_class": "unknown",
+      "response_zh": "未取得Wallis完整品牌回应。",
+      "response_en": "Complete Wallis response not obtained.",
+      "decision_zh": "Marketing Week同期报道转述ASA未禁止、未认为可能严重或广泛冒犯；原裁决未取回。",
+      "decision_en": "Contemporary Marketing Week reporting says ASA did not ban the ads or find likely serious or widespread offence; original ruling not obtained.",
+      "pending_zh": "各版本原广告、完整裁决、首投日及回应待补；品牌历史责任和当前经营状况分开。",
+      "pending_en": "Original executions, full ruling, first placement and response needed; historical responsibility is separate from present business status.",
+      "sources": [
+        {
+          "url": "https://www.marketingweek.com/asa-blasts-rise-of-girl-power-ads/",
+          "label_zh": "Marketing Week：1997-11-13两品牌争议报道",
+          "label_en": "Marketing Week report on the two brands, 13 November 1997",
+          "access_zh": "已读取同期正文；报道转述监管结果，未取回两案原始裁决。",
+          "access_en": "Contemporaneous body read; reported regulatory outcome, not original rulings for either case."
+        }
+      ],
+      "verification_status": "partial",
+      "evidence_level": "third_party",
+      "material_status": "background",
+      "publisher_scope": "headquarters",
+      "category_zh": "历史投诉与驳回报道",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "wallis-ad-ruling",
+          "title_zh": "补广告各版与原裁决",
+          "title_en": "Recover executions and ruling",
+          "need_zh": "提交完整各版广告与ASA原裁决，保留日期。",
+          "need_en": "Submit complete executions and original ASA ruling with dates.",
+          "kind": "original"
+        },
+        {
+          "key": "wallis-response",
+          "title_zh": "补企业回应",
+          "title_en": "Recover advertiser response",
+          "need_zh": "提交Wallis对本次投诉的完整回应。",
+          "need_en": "Submit Wallis's complete response to these complaints.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "lambrini-poster-2001",
+      "brand": "Lambrini / Halewood International",
+      "brand_en": "Lambrini / Halewood International",
+      "brand_type_zh": "酒类",
+      "brand_type_en": "Alcohol",
+      "market": "GB",
+      "language": "en-GB",
+      "event_date": "2001",
+      "date_precision_zh": "年份；11月7日为报道日，非首投日。",
+      "date_precision_en": "Year only; 7 November is report date, not first placement.",
+      "title_zh": "Lambrini海报投诉",
+      "title_en": "Lambrini poster complaint",
+      "summary_zh": "分手笑话遭投诉。",
+      "summary_en": "Breakup joke drew a complaint.",
+      "response_class": "defended",
+      "response_zh": "报道记载幽默辩护。",
+      "response_en": "Humour defence reported.",
+      "decision_zh": "报道记载投诉驳回。",
+      "decision_en": "Dismissal reported.",
+      "pending_zh": "完整2001年海报、ASA裁决、品牌声明与首投时间仍缺。本条保留极短报道摘要，不能扩展监管理由。",
+      "pending_en": "Complete 2001 poster, ASA ruling, brand statement and first placement missing. Only a brief report summary retained; no additional regulatory reasoning inferred.",
+      "sources": [
+        {
+          "url": "https://www.theguardian.com/media/2001/nov/07/advertising.asa",
+          "label_zh": "The Guardian：2001-11-07裁定报道",
+          "label_en": "The Guardian ruling report, 7 November 2001",
+          "access_zh": "已访问同期正文；本条只作极短摘要，完整裁决和物料待补。",
+          "access_en": "Contemporaneous body accessed; this record uses a very brief summary pending original ruling and material."
+        }
+      ],
+      "verification_status": "partial",
+      "evidence_level": "third_party",
+      "material_status": "background",
+      "publisher_scope": "headquarters",
+      "category_zh": "历史海报投诉",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "lambrini-original-ruling",
+          "title_zh": "补原海报与ASA裁决",
+          "title_en": "Recover poster and ASA ruling",
+          "need_zh": "提交完整原海报、裁决和准确时间；现有短摘要不足以还原全案。",
+          "need_en": "Submit complete original poster, ruling and accurate dates; the brief summary cannot reconstruct the whole case.",
+          "kind": "original"
+        },
+        {
+          "key": "lambrini-response",
+          "title_zh": "补品牌原声明",
+          "title_en": "Recover original brand statement",
+          "need_zh": "提交Halewood当时完整回应及发布日期。",
+          "need_en": "Submit complete contemporary Halewood response and publication date.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "david-goliath-boys-2004",
+      "brand": "David & Goliath（服饰）",
+      "brand_en": "David & Goliath (clothing)",
+      "brand_type_zh": "服饰 / 授权商品",
+      "brand_type_en": "Clothing / licensed products",
+      "market": "US",
+      "language": "en",
+      "event_date": "2004-01-30",
+      "date_precision_zh": "RetailWire搜索索引中的报道日期；不是商品上市或抗议起点。",
+      "date_precision_en": "Report date in RetailWire search index, not product launch or protest onset.",
+      "title_zh": "David & Goliath商品抵制：2004年报道与回应线索",
+      "title_en": "David & Goliath product protest: 2004 reporting and response node",
+      "summary_zh": "2004年零售行业报道索引记载反男孩商品引发抗议和部分撤货。文章原页仅返回导航，本节点作为历史来源线索。",
+      "summary_en": "A 2004 retail-report index records protests over anti-boy products and some retailer withdrawals. Direct article opening returned navigation only; this node is a historical source lead.",
+      "response_class": "defended",
+      "response_zh": "索引中的设计者回应将漫画解释为幽默。这里只归属为媒体索引所存回应，不视作已取得制造商原声明。",
+      "response_en": "Indexed designer comments frame the cartoons as humour. This is an index-retained response, not a recovered original manufacturer statement.",
+      "decision_zh": "未取得监管裁定；零售商撤货不等于制造商道歉。",
+      "decision_en": "No regulatory ruling obtained; retailer withdrawal is not manufacturer apology.",
+      "pending_zh": "2004年文章原文、商品原图、正式回应和首发日待补。与David蛋白棒不同，不用公司成立日代替商品首发。",
+      "pending_en": "Original 2004 article, product images, formal response and release dates needed. Separate from David protein bars; company founding date is not product launch.",
+      "sources": [
+        {
+          "url": "https://retailwire.com/discussion/protesters-boost-boys-are-stupid-sales/",
+          "label_zh": "RetailWire：2004-01-30报道（索引）",
+          "label_en": "RetailWire report, 30 January 2004 (index)",
+          "access_zh": "搜索索引提供正文与日期；直接打开只返回网站导航，未取回文章原页。",
+          "access_en": "Search index supplies text and date; direct opening returned navigation only, not the original article body."
+        }
+      ],
+      "verification_status": "unverified",
+      "evidence_level": "none",
+      "material_status": "lead",
+      "publisher_scope": "headquarters",
+      "category_zh": "贬损男孩商品索引线索",
+      "topic": "other",
+      "needs": [
+        {
+          "key": "dg-2004-source",
+          "title_zh": "补2004年同期报道与原商品",
+          "title_en": "Recover 2004 report and products",
+          "need_zh": "提交可完整阅读的同期报道与原商品图，保留来源、时间及制造商身份。",
+          "need_en": "Submit readable contemporary report and original product images with source, date and manufacturer identity.",
+          "kind": "original"
+        },
+        {
+          "key": "dg-2004-response",
+          "title_zh": "补制造商原始回应",
+          "title_en": "Recover manufacturer response",
+          "need_zh": "提供2004年制造商或设计者完整正式回应，不用后续年份回填。",
+          "need_en": "Provide complete original 2004 manufacturer/designer response, not a later-year substitute.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "david-goliath-eason-2005",
+      "brand": "David & Goliath（服饰）",
+      "brand_en": "David & Goliath (clothing)",
+      "brand_type_zh": "文具 / 零售",
+      "brand_type_en": "Stationery / retail",
+      "market": "IE",
+      "language": "en-IE",
+      "event_date": "2005-09-17",
+      "date_precision_zh": "Irish Times报道日；具体各商品撤货日期未全部核齐。",
+      "date_precision_en": "Irish Times report date; exact withdrawal dates for each product not all established.",
+      "title_zh": "David & Goliath文具：Eason下架与制造商辩护",
+      "title_en": "David & Goliath stationery: Eason withdrawal and manufacturer defence",
+      "summary_zh": "爱尔兰Eason在家长和教师组织反对后撤下多项文具。争议涉及贬损男孩或男性的设计。零售商处置与美国制造商态度分别记录。",
+      "summary_en": "Irish retailer Eason withdrew stationery after objections involving parents and teachers' organizations. Designs denigrating boys or men were disputed. Retailer action and US manufacturer position are recorded separately.",
+      "response_class": "defended",
+      "response_zh": "报道记载Eason称不愿冒犯家长或儿童而撤货；制造商David & Goliath为设计辩护。两者不能合并成制造商道歉。",
+      "response_en": "Reporting says Eason withdrew items to avoid offending parents or children, while manufacturer David & Goliath defended the designs. The two actions are not a manufacturer apology.",
+      "decision_zh": "可确认同期撤货报道；未取得监管裁定。",
+      "decision_en": "Contemporary withdrawal reporting confirmed; no regulatory ruling obtained.",
+      "pending_zh": "双方原始声明、完整商品图和各项撤货时间待补。与2004年美国节点及David蛋白棒分别归档。",
+      "pending_en": "Original statements from both parties, full product images and withdrawal timing needed. Separate from the 2004 US node and David protein bars.",
+      "sources": [
+        {
+          "url": "https://www.irishtimes.com/news/complaints-stop-sale-of-children-s-stationery-items-1.493544",
+          "label_zh": "Irish Times：2005-09-17 Eason下架报道",
+          "label_en": "Irish Times: Eason withdrawal report, 17 September 2005",
+          "access_zh": "已读取同期正文，明确区分Eason撤货和制造商辩护；未直接取得双方原声明。",
+          "access_en": "Contemporaneous body read, distinguishing Eason withdrawal from manufacturer defence; original statements missing."
+        }
+      ],
+      "verification_status": "partial",
+      "evidence_level": "third_party",
+      "material_status": "evidence",
+      "publisher_scope": "shop",
+      "category_zh": "贬损男孩商品与零售撤货",
+      "topic": "other",
+      "needs": [
+        {
+          "key": "dg-eason-statements",
+          "title_zh": "补零售商与制造商原声明",
+          "title_en": "Recover retailer/manufacturer statements",
+          "need_zh": "分别提交Eason与David & Goliath完整声明，明确主体和日期。",
+          "need_en": "Submit Eason and David & Goliath statements separately, identifying speaker and date.",
+          "kind": "response"
+        },
+        {
+          "key": "dg-eason-products",
+          "title_zh": "补完整商品与撤货时间",
+          "title_en": "Recover products and withdrawal dates",
+          "need_zh": "提交完整商品图、商品名称及对应撤货日期。",
+          "need_en": "Submit full product images, product names and associated withdrawal dates.",
+          "kind": "original"
+        }
+      ]
+    },
+    {
+      "key": "fishermans-friend-fish-slap-2008",
+      "brand": "Fisherman’s Friend（Stuart Alexander广告）",
+      "brand_en": "Fisherman's Friend (Stuart Alexander advertisement)",
+      "brand_type_zh": "食品 / 润喉糖",
+      "brand_type_en": "Food / lozenges",
+      "market": "AU",
+      "language": "en-AU",
+      "event_date": "",
+      "date_precision_zh": "本轮未核验广告首播日；2008-08-13是索引中的裁定日期，不能代替发生日。",
+      "date_precision_en": "First broadcast not verified; 13 August 2008 is the indexed determination date, not event date.",
+      "title_zh": "Fisherman’s Friend鱼打男司机广告：案卷线索",
+      "title_en": "Fisherman's Friend fish-slapping ad: case-record lead",
+      "summary_zh": "官方案卷300/08索引描述女子用鱼击打男司机面部，投诉者认为男性受暴被当作笑料并形成性别双标。投诉意见不是监管结论。",
+      "summary_en": "Official case 300/08 index describes a woman hitting a male driver with a fish. Complainants alleged trivialized male victimization and double standards; those opinions are not regulatory findings.",
+      "response_class": "unknown",
+      "response_zh": "未取回完整广告方答辩；早期研究记载幽默幻想解释，需案卷全文核验后再分类。",
+      "response_en": "Complete advertiser defence not recovered. Earlier research recorded a humorous-fantasy explanation, which requires the full file before classification.",
+      "decision_zh": "官方索引记载2008-08-13、Dismissed（驳回）；PDF直开失败，不能补写完整驳回理由。",
+      "decision_en": "Official index lists 13 August 2008 and Dismissed; direct PDF failed, so complete dismissal reasoning is not supplied.",
+      "pending_zh": "完整PDF、原广告、广告方回应及首播时间待补。早期首播日期线索不填成已核验日期。",
+      "pending_en": "Full PDF, original ad, advertiser response and first broadcast timing needed. Earlier premiere lead is not filled as a verified date.",
+      "sources": [
+        {
+          "url": "https://adstandards.com.au/sites/default/files/reports/300-08.pdf",
+          "label_zh": "Ad Standards案卷300/08（索引线索）",
+          "label_en": "Ad Standards case 300/08 (index lead)",
+          "access_zh": "仅取得官方PDF搜索索引；直接打开失败，完整答辩与裁决原文未取回。",
+          "access_en": "Official PDF search-index text only; direct opening failed, full defence and ruling not recovered."
+        }
+      ],
+      "verification_status": "unverified",
+      "evidence_level": "none",
+      "material_status": "lead",
+      "publisher_scope": "partner",
+      "category_zh": "男性受暴投诉索引线索",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "fishermans-case",
+          "title_zh": "补官方案卷全文",
+          "title_en": "Recover official case file",
+          "need_zh": "提交300/08完整官方PDF，包含广告描述、答辩及委员会认定。",
+          "need_en": "Submit complete official 300/08 PDF with ad description, defence and Board determination.",
+          "kind": "original"
+        },
+        {
+          "key": "fishermans-first-date",
+          "title_zh": "补首播时间",
+          "title_en": "Verify first broadcast",
+          "need_zh": "提供可核验首轮播出材料；2007年具体日期必须有出处。",
+          "need_en": "Provide verifiable first-broadcast material; any exact 2007 date requires a source.",
+          "kind": "date"
+        }
+      ]
+    },
+    {
+      "key": "oven-pride-so-easy-2009",
+      "brand": "Oven Pride / HomePride",
+      "brand_en": "Oven Pride / HomePride",
+      "brand_type_zh": "家居清洁",
+      "brand_type_en": "Household cleaning",
+      "market": "GB",
+      "language": "en-GB",
+      "event_date": "2009-03",
+      "date_precision_zh": "3月13日同期报道说活动前一周开始；保留月份，不猜精确首投日。",
+      "date_precision_en": "13 March report says campaign began the previous week; month retained without guessing first placement.",
+      "title_zh": "Oven Pride“即使男人也能做”广告争议",
+      "title_en": "Oven Pride 'even a man can do it' ad dispute",
+      "summary_zh": "广告用男性做家务能力作笑点，受到性别刻板印象投诉。ASA 2010年报回顾了2009年审查和次年的再投诉。",
+      "summary_en": "An ad joked about men's housework ability, drawing stereotype complaints. ASA's 2010 annual report recounts the 2009 review and complaints the following year.",
+      "response_class": "defended",
+      "response_zh": "DIY Week同期报道留存Matt Stockdale的具名辩解，称表现同居伴侣和部分男性不分担家务。辩解不等于明确拒绝道歉。",
+      "response_en": "DIY Week retains Matt Stockdale's defence about cohabiting couples and some men not sharing chores. Defence is not explicit refusal to apologize.",
+      "decision_zh": "ASA官方2010年报称2009年投诉未获支持；2010年再收273宗投诉，但未重新调查。历史评估认为是轻松喜剧，不足以严重或广泛冒犯。",
+      "decision_en": "ASA's 2010 report states complaints were not upheld in 2009; 273 further complaints in 2010 were not reinvestigated. Its historical assessment considered the comic treatment unlikely to cause serious or widespread offence.",
+      "pending_zh": "2009年原裁决、原片、首投日和品牌声明待补。2010年数字属于再投诉，不能混成2009年数量。",
+      "pending_en": "Original 2009 ruling, ad, first placement and brand statement needed. 2010 count concerns later complaints, not the 2009 total.",
+      "sources": [
+        {
+          "url": "https://www.asa.org.uk/static/uploaded/ad3f5a90-8e8f-4cc6-aacf1f6aec810a61.pdf",
+          "label_zh": "ASA 2010年报：HomePride，PDF第14页",
+          "label_en": "ASA 2010 Annual Report: HomePride, PDF page 14",
+          "access_zh": "已读取官方PDF文字：2009年投诉不成立，2010年未重新调查。",
+          "access_en": "Official PDF text read: not upheld in 2009, not reinvestigated in 2010."
+        },
+        {
+          "url": "https://www.diyweek.net/oven-cleaner-advert-gets-more-than-1000-complaints",
+          "label_zh": "DIY Week：2009-03-13具名回应",
+          "label_en": "DIY Week: named response, 13 March 2009",
+          "access_zh": "已读取同期报道正文和Matt Stockdale回应；网页下方评论不是品牌声明。",
+          "access_en": "Contemporaneous body and Matt Stockdale response read; reader comments below are not brand statements."
+        },
+        {
+          "url": "https://www.theguardian.com/media/2009/may/20/asa-oven-pride-cleared-of-sexism",
+          "label_zh": "The Guardian：2009-05-20裁定日报道",
+          "label_en": "The Guardian ruling-day report, 20 May 2009",
+          "access_zh": "已核对报道日期；裁定内容以可读ASA官方年报为据。",
+          "access_en": "Report date checked; regulatory substance based on accessible ASA annual report."
+        }
+      ],
+      "verification_status": "partial",
+      "evidence_level": "original",
+      "material_status": "evidence",
+      "publisher_scope": "headquarters",
+      "category_zh": "监管驳回对照：家务刻板印象",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "oven-pride-original-ruling",
+          "title_zh": "补2009年裁决与原广告",
+          "title_en": "Recover 2009 ruling and ad",
+          "need_zh": "提供完整2009年个案裁决和广告原片，明确2009/2010节点。",
+          "need_en": "Provide complete original 2009 ruling and ad, distinguishing 2009 and 2010 nodes.",
+          "kind": "original"
+        },
+        {
+          "key": "oven-pride-response",
+          "title_zh": "补品牌回应原文",
+          "title_en": "Recover original brand response",
+          "need_zh": "提供HomePride当时完整回应，不以网页评论代替。",
+          "need_en": "Provide full contemporary HomePride response, not reader comments.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "camel-tanks-head-slap-2014",
+      "brand": "Camel Tanks",
+      "brand_en": "Camel Tanks",
+      "brand_type_zh": "家居设备 / 储水罐",
+      "brand_type_en": "Home equipment / water tanks",
+      "market": "AU",
+      "language": "en-AU",
+      "event_date": "2014",
+      "date_precision_zh": "官方2014年报收录年度；首投日和裁定日未取得。",
+      "date_precision_en": "Year recorded in official 2014 annual review; first-placement and ruling dates missing.",
+      "title_zh": "Camel Tanks拍打男方后脑广告：年报线索",
+      "title_en": "Camel Tanks head-slapping ad: annual-review lead",
+      "summary_zh": "官方年报索引提及0491/14案的女子拍打男子后脑情节。索引还记载真实击打声和疼痛表情；本轮未取回完整原PDF。",
+      "summary_en": "Official annual-review index describes case 0491/14, with a woman slapping a man's head. It mentions realistic impact sound and pain; full original PDF not recovered.",
+      "response_class": "unknown",
+      "response_zh": "未取得广告方完整回应或后续处置。",
+      "response_en": "Complete advertiser response or subsequent action not obtained.",
+      "decision_zh": "官方年报索引称投诉获支持，理由涉及暴力与产品缺乏关联、情境不足以合理化。当前仅属索引所记摘要，非全文核验结果。",
+      "decision_en": "Official annual-review index says complaints were upheld over unjustified violence unrelated to the product. This is an indexed summary, not verification of the complete ruling.",
+      "pending_zh": "追索0491/14完整裁决、原广告、日期及广告方后续回应。",
+      "pending_en": "Recover full 0491/14 ruling, original ad, dates and subsequent advertiser response.",
+      "sources": [
+        {
+          "url": "https://adstandards.com.au/sites/default/files/2014_review_of_operations_web.pdf",
+          "label_zh": "Ad Standards 2014年报：0491/14（索引线索）",
+          "label_en": "Ad Standards 2014 Annual Review: 0491/14 (index lead)",
+          "access_zh": "仅取得官方来源搜索索引的年报摘要；直接PDF失败，个案正文未取回。",
+          "access_en": "Official-source index of annual summary only; direct PDF failed, case body not recovered."
+        }
+      ],
+      "verification_status": "unverified",
+      "evidence_level": "none",
+      "material_status": "lead",
+      "publisher_scope": "headquarters",
+      "category_zh": "暴力投诉年报索引线索",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "camel-tanks-case",
+          "title_zh": "补0491/14完整案卷",
+          "title_en": "Recover full 0491/14 file",
+          "need_zh": "提交完整官方裁决，保留来源、裁定日期和广告方回应。",
+          "need_en": "Submit complete official ruling preserving source, decision date and advertiser response.",
+          "kind": "original"
+        },
+        {
+          "key": "camel-tanks-ad-response",
+          "title_zh": "补原广告与后续回应",
+          "title_en": "Recover ad and follow-up",
+          "need_zh": "提交完整广告及裁定后的广告方声明。",
+          "need_en": "Submit complete ad and post-decision advertiser statement.",
+          "kind": "response"
+        }
+      ]
+    },
+    {
+      "key": "chemists-own-sick-man-2023",
+      "brand": "Chemists’ Own / Arrotex Pharmaceuticals",
+      "brand_en": "Chemists' Own / Arrotex Pharmaceuticals",
+      "brand_type_zh": "药品",
+      "brand_type_en": "Medicines",
+      "market": "AU",
+      "language": "en-AU",
+      "event_date": "",
+      "date_precision_zh": "广告首播日期待核；2023-07-26为官方索引中的裁定日。",
+      "date_precision_en": "First broadcast unknown; 26 July 2023 is the indexed decision date.",
+      "title_zh": "Chemists’ Own感冒男子广告：案卷线索",
+      "title_en": "Chemists' Own sick-man ad: case-record lead",
+      "summary_zh": "官方案卷索引描述感冒男子裹毯进入厨房，妻女停止微笑。投诉者认为男性病态被表现得可笑无能；这是投诉观点。",
+      "summary_en": "Official case index describes a sick man entering a kitchen in a blanket while wife and daughter stop smiling. A complainant alleged a pathetic, incompetent male portrayal; this is a complaint opinion.",
+      "response_class": "unknown",
+      "response_zh": "完整广告方答辩和后续回应尚未取回。",
+      "response_en": "Complete advertiser defence and later response not recovered.",
+      "decision_zh": "0146-23索引标注2023-07-26、Dismissed（驳回）。全文缺失，不能把投诉者的解读当监管认定或编写驳回理由。",
+      "decision_en": "0146-23 index lists 26 July 2023 and Dismissed. Full body missing; the complainant's reading is not a regulatory finding, and dismissal reasons are not supplied.",
+      "pending_zh": "完整官方案卷、广告方答辩、原片及首播时间待补。",
+      "pending_en": "Complete official file, advertiser defence, original ad and first broadcast timing needed.",
+      "sources": [
+        {
+          "url": "https://adstandards.com.au/sites/default/files/reports/0146-23.pdf",
+          "label_zh": "Ad Standards案卷0146-23（索引线索）",
+          "label_en": "Ad Standards case 0146-23 (index lead)",
+          "access_zh": "仅读取官方PDF搜索索引，含2023-07-26、Dismissed和投诉情节；直接PDF失败。",
+          "access_en": "Official PDF search index only, including 26 July 2023, Dismissed and complaint description; direct PDF failed."
+        }
+      ],
+      "verification_status": "unverified",
+      "evidence_level": "none",
+      "material_status": "lead",
+      "publisher_scope": "headquarters",
+      "category_zh": "男性病态刻板印象索引线索",
+      "topic": "advertising",
+      "needs": [
+        {
+          "key": "chemists-own-case",
+          "title_zh": "补官方案卷全文",
+          "title_en": "Recover complete official case",
+          "need_zh": "提交0146-23完整官方PDF及其出处。",
+          "need_en": "Submit complete official 0146-23 PDF and source.",
+          "kind": "original"
+        },
+        {
+          "key": "chemists-own-first-date",
+          "title_zh": "补原片与首播时间",
+          "title_en": "Recover ad and first broadcast",
+          "need_zh": "提供完整原广告和可核验首播时间，不用裁定日代替。",
+          "need_en": "Provide full original ad and verifiable first broadcast, not decision date.",
+          "kind": "date"
+        }
+      ]
+    }
+  ]
+}

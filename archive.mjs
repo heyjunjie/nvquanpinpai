@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {globalSchema,globalRecord} from './global-data.mjs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {editorialBrief} from './editorial.mjs';
@@ -14,6 +15,7 @@ export const archiveFields={
 };
 export const metadataText=['event_date','source_date','date_precision','source_type','response_summary','pending_summary','parent_event_id','reply_type','editor_summary'];
 export function archive(db,DATA){
+ globalSchema(db);
  const columns=db.prepare('PRAGMA table_info(feedback)').all().map(c=>c.name);
  for(const name of [...Object.keys(archiveFields),...metadataText])if(!columns.includes(name))db.exec(`ALTER TABLE feedback ADD COLUMN ${name} TEXT NOT NULL DEFAULT ''`);
  db.exec(`CREATE TABLE IF NOT EXISTS event_changes(id INTEGER PRIMARY KEY,event_id TEXT NOT NULL,created INTEGER NOT NULL,action TEXT NOT NULL,changes TEXT NOT NULL,public_note TEXT NOT NULL DEFAULT '');
@@ -69,17 +71,19 @@ export function archive(db,DATA){
   const parts=[...row.content.matchAll(/图(\d+)：[\s\S]*?(?=\n图\d+：|\n整理上传：|$)/g)];
   const attachments=[...JSON.parse(row.images),...JSON.parse(row.videos||'[]')].map((key,n)=>{const meta=db.prepare('SELECT sha256,size FROM attachment_index WHERE key=?').get(key);const block=parts.find(p=>Number(p[1])===n+1)?.[0]||'';return{key,caption:/说明：([^\n]+)/.exec(block)?.[1]||`附件 ${n+1} · 逐图说明待核（保留原附件索引）`,source:/来源页：(https?:\/\/[^\s]+)/.exec(block)?.[1]||'',source_type:block?'原附件索引／第三方留存': '逐图来源待核（不自动沿用事件主来源）',date:/(?:来源日期|日期依据)：([^\n]+)/.exec(block)?.[1]||'未知',...(meta||{}),duplicate_count:meta?db.prepare("SELECT COUNT(*) n FROM attachment_index JOIN feedback ON feedback.id=attachment_index.event_id WHERE sha256=? AND feedback.status='approved'").get(meta.sha256).n:1}});
   const changes=db.prepare('SELECT created,action,changes,public_note FROM event_changes WHERE event_id=? ORDER BY id').all(row.id).map(r=>({...r,changes:JSON.parse(r.changes)}));
-  const record={...row,moderation_status:row.status,collected_at:row.created,attachments,changes};
+  const record={...row,moderation_status:row.status,collected_at:row.created,attachments,changes,global:globalRecord(db,row),content_language:db.prepare('SELECT language FROM global_submission_languages WHERE event_id=?').get(row.id)?.language||'zh-CN'};
   return {...record,brief:editorialBrief(record)};
  }
  const publicItems=()=>db.prepare("SELECT feedback.*,COALESCE(users.username,guest_name,'站点整理') contributor FROM feedback LEFT JOIN users ON users.id=feedback.user_id WHERE feedback.status='approved' ORDER BY feedback.created DESC,feedback.id").all().map(extras);
  function initializeSubmission(id,fields){
+  if(fields.content_language)db.prepare('INSERT INTO global_submission_languages VALUES(?,?)').run(id,fields.content_language);
   const parent=fields.parent_event_id||'';const reply=fields.reply_type||'';
   const type=parent?'correction':fields.record_type||'opinion';
   db.prepare('UPDATE feedback SET record_type=?,verification_status=?,evidence_level=?,publisher_scope=?,region=?,material_status=?,date_precision=?,source_type=?,parent_event_id=?,reply_type=?,pending_summary=?,response_summary=?,topic=? WHERE id=?').run(type,'unverified',(fields.has_media?'third_party':'none'),'unknown','unknown',fields.has_media?'evidence':'lead','unknown',fields.source?'用户提供来源（待核）':'未提供外部来源',parent,reply,'用户投稿，内容审核不代表事实核实','暂无已核验回应',fields.category==='广告表达'?'advertising':fields.category==='消费体验'?'experience':'other',id);
   const row=db.prepare('SELECT images,videos FROM feedback WHERE id=?').get(id);for(const key of [...JSON.parse(row.images),...JSON.parse(row.videos||'[]')])index(key,id);
  }
  function validateSubmission(f){
+  if(f.content_language&&!['en','zh-CN'].includes(f.content_language))return '投稿语言无效 / Invalid contribution language';
   if(f.record_type&&!['opinion','event'].includes(f.record_type))return '投稿类型无效';
   if(f.parent_event_id){const parent=db.prepare("SELECT id,brand,record_type FROM feedback WHERE id=? AND status='approved'").get(f.parent_event_id);if(!parent||parent.record_type!=='event'||parent.brand!==f.brand)return '关联事件无效或品牌不一致';if(!['correction','response','counterevidence'].includes(f.reply_type))return '请选择补充类型'}
   return '';

@@ -5,7 +5,7 @@ import {spawn} from 'node:child_process';
 import os from 'node:os';
 import {fileURLToPath} from 'node:url';
 const root=fileURLToPath(new URL('../',import.meta.url)),data=fs.mkdtempSync(path.join(os.tmpdir(),'nvquanpinpai-test-'));
-const proc=spawn(process.execPath,['--experimental-sqlite',path.join(root,'server.mjs')],{env:{...process.env,DATA_DIR:data,PORT:'18789'},stdio:['ignore','pipe','pipe']});
+const proc=spawn(process.execPath,['--experimental-sqlite',path.join(root,'server.mjs')],{env:{...process.env,DATA_DIR:data,PORT:'18789',GLOBAL_CASES:'off'},stdio:['ignore','pipe','pipe']});
 let log='';proc.stderr.on('data',b=>log+=b);
 const base='http://127.0.0.1:18789';
 async function req(url,{method='GET',body,auth,headers={}}={}){const r=await fetch(base+url,{method,headers:{...headers,...(auth?{Cookie:auth.cookie,'X-CSRF-Token':auth.csrf}:{})},body});return {status:r.status,body:r.headers.get('content-type')?.includes('json')?await r.json():await r.arrayBuffer(),cookie:r.headers.get('set-cookie')}}
@@ -79,8 +79,8 @@ try{
  const task=await req('/api/admin/tasks',{method:'POST',...json(taskBody),auth:admin});assert.equal(task.status,201);const tid=task.body.item.id;
  assert.ok(new TextDecoder().decode((await req('/tasks')).body).includes('?task='+tid));
  linked.set('parent_event_id',gid);linked.set('task_id',tid);linked.set('visit_channel','weibo');
- linked.set('guest_name','任务贡献者');linked.set('title','任务关联补证验收记录');
- const taskSubmission=await req('/api/feedback',{method:'POST',body:linked});assert.equal(taskSubmission.status,201);const sid=taskSubmission.body.item.id;
+ linked.set('content_language','en');linked.set('guest_name','任务贡献者');linked.set('title','任务关联补证验收记录');
+ const taskSubmission=await req('/api/feedback',{method:'POST',body:linked});assert.equal(taskSubmission.status,201);const sid=taskSubmission.body.item.id;assert.equal((await req('/api/admin/feedback',{auth:admin})).body.items.find(i=>i.id===sid).content_language,'en');
  const pendingTask=(await req('/api/tasks')).body.items.find(t=>t.id===tid);assert.equal(pendingTask.contributions.length,0);assert.ok(!JSON.stringify(pendingTask).includes(sid));
  const resolution={status:'resolved',resolution_id:sid,resolution_note:'已核对提交的完整材料，这项任务所列缺口已补齐。'};
  assert.equal((await req('/api/admin/tasks/'+tid,{method:'PATCH',...json(resolution),auth:admin})).status,400);

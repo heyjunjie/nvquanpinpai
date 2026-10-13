@@ -1,8 +1,10 @@
 import fs from 'node:fs';
 import crypto from 'node:crypto';
+import {globalSchema} from './global-data.mjs';
 const seeds=JSON.parse(fs.readFileSync(new URL('./docs/evidence-tasks-20261013.json',import.meta.url),'utf8'));
 const kinds=['original','date','identity','response'];
 export function participation(db,getItems,initial=seeds){
+ globalSchema(db);
  db.exec(`CREATE TABLE IF NOT EXISTS evidence_tasks(id TEXT PRIMARY KEY,event_id TEXT NOT NULL,title TEXT NOT NULL,need TEXT NOT NULL,kind TEXT NOT NULL,status TEXT NOT NULL DEFAULT 'open',priority INTEGER NOT NULL DEFAULT 1,created INTEGER NOT NULL,updated INTEGER NOT NULL,resolution_id TEXT NOT NULL DEFAULT '',resolution_note TEXT NOT NULL DEFAULT '');
  CREATE TABLE IF NOT EXISTS evidence_task_links(feedback_id TEXT PRIMARY KEY,task_id TEXT NOT NULL);
  CREATE INDEX IF NOT EXISTS evidence_task_event ON evidence_tasks(event_id);`);
@@ -18,7 +20,8 @@ export function participation(db,getItems,initial=seeds){
    const proof=candidates.find(i=>i.id===t.resolution_id);
    const links=new Set(db.prepare('SELECT feedback_id FROM evidence_task_links WHERE task_id=?').all(t.id).map(r=>r.feedback_id));
    const parent=events.get(t.event_id),status=t.status==='resolved'&&proof?'resolved':'open';
-   return {id:t.id,event_id:t.event_id,title:t.title,need:t.need,kind:t.kind,priority:t.priority,created:t.created,updated:t.updated,status,brand:parent.brand,event_title:parent.title,proof:status==='resolved'?credit(proof):null,resolution_note:status==='resolved'?t.resolution_note:'',contributions:candidates.filter(i=>links.has(i.id)).map(credit)};
+   const translation=db.prepare('SELECT payload FROM global_task_meta WHERE task_id=?').get(t.id);
+   return {id:t.id,event_id:t.event_id,title:t.title,need:t.need,kind:t.kind,priority:t.priority,created:t.created,updated:t.updated,status,brand:parent.brand,event_title:parent.title,translations:translation?JSON.parse(translation.payload):null,proof:status==='resolved'?credit(proof):null,resolution_note:status==='resolved'?t.resolution_note:'',contributions:candidates.filter(i=>links.has(i.id)).map(credit)};
   });
  }
  function create(f){
