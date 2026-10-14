@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node --experimental-sqlite server.mjs",
     "build": "vite build",
-    "test": "node tests/integration.mjs && node --experimental-sqlite tests/archive.mjs && node tests/presentation.mjs && node --experimental-sqlite tests/event-dates.mjs && node --experimental-sqlite tests/propagation-dates.mjs && node tests/discovery.mjs && node tests/editorial.mjs && node --experimental-sqlite tests/participation.mjs && node --experimental-sqlite tests/growth.mjs && node tests/research.mjs && node --experimental-sqlite tests/global-data.mjs && node tests/global-pages.mjs",
+    "test": "node tests/integration.mjs && node --experimental-sqlite tests/archive.mjs && node tests/presentation.mjs && node --experimental-sqlite tests/event-dates.mjs && node --experimental-sqlite tests/propagation-dates.mjs && node tests/discovery.mjs && node tests/editorial.mjs && node --experimental-sqlite tests/participation.mjs && node --experimental-sqlite tests/growth.mjs && node tests/research.mjs && node --experimental-sqlite tests/global-data.mjs && node tests/global-pages.mjs && node tests/i18n-data.mjs && node tests/locale.mjs",
     "typecheck": "tsc --noEmit",
     "pretest": "npm run build"
   },

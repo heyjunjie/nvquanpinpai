@@ -1,3 +1,4 @@
+import {ui} from './locale.mjs';
 import {shareModel,formatUpdateTime} from './reading.mjs';
 const ink='#222420',muted='#62645e',paper='#fafaf8',line='#d9dad4';
 const sans="'Microsoft YaHei UI','PingFang SC',sans-serif",serif="'Noto Serif SC','Source Han Serif SC','Songti SC','SimSun',serif";
@@ -7,6 +8,7 @@ export function wrapLines(text,measure,width,maxLines){
  if(lines.length>maxLines){lines.length=maxLines;let end=lines[maxLines-1];while(end&&measure(end+'…')>width)end=Array.from(end).slice(0,-1).join('');lines[maxLines-1]=end+'…'}return lines;
 }
 function text(ctx,value,x,y,width,size,maxLines=3,{bold=false,display=false,color=ink}={}){
+ value=ui(value);
  ctx.font=`${bold?700:400} ${size}px ${display?serif:sans}`;ctx.fillStyle=color;ctx.textBaseline='top';
  const rows=wrapLines(value,s=>ctx.measureText(s).width,width,maxLines);rows.forEach((row,n)=>ctx.fillText(row,x,y+n*size*1.42));return rows.length*size*1.42;
 }

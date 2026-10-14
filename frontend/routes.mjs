@@ -1,15 +1,16 @@
 // Real URLs are shared by server rendering, in-page navigation and share actions.
+import {localePath,currentLocale,canonicalPath} from './locale.mjs';
 export function publicPath(type, value='') {
   const prefix=typeof location!=='undefined'&&location.pathname.startsWith('/brand-watch/')?'/brand-watch':'';
-  return prefix+'/'+type+(value?'/'+encodeURIComponent(value):'');
+  return localePath(prefix+'/'+type+(value?'/'+encodeURIComponent(value):''),currentLocale());
 }
 export function routePath(input='') {
   const raw=input.replace(/^#/, '')||'/';
-  return raw.startsWith('/')&&!raw.startsWith('//')?raw:'/';
+  return localePath(raw.startsWith('/')&&!raw.startsWith('//')?raw:'/',currentLocale());
 }
 export function currentRoute(loc) {
   const raw=loc.hash?.startsWith('#/')?loc.hash.slice(1):loc.pathname.replace(/^\/brand-watch(?=\/|$)/,'');
-  const parts=raw.split('/').filter(Boolean);
+  const parts=canonicalPath(raw).split('/').filter(Boolean);
   try {return {type:parts[0]||'',value:decodeURIComponent(parts.slice(1).join('/'))};}
   catch {return {type:'invalid',value:''};}
 }

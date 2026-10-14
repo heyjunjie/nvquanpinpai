@@ -1,5 +1,6 @@
 // Presentation only: these helpers never upgrade verification or infer dates.
 export function eventSummary(item){
+ if(item.original_record&&item.editor_summary!==item.original_record.editor_summary)return item.editor_summary||item.title;
  const body=(item.content||'').split('附件索引')[0];
  const start=body.indexOf('事件概述');
  const section=start>=0?body.slice(start+4).split(/发生与报道时间|证据与核实情况|资料分类与证据层级|完整语境、回应与待核事项/)[0]:body;

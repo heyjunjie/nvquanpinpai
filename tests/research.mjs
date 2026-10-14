@@ -24,7 +24,7 @@ const injected=citationPack([{...item,title:'<script>alert(1)</script>',content:
 const template='<!doctype html><head><title>old</title><script src="/assets/app.js"></script></head><body><div id="root"></div></body>';
 const service=discovery({template,getItems:()=>rows});
 assert.equal(service.handle('/lookup').status,200);assert.match(service.handle('/sitemap.xml').body,/\/lookup/);
-const page=service.handle('/lookup','?q=logitech');assert.equal(page.noindex,true);assert.match(page.body,/罗技/);assert.ok(!page.body.includes('/assets/app.js'));assert.ok(!page.body.includes('PRIVATE'));
+const page=service.handle('/lookup','?q=logitech');assert.equal(page.noindex,true);assert.match(page.body,/罗技/);assert.ok(page.body.includes('/assets/app.js'));assert.ok(!page.body.includes('PRIVATE'));
 assert.match(service.handle('/lookup','?q=oppo').body,/未收录不代表/);assert.match(service.handle('/lookup','?q=unknownname').body,/还没找到/);assert.equal(service.handle('/lookup','?q='+'x'.repeat(81)).status,400);
 assert.ok(!service.handle('/lookup','?q='+encodeURIComponent('<img src=x onerror=x>')).body.includes('<img src=x'));
 assert.equal(service.handle('/sources/public/image').status,200);assert.equal(service.handle('/sources/pending/image').status,404);assert.equal(service.handle('/cite/pending').status,404);assert.equal(service.handle('/cite/public').noindex,true);assert.match(service.handle('/cite/public').body,/copy-citation/);

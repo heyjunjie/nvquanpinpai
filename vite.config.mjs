@@ -1,1 +1,1 @@
-import{defineConfig}from'vite';import react from'@vitejs/plugin-react';export default defineConfig({base:'/',plugins:[react()],build:{outDir:'dist',emptyOutDir:true}});
+import{defineConfig}from'vite';import react from'@vitejs/plugin-react';import{fileURLToPath}from'node:url';export default defineConfig({base:'/',plugins:[react({jsxImportSource:'@notbuy/localized'})],resolve:{alias:{'@notbuy/localized':fileURLToPath(new URL('./frontend/localized',import.meta.url))}},build:{outDir:'dist',emptyOutDir:true}});

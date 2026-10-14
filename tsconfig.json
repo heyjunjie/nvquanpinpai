@@ -5,6 +5,8 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "jsx": "react-jsx",
+    "jsxImportSource": "@notbuy/localized",
+    "paths": {"@notbuy/localized/*": ["./frontend/localized/*"]},
     "skipLibCheck": true,
     "noEmit": true
   },

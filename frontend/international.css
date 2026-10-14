@@ -1,0 +1,16 @@
+/* Shared layout: translation changes copy, never the page or its components. */
+.phase-two-header{min-height:76px;height:auto;padding-top:12px;padding-bottom:12px}
+.phase-two-header .logo{min-width:0;white-space:nowrap;line-height:1.4;flex-shrink:0}
+.phase-two-header nav{gap:clamp(12px,1.8vw,26px);flex-wrap:wrap}
+.language-switch{flex-shrink:0;white-space:nowrap;min-height:44px;padding:8px 4px;display:inline-flex;align-items:center;justify-content:center}
+.modal>.language-switch{margin:0 16px 12px 0}
+.record-context,.translation-note{font-size:14px;line-height:1.8;color:var(--muted);overflow-wrap:anywhere}
+.translation-note:empty{display:none}
+.shared-page{padding-top:24px;padding-bottom:36px}
+.shared-page h1{font-family:var(--serif);font-size:32px;line-height:1.5;margin:18px 0}
+.shared-page .reading-column>section+section{margin-top:30px}
+.opening-note h1,.brand-heading h3,.section-line>*{min-width:0;overflow-wrap:anywhere}
+.community-metrics span,.community-metrics small,.participation-label{overflow-wrap:anywhere}
+.participation-label{line-height:1.5;min-height:44px}
+@media(max-width:1450px){.phase-two-header>nav{display:none}.mobile-menu-toggle{display:flex}.mobile-nav[data-open=true]{display:flex;position:fixed;top:76px;left:0;right:0;z-index:6;background:var(--ground);border-bottom:1px solid var(--ink);padding:12px 24px;gap:12px;flex-wrap:wrap}.mobile-nav a{display:flex;align-items:center;min-height:44px;font-size:14px}}
+@media(max-width:600px){.phase-two-header{min-height:64px;height:64px;padding-top:8px;padding-bottom:8px;align-items:center}.phase-two-header .logo{flex:1;font-size:18px;line-height:1.2;white-space:normal}.header-actions{flex-shrink:0}.header-actions>.text-button{display:none}.header-actions>.language-switch{min-width:44px;font-size:13px}.mobile-nav[data-open=true]{top:64px}.newspaper .opening-note p{font-size:15px}.section-line{align-items:start;flex-wrap:wrap}.section-line>h2{flex:1 0 auto;max-width:100%}.section-line>a{white-space:normal}.shared-page h1{font-size:26px}.record-context,.translation-note{font-size:14px}.vertical-participation-chart{gap:28px;min-height:244px;height:auto;padding-top:24px}.participation-bar-area{height:170px}.participation-label{font-size:15px}.community-metrics span{line-height:1.6}}

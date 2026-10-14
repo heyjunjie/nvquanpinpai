@@ -4,7 +4,9 @@
 
 访问主站可查看品牌事件、图片与视频证据，并提交署名反馈。
 
-**全球站点：[中文全球目录](https://notbuy.top/global) · [English](https://notbuy.top/en) · [英文全部档案](https://notbuy.top/en/archive)**
+**全球站点：[默认简体中文](https://notbuy.top/) · [English](https://notbuy.top/en) · [全部档案](https://notbuy.top/archive)**
+
+中英文使用同一套首页、品牌目录、统计、资料阅读器与投稿流程。点击页头或弹窗内的语言入口可随时切换，保留当前页面、筛选和未提交的投稿草稿；`/global` 保留为兼容入口。实现和验收边界见 [统一全球站点](docs/UNIFIED-GLOBAL-20261013.md)。
 
 首期发布29条海外事件、对照与线索，覆盖6个国家，另1条地区待核；按国家、议题、回应与材料用途组合筛选，新增55项关联补证任务。原图／原片缺失明确提示，账户或免注册署名均可提交图片、视频。旧中文档案未翻译时显示原文标签，不宣称全量已译。[海外清单与来源边界](docs/GLOBAL-CONTENT-20261013.md) · [全球站点实施](docs/GLOBAL-SITE-20261013.md)。
 
@@ -118,6 +120,8 @@ npm start
 
 ## English
 
-NotBuy is an independent consumer archive focused on brand expression disputes and male consumer interests. [English portal](https://notbuy.top/en) · [Evidence gaps](https://notbuy.top/en/tasks).
+NotBuy is an independent consumer archive focused on brand expression disputes and male consumer interests. [English](https://notbuy.top/en) · [Evidence gaps](https://notbuy.top/en/tasks).
+
+Simplified Chinese is the default. Both languages share the same application, directory, statistics, readers and contribution workflow. Switch language in the header or an open dialog without losing the current page, filters or contribution draft.
 
 Publication is not a finding of wrongdoing. Complaints, responses, regulator decisions, source accessibility and unresolved questions remain separate. The first release includes Chinese and English navigation, filtering, reading and contribution flows. Newly curated overseas records have editorial English summaries; older Chinese records may remain untranslated and are labelled accordingly. Named guests can submit without registering; all contributions and media are private until moderated. MIT covers software code only, excluding third-party content.

@@ -15,6 +15,8 @@ mkdir -p "$BACKUP"
 chmod 700 "$BACKUP"
 IMAGE="brand-watch:$RELEASE_SHA"
 docker build --build-arg "RELEASE_SHA=$RELEASE_SHA" -t "$IMAGE" .
+# UI/localization suites run in the build stage with TypeScript; the twelve
+# server/data suites below run in the resulting minimal image.
 docker run --rm "$IMAGE" node tests/archive.mjs
 docker run --rm "$IMAGE" node tests/integration.mjs
 docker run --rm "$IMAGE" node tests/presentation.mjs

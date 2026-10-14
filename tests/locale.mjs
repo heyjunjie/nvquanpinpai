@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import {localeFromPath,canonicalPath,localePath,switchLanguage} from '../frontend/locale.mjs';
+import {localizeProps} from '../frontend/localized-props.mjs';
+import {currentRoute,publicPath} from '../frontend/routes.mjs';
+import {pageMetadata} from '../frontend/page-metadata.mjs';
+assert.equal(localeFromPath('/'),'zh-CN');assert.equal(localeFromPath('/en/brand/Warrior'),'en');assert.equal(localeFromPath('/english'),'zh-CN');
+for(const path of ['/','/brand/回力','/event/stable-id','/attachment/id%2Fkey','/reply/id?task=one','/lookup?q=Oven%20Pride#results','/tasks','/topics/history']){
+ assert.equal(localePath(localePath(path,'en'),'zh-CN'),path);
+ assert.equal(localePath(localePath(path,'en'),'en'),localePath(path,'en'));
+}
+assert.equal(localePath('/en?q=test','en'),'/en?q=test');assert.equal(canonicalPath('/en?q=test'),'/?q=test');
+for(const href of ['/api/images/key','/feed.xml?brand=回力','/admin','https://example.com/en','mailto:tojunjie@gmail.com','#recent'])assert.equal(localePath(href,'en'),href);
+globalThis.location=new URL('https://notbuy.top/en/event/stable-id?q=old&market=GB#context');
+assert.deepEqual(currentRoute(location),{type:'event',value:'stable-id'});assert.equal(publicPath('brand','回力'),'/en/brand/%E5%9B%9E%E5%8A%9B');
+const option={children:'广告表达'};assert.deepEqual(localizeProps('option',option),{value:'广告表达',children:'Advertising expression'});assert.deepEqual(option,{children:'广告表达'});
+assert.equal(localizeProps('input',{value:'回力',placeholder:'品牌、英文别名或事件关键词'}).value,'回力');
+assert.equal(localizeProps('a',{href:'/en/tasks'}).href,'/en/tasks');assert.equal(localizeProps('a',{'data-language':true,href:'/event/stable-id'}).href,'/event/stable-id');
+assert.equal(localizeProps('p',{'data-original':true,children:'品牌回应'}).children,'品牌回应');
+assert.equal(localizeProps('p',{children:'作者原文：某品牌具体说法'}).children,'作者原文：某品牌具体说法');
+assert.equal(localizeProps('button',{'aria-label':'关闭',children:'关闭'})['aria-label'],'Close');
+let pushed='',changed=0;globalThis.history={pushState(_a,_b,url){pushed=url;globalThis.location=new URL(url,location.origin)}};globalThis.window={dispatchEvent(e){if(e.type==='languagechange')changed++}};
+switchLanguage('zh-CN');assert.equal(pushed,'/event/stable-id?q=old&market=GB#context');switchLanguage('en');assert.equal(pushed,'/en/event/stable-id?q=old&market=GB#context');assert.equal(changed,2);
+const metadata=(path,extra={})=>pageMetadata({origin:'https://notbuy.top',pathname:path,route:currentRoute({pathname:path,hash:''}),locale:localeFromPath(path),...extra});
+for(const path of ['/archive','/tasks','/updates','/lookup','/topics/history'])assert.notEqual(metadata(path).ogTitle,metadata('/').ogTitle,path);
+assert.match(metadata('/en/archive').title,/All brands and event records/);
+assert.match(metadata('/en/tasks').title,/Evidence gaps/);
+assert.equal(metadata('/en/event/site',{detail:{title:'Original site notice',record_type:'site'}}).robots,'noindex,follow');
+assert.equal(metadata('/en/event/event',{detail:{title:'Reviewed record',record_type:'event'}}).robots,'index,follow');
+assert.equal(metadata('/en/attachment/key').robots,'noindex,follow');assert.equal(metadata('/en/reply/event').robots,'noindex,follow');
+assert.equal(metadata('/en',{search:'?market=GB&q=Oven'}).robots,'noindex,follow');
+assert.equal(metadata('/global').canonical,'https://notbuy.top/');assert.equal(metadata('/global').en,'https://notbuy.top/en');
+assert.equal(metadata('/en/archive').zh,'https://notbuy.top/archive');assert.equal(metadata('/en/archive').en,'https://notbuy.top/en/archive');
+console.log('PASS locale: default Chinese, reversible routes, stable form values, originals, accessibility and per-page metadata/indexing');

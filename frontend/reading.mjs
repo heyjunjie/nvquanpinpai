@@ -1,3 +1,4 @@
+import {currentLocale,localePath} from './locale.mjs';
 import {eventSummary,publisherText,criticalNote} from './presentation.mjs';
 
 const labels={unverified:'事实待核',partial:'部分核实',verified:'已有核实依据',disputed:'资料存在冲突'};
@@ -22,8 +23,8 @@ export function recentUpdates(items,limit=100){
  const seen=new Set();
  return updates.sort((a,b)=>b.at-a.at||a.key.localeCompare(b.key)).filter(u=>{const key=[u.event_id,u.at,u.kind,u.note].join('|');if(seen.has(key))return false;seen.add(key);return true}).slice(0,limit);
 }
-export function formatUpdateTime(value){return new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(value))}
+export function formatUpdateTime(value){return new Intl.DateTimeFormat(currentLocale(),{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(value))}
 export function shareModel(item){
  const sources=[item.source,...(item.attachments||[]).map(a=>a.source)].filter(Boolean).flatMap(value=>{try{const u=new URL(value);return ['http:','https:'].includes(u.protocol)?[u.hostname]:[]}catch{return []}});
- return {title:item.title,brand:item.brand,status:labels[item.verification_status]||'事实待核',date:`${item.event_date||'日期待核'}${item.date_precision?' · '+item.date_precision:''}`,summary:item.brief?.summary||eventSummary(item),publisher:item.brief?.publisher_note||publisherText(item),response:item.brief?.response.text||item.response_summary||'暂无已核验回应',limitation:item.brief?.uncertainties.map(s=>s.replace(/[。；;]+$/,'')).join('；')||criticalNote(item),sources:[...new Set(sources)].slice(0,2).join(' / ')||'来源待核',url:'https://notbuy.top/event/'+encodeURIComponent(item.id),contributor:item.contributor||'站点整理'};
+ return {title:item.title,brand:item.brand,status:labels[item.verification_status]||'事实待核',date:`${item.event_date||'日期待核'}${item.date_precision?' · '+item.date_precision:''}`,summary:item.brief?.summary||eventSummary(item),publisher:item.brief?.publisher_note||publisherText(item),response:item.brief?.response.text||item.response_summary||'暂无已核验回应',limitation:item.brief?.uncertainties.map(s=>s.replace(/[。；;]+$/,'')).join('；')||criticalNote(item),sources:[...new Set(sources)].slice(0,2).join(' / ')||'来源待核',url:'https://notbuy.top'+localePath('/event/'+encodeURIComponent(item.id),currentLocale()),contributor:item.contributor||'站点整理'};
 }
