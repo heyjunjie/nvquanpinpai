@@ -1,6 +1,7 @@
 // Display translations only. Canonical identifiers, evidence and submitted text
 // stay intact; unknown text is deliberately never machine-translated here.
 const ui = {
+ '资料年份：':'Dated records: ', '条公开事件':'public event records', ' 条公开事件':' public event records',
  '女拳品牌观察':'NotBuy · Brand Watch',
  '拿男性当笑料，':'Make men the punchline,',
  '还想让我们买单？':'then ask us to pay?',

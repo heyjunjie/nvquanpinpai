@@ -4,6 +4,8 @@
 
 访问主站可查看品牌事件、图片与视频证据，并提交署名反馈。
 
+**[2026-10-25 报刊版面精修](docs/DESIGN-REFINEMENT-20261025.md)**：统一双语字阶、索引留白、手机单列目录、适窗阅读器和减弱动态效果。随站字体按各自 SIL Open Font License 授权，来源及许可证见 [public/fonts](public/fonts)；字体授权不由软件 MIT 许可证替代。
+
 **全球站点：[默认简体中文](https://notbuy.top/) · [English](https://notbuy.top/en) · [全部档案](https://notbuy.top/archive)**
 
 中英文使用同一套首页、品牌目录、统计、资料阅读器与投稿流程。点击页头或弹窗内的语言入口可随时切换，保留当前页面、筛选和未提交的投稿草稿；`/global` 保留为兼容入口。实现和验收边界见 [统一全球站点](docs/UNIFIED-GLOBAL-20261013.md)。

@@ -1,171 +1,114 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-13T02:00:42.795Z",
+  "generatedAt": "2026-10-24T22:15:49.097446+00:00",
   "title": "Design System: 女拳品牌观察",
   "extensions": {
     "colorMeta": {
       "ground": {
         "role": "neutral",
-        "displayName": "Paper",
-        "tonalRamp": [
-          "oklch(15.00% 0.00264 106.45)",
-          "oklch(26.43% 0.00264 106.45)",
-          "oklch(37.86% 0.00264 106.45)",
-          "oklch(49.29% 0.00264 106.45)",
-          "oklch(60.71% 0.00264 106.45)",
-          "oklch(72.14% 0.00264 106.45)",
-          "oklch(83.57% 0.00264 106.45)",
-          "oklch(95.00% 0.00264 106.45)"
-        ]
+        "displayName": "Paper"
       },
       "surface": {
         "role": "neutral",
-        "displayName": "Inset Paper",
-        "tonalRamp": [
-          "oklch(15.00% 0.00531 106.50)",
-          "oklch(26.43% 0.00531 106.50)",
-          "oklch(37.86% 0.00531 106.50)",
-          "oklch(49.29% 0.00531 106.50)",
-          "oklch(60.71% 0.00531 106.50)",
-          "oklch(72.14% 0.00531 106.50)",
-          "oklch(83.57% 0.00531 106.50)",
-          "oklch(95.00% 0.00531 106.50)"
-        ]
+        "displayName": "Inset Paper"
       },
       "ink": {
         "role": "neutral",
-        "displayName": "Ink",
-        "tonalRamp": [
-          "oklch(15.00% 0.00790 128.81)",
-          "oklch(26.43% 0.00790 128.81)",
-          "oklch(37.86% 0.00790 128.81)",
-          "oklch(49.29% 0.00790 128.81)",
-          "oklch(60.71% 0.00790 128.81)",
-          "oklch(72.14% 0.00790 128.81)",
-          "oklch(83.57% 0.00790 128.81)",
-          "oklch(95.00% 0.00790 128.81)"
-        ]
+        "displayName": "Ink"
       },
       "muted": {
         "role": "neutral",
-        "displayName": "Quiet Ink",
-        "tonalRamp": [
-          "oklch(15.00% 0.00965 121.80)",
-          "oklch(26.43% 0.00965 121.80)",
-          "oklch(37.86% 0.00965 121.80)",
-          "oklch(49.29% 0.00965 121.80)",
-          "oklch(60.71% 0.00965 121.80)",
-          "oklch(72.14% 0.00965 121.80)",
-          "oklch(83.57% 0.00965 121.80)",
-          "oklch(95.00% 0.00965 121.80)"
-        ]
+        "displayName": "Quiet Ink"
       },
       "line": {
         "role": "neutral",
-        "displayName": "Fine Rule",
-        "tonalRamp": [
-          "oklch(15.00% 0.00817 114.24)",
-          "oklch(26.43% 0.00817 114.24)",
-          "oklch(37.86% 0.00817 114.24)",
-          "oklch(49.29% 0.00817 114.24)",
-          "oklch(60.71% 0.00817 114.24)",
-          "oklch(72.14% 0.00817 114.24)",
-          "oklch(83.57% 0.00817 114.24)",
-          "oklch(95.00% 0.00817 114.24)"
-        ]
+        "displayName": "Fine Rule"
       },
       "accent": {
         "role": "primary",
-        "displayName": "Oxblood",
-        "tonalRamp": [
-          "oklch(15.00% 0.13538 19.00)",
-          "oklch(26.43% 0.13538 19.00)",
-          "oklch(37.86% 0.13538 19.00)",
-          "oklch(49.29% 0.13538 19.00)",
-          "oklch(60.71% 0.13538 19.00)",
-          "oklch(72.14% 0.13538 19.00)",
-          "oklch(83.57% 0.13538 19.00)",
-          "oklch(95.00% 0.13538 19.00)"
-        ]
+        "displayName": "Oxblood"
       },
       "accent-hover": {
         "role": "primary",
-        "displayName": "Deep Oxblood",
-        "tonalRamp": [
-          "oklch(15.00% 0.11344 18.68)",
-          "oklch(26.43% 0.11344 18.68)",
-          "oklch(37.86% 0.11344 18.68)",
-          "oklch(49.29% 0.11344 18.68)",
-          "oklch(60.71% 0.11344 18.68)",
-          "oklch(72.14% 0.11344 18.68)",
-          "oklch(83.57% 0.11344 18.68)",
-          "oklch(95.00% 0.11344 18.68)"
-        ]
+        "displayName": "Deep Oxblood"
       },
       "white": {
         "role": "neutral",
-        "displayName": "White",
-        "tonalRamp": [
-          "oklch(15.00% 0.00000 89.88)",
-          "oklch(26.43% 0.00000 89.88)",
-          "oklch(37.86% 0.00000 89.88)",
-          "oklch(49.29% 0.00000 89.88)",
-          "oklch(60.71% 0.00000 89.88)",
-          "oklch(72.14% 0.00000 89.88)",
-          "oklch(83.57% 0.00000 89.88)",
-          "oklch(95.00% 0.00000 89.88)"
-        ]
+        "displayName": "White"
       }
     },
     "typographyMeta": {
       "display": {
-        "displayName": "Editorial introduction",
-        "purpose": "Chinese serif introductory heading; scales at 1100, 600 and 360px."
+        "displayName": "Bilingual editorial display",
+        "purpose": "Self-hosted Newsreader and known Chinese-title subset; serif fallback for additional glyphs."
       },
       "headline": {
         "displayName": "Section heading",
-        "purpose": "Editorial hierarchy."
+        "purpose": "Serif reading structure, with distinct phone scale."
       },
       "title": {
-        "displayName": "Record title",
-        "purpose": "Sans-serif event title."
+        "displayName": "Brand title",
+        "purpose": "Source-aware index row heading."
       },
       "body": {
         "displayName": "Reading and controls",
-        "purpose": "Chinese UI sans-serif; detailed records increase line-height."
+        "purpose": "Installed Chinese UI sans-serif; record descriptions and forms."
       },
       "label": {
         "displayName": "Metadata",
-        "purpose": "Secondary context and numeric labels."
+        "purpose": "Supporting context; screenshot values are not constants."
       }
     },
     "shadows": [
       {
+        "name": "paper-dialog",
+        "value": "0 22px 70px #11130e26",
+        "purpose": "Ambient depth for temporary reader/form sheets."
+      },
+      {
         "name": "transient-toast",
         "value": "0 12px 32px #0006",
-        "purpose": "Inherited floating status-message depth; not directory/card elevation."
+        "purpose": "Inherited status message only."
       }
     ],
     "motion": [
       {
-        "name": "button-state",
-        "value": "color .16s,background-color .16s",
-        "purpose": "Button state changes."
+        "name": "state",
+        "value": "color 180ms ease, background-color 180ms ease, border-color 180ms ease",
+        "purpose": "Links and button state changes."
+      },
+      {
+        "name": "svg-state",
+        "value": "transform 260ms cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Small directional SVG feedback."
+      },
+      {
+        "name": "paper-open",
+        "value": "300ms cubic-bezier(.16, 1, .3, 1) both; from opacity:.7, translateY(14px), clip-path:inset(0 0 3% 0); to opacity:1, translateY(0), clip-path:inset(0)",
+        "purpose": "One temporary sheet entrance; content remains readable."
       },
       {
         "name": "reduced-motion",
-        "value": "transition:none!important;animation:none!important;scroll-behavior:auto",
-        "purpose": "Applied through prefers-reduced-motion:reduce."
+        "value": "transition:none!important;animation:none!important;scroll-behavior:auto!important",
+        "purpose": "Applied to all elements and pseudo-elements under prefers-reduced-motion:reduce."
       }
     ],
     "breakpoints": [
       {
-        "name": "wide-min",
-        "value": "1500px"
+        "name": "site-tag-max",
+        "value": "1600px"
+      },
+      {
+        "name": "menu-max",
+        "value": "1350px"
       },
       {
         "name": "compact-desktop-max",
         "value": "1100px"
+      },
+      {
+        "name": "compact-first-viewport-min",
+        "value": "851px"
       },
       {
         "name": "stacked-max",
@@ -188,7 +131,7 @@
       "refersTo": "button-primary",
       "description": "Contribution and submission action.",
       "html": "<button class=\"ds-primary\">提交反馈</button>",
-      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 18px;border:0;border-radius:3px;background:var(--accent);color:#fff;font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:color .16s,background-color .16s}.ds-primary:hover{background:#6e1d26}.ds-primary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 19px;border:0;border-radius:2px;background:var(--accent);color:#fff;font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:color 180ms ease,background-color 180ms ease,border-color 180ms ease}.ds-primary:hover{background:#6e1d26}.ds-primary:focus-visible{outline:2px solid var(--accent);outline-offset:5px}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
     },
     {
       "name": "Text action",
@@ -196,7 +139,7 @@
       "refersTo": "button-text",
       "description": "Secondary contextual action.",
       "html": "<button class=\"ds-text\">重新加载统计</button>",
-      "css": ".ds-text{background:none;border:0;color:var(--accent);min-height:44px;padding:10px 0;font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:13px;cursor:pointer;transition:color .16s,background-color .16s}.ds-text:focus-visible{outline:2px solid var(--accent);outline-offset:4px}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
+      "css": ".ds-text{background:none;border:0;color:var(--accent);min-height:44px;padding:10px 0;font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:14px;cursor:pointer;transition:color 180ms ease,background-color 180ms ease,border-color 180ms ease}.ds-text:focus-visible{outline:2px solid var(--accent);outline-offset:5px}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
     },
     {
       "name": "Search action",
@@ -204,21 +147,21 @@
       "refersTo": "button-search",
       "description": "Ink-filled directory search submission.",
       "html": "<button class=\"ds-search-action\">查资料</button>",
-      "css": ".ds-search-action{background:var(--ink);color:#fff;border:0;min-height:44px;padding:10px 16px;font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:15px;cursor:pointer;transition:color .16s,background-color .16s}.ds-search-action:hover{background:var(--accent)}.ds-search-action:focus-visible{outline:2px solid var(--accent);outline-offset:4px}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
+      "css": ".ds-search-action{background:var(--ink);color:#fff;border:0;min-height:48px;padding:10px 19px;font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:14px;font-weight:600;border-radius:2px;cursor:pointer;transition:color 180ms ease,background-color 180ms ease,border-color 180ms ease}.ds-search-action:hover{background:var(--accent)}.ds-search-action:focus-visible{outline:2px solid var(--accent);outline-offset:5px}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
     },
     {
       "name": "Directory search",
       "kind": "input",
       "description": "Visible search enclosure and focus-within state.",
       "html": "<label class=\"ds-search\"><input aria-label=\"搜索品牌或事件\" placeholder=\"品牌、英文别名或事件关键词\"/></label>",
-      "css": ".ds-search{display:flex;border:1px solid #8b8e84;padding:5px 5px 5px 15px;background:#fff}.ds-search:focus-within{outline:2px solid var(--accent);outline-offset:2px}.ds-search input{width:100%;min-width:0;height:44px;border:0;background:transparent;outline:0;padding:8px 0;color:var(--ink);font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:15px}.ds-search input::placeholder{color:var(--muted)}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
+      "css": ".ds-search{display:flex;border:1px solid #a7a89d;min-height:60px;padding:6px 6px 6px 19px;background:transparent}.ds-search:focus-within{outline:2px solid var(--accent);outline-offset:3px;border-color:var(--ground)}.ds-search input{width:100%;min-width:0;height:44px;border:0;background:transparent;outline:0;padding:8px 0;color:var(--ink);font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:16px}.ds-search input::placeholder{color:var(--muted)}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
     },
     {
       "name": "Directory tabs",
       "kind": "nav",
       "description": "Pressed-state filters with ink underlining.",
       "html": "<nav class=\"ds-tabs\" aria-label=\"品牌目录\"><button aria-pressed=\"true\">全部品牌</button><button aria-pressed=\"false\">我的关注</button></nav>",
-      "css": ".ds-tabs{display:flex;gap:18px;flex-wrap:wrap}.ds-tabs button{padding:8px 0;min-height:44px;background:none;color:var(--muted);font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:14px;border:0;border-bottom:2px solid transparent;border-radius:0;cursor:pointer}.ds-tabs button[aria-pressed=true]{color:var(--ink);border-color:var(--ink);font-weight:700}.ds-tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
+      "css": ".ds-tabs{display:flex;gap:27px;flex-wrap:wrap}.ds-tabs button{padding:10px 0;min-height:44px;background:none;color:var(--muted);font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:14px;border:0;border-bottom:2px solid transparent;border-radius:0;cursor:pointer}.ds-tabs button[aria-pressed=true]{color:var(--ink);border-color:var(--ink);font-weight:700}.ds-tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:5px}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
     },
     {
       "name": "Removable filter",
@@ -226,41 +169,41 @@
       "refersTo": "filter-chip",
       "description": "Active condition that remains visible outside the filter disclosure.",
       "html": "<button class=\"ds-chip\" aria-label=\"取消地区：海外\">海外<svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></button>",
-      "css": ".ds-chip{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:5px 10px;min-height:36px;font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:12px;cursor:pointer}.ds-chip:focus-visible{outline:2px solid var(--accent);outline-offset:4px}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
+      "css": ".ds-chip{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:5px 10px;min-height:40px;font-family:'Microsoft YaHei UI','PingFang SC',sans-serif;font-size:12px;cursor:pointer}.ds-chip:focus-visible{outline:2px solid var(--accent);outline-offset:5px}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
     },
     {
       "name": "Directory row",
       "kind": "card",
       "refersTo": "directory-row",
       "description": "Flat ruled entry with a brand title and readable summary.",
-      "html": "<article class=\"ds-row\"><h3><button>品牌资料</button></h3><span>品牌类别</span><p>查看事件、图片、来源与回应。</p><small>公开记录 · 来源可查</small></article>",
-      "css": ".ds-row{padding:15px 0 17px;border-bottom:1px solid var(--line);border-radius:0;background:none;color:var(--ink);font-family:'Microsoft YaHei UI','PingFang SC',sans-serif}.ds-row h3{font-size:21px;line-height:1.4;margin:0}.ds-row h3 button{border:0;background:none;padding:0;font:inherit;color:inherit;min-height:44px;text-align:left;cursor:pointer}.ds-row h3 button:hover{text-decoration:underline;text-underline-offset:5px}.ds-row h3 button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}.ds-row>span{color:var(--muted);font-size:12px}.ds-row p{font-size:14px;line-height:1.7}.ds-row small{font-size:11px;line-height:1.6;color:var(--muted)}@media(prefers-reduced-motion:reduce){button{transition:none!important;animation:none!important}}"
+      "html": "<article class=\"ds-row\"><h3><a href=\"#brand\">品牌资料 / Brand archive</a></h3><span>品牌类别</span><p>查看事件、图片、来源与回应。</p><small>公开记录 · 来源可查</small></article>",
+      "css": ".ds-row{padding:21px 0 23px;border-bottom:1px solid var(--line);border-radius:0;background:none;color:var(--ink);font-family:'Microsoft YaHei UI','PingFang SC',sans-serif}.ds-row h3{font-family:var(--serif);font-size:29px;font-weight:700;line-height:1.25;letter-spacing:-.02em;margin:0;padding-top:3px}.ds-row h3 a{color:inherit;text-decoration:none;transition:color 180ms ease}.ds-row h3 a:hover{color:var(--accent)}.ds-row a:focus-visible{outline:2px solid var(--accent);outline-offset:5px}.ds-row>span{display:block;margin-top:7px;color:var(--muted);font-size:12px;line-height:1.8}.ds-row p{font-size:14px;line-height:1.8;margin-top:15px}.ds-row small{font-size:11px;line-height:1.8;color:var(--muted)}@media(min-width:851px){.ds-row{padding-top:16px}}@media(max-width:600px){.ds-row{padding:20px 0 22px}}@media(prefers-reduced-motion:reduce){.ds-row a{transition:none!important}}"
     },
     {
       "name": "Topic digest row",
       "kind": "custom",
       "description": "Homepage topic link after the brand directory.",
       "html": "<a class=\"ds-topic\" href=\"/topics/history\"><strong>旧事件回看：别把收录日当发生日</strong><span>按时间查阅历史材料<svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></span></a>",
-      "css": ".ds-topic{display:block;padding:18px 0;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;font-family:'Microsoft YaHei UI','PingFang SC',sans-serif}.ds-topic strong{display:block;font-size:18px;line-height:1.7}.ds-topic span{display:flex;align-items:center;justify-content:space-between;gap:16px;color:var(--muted);font-size:14px;margin-top:6px}.ds-topic svg{flex-shrink:0}.ds-topic:hover strong{color:var(--accent)}.ds-topic:focus-visible{outline:2px solid var(--accent);outline-offset:4px}@media(max-width:600px){.ds-topic strong{font-size:17px}}"
+      "css": ".ds-topic{display:block;padding:21px 0;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;font-family:'Microsoft YaHei UI','PingFang SC',sans-serif}.ds-topic strong{display:block;font-size:19px;line-height:1.65}.ds-topic span{display:flex;align-items:center;justify-content:space-between;gap:16px;color:var(--muted);font-size:13px;margin-top:6px}.ds-topic svg{flex-shrink:0}.ds-topic:hover strong{color:var(--accent)}.ds-topic:focus-visible{outline:2px solid var(--accent);outline-offset:5px}@media(max-width:600px){.ds-topic strong{font-size:17px}}"
     },
     {
       "name": "Discovery record row",
       "kind": "card",
-      "description": "Standalone document-link reading surface with metadata and serif heading.",
+      "description": "Scoped legacy standalone-discovery preview; literal palette/fonts are retained historical drift, not the shared React tokens.",
       "html": "<article class=\"ds-discovery\"><p class=\"ds-discovery-meta\">发生日期待核 · 事件档案 · 事实待核</p><h2><a href=\"/archive\">事件标题与留存材料</a></h2><p>查阅图片、时间与发布主体，保留原始来源与待核说明。</p><p class=\"ds-discovery-meta\">发布主体待核 · 贡献者：站点整理</p></article>",
-      "css": ".ds-discovery{padding:24px 0;border-top:1px solid #d9dad4;color:#222420;background:#fafaf8;font:16px/1.85 'Microsoft YaHei UI','PingFang SC',sans-serif;overflow-wrap:anywhere}.ds-discovery h2{font-family:'Noto Serif SC','Source Han Serif SC','Songti SC','SimSun',serif;font-size:23px;line-height:1.6;text-wrap:balance;margin:8px 0}.ds-discovery p{max-width:72ch}.ds-discovery-meta{color:#62645e;font-size:14px;font-variant-numeric:tabular-nums}.ds-discovery a{color:inherit;text-underline-offset:4px;text-decoration:none}.ds-discovery a:hover{color:#8b2631;text-decoration:underline}.ds-discovery a:focus-visible{outline:2px solid #8b2631;outline-offset:4px}@media(max-width:600px){.ds-discovery h2{font-size:21px}}"
+      "css": ".ds-discovery{padding:24px 0;border-top:1px solid #d9dad4;color:#222420;background:#fafaf8;font:16px/1.85 'Microsoft YaHei UI','PingFang SC',sans-serif;overflow-wrap:anywhere}.ds-discovery h2{font-family:'Noto Serif SC','Source Han Serif SC','Songti SC','SimSun',serif;font-size:23px;line-height:1.6;text-wrap:balance;margin:8px 0}.ds-discovery p{max-width:72ch}.ds-discovery-meta{color:#62645e;font-size:14px;font-variant-numeric:tabular-nums}.ds-discovery a{color:inherit;text-underline-offset:4px;text-decoration:none}.ds-discovery a:hover{color:#8b2631;text-decoration:underline}.ds-discovery a:focus-visible{outline:2px solid #8b2631;outline-offset:5px}@media(max-width:600px){.ds-discovery h2{font-size:21px}}"
     },
     {
       "name": "Source statistics disclosure",
       "kind": "custom",
       "description": "Administrator source report, initially closed; preview uses unavailable-value placeholders.",
       "html": "<details class=\"ds-growth\"><summary>流量来源 · 近 30 天</summary><p>来源是估算值；不同渠道的人数不能相加。</p><table><thead><tr><th>来源</th><th>去重人数</th><th>累计访问人天</th></tr></thead><tbody><tr><th scope=\"row\">直接 / 来源未知</th><td>—</td><td>—</td></tr></tbody></table><details><summary>查看每日去重访客</summary><p>等待访问数据</p></details></details>",
-      "css": ".ds-growth{margin:24px 0;padding:20px 0;border-block:1px solid var(--line);color:var(--ink);font:15px/1.75 'Microsoft YaHei UI','PingFang SC',sans-serif}.ds-growth>summary{font-weight:700;font-size:20px;cursor:pointer}.ds-growth summary{cursor:pointer}.ds-growth summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}.ds-growth table{border-collapse:collapse;width:100%;margin:20px 0;font-variant-numeric:tabular-nums}.ds-growth th,.ds-growth td{padding:12px 8px;border-bottom:1px solid var(--line);text-align:left}.ds-growth td{text-align:right}@media(max-width:600px){.ds-growth th,.ds-growth td{padding:10px 4px;font-size:14px}}"
+      "css": ".ds-growth{margin:24px 0;padding:20px 0;border-block:1px solid var(--line);color:var(--ink);font:15px/1.75 'Microsoft YaHei UI','PingFang SC',sans-serif}.ds-growth>summary{font-weight:700;font-size:20px;cursor:pointer}.ds-growth summary{cursor:pointer}.ds-growth summary:focus-visible{outline:2px solid var(--accent);outline-offset:5px}.ds-growth table{border-collapse:collapse;width:100%;margin:20px 0;font-variant-numeric:tabular-nums}.ds-growth th,.ds-growth td{padding:12px 8px;border-bottom:1px solid var(--line);text-align:left}.ds-growth td{text-align:right}@media(max-width:600px){.ds-growth th,.ds-growth td{padding:10px 4px;font-size:14px}}"
     }
   ],
   "narrative": {
     "northStar": "Serious Newspaper Archive",
-    "overview": "White paper, near-black ink, quiet grey rules and restrained oxblood actions make an archive meant to be read and checked. Chinese serif headings provide editorial hierarchy; sans-serif copy and controls keep dense records usable. This describes the implemented Read surface and its account, submission and moderation Operate surfaces.\n\nEvidence is the imagery: existing uploaded documents, screenshots and videos retain their proportions and accompanying attribution. There are no newly commissioned raster assets or image-generation comps. Attachment metadata carries provenance; sample review images are not reusable decorative assets.",
+    "overview": "Warm paper, near-black ink, quiet grey rules and restrained oxblood actions make an archive meant to be read and checked. Self-hosted Latin and Chinese serif headings provide editorial hierarchy; sans-serif copy and controls keep dense records usable. The shared Chinese / English React application carries the public Read surface and its account, submission and moderation Operate surfaces.\n\nEvidence is the imagery: existing uploaded documents, screenshots and videos retain their proportions and accompanying attribution. There are no newly commissioned raster assets or image-generation comps. Attachment metadata carries provenance; sample review images are not reusable decorative assets.",
     "keyCharacteristics": [
       "Flat directory rows separated by rules.",
       "Serif editorial hierarchy with sans-serif reading and controls.",
@@ -275,7 +218,7 @@
       },
       {
         "name": "The Read and Operate Rule",
-        "body": "Serif marks editorial structure; sans-serif carries records, numeric values and controls.",
+        "body": "Serif marks editorial structure and prominent statistics; sans-serif carries record descriptions, metadata and controls.",
         "section": "typography"
       },
       {
@@ -294,7 +237,7 @@
       "Don't introduce decorative card shadows or side accents into the flat reading surfaces.",
       "Don't replace evidence media with decorative imagery or crop away source context in the reader.",
       "Don't turn hidden legacy eyebrows into a visible house style.",
-      "Don't treat screenshot counts or device-specific font rendering as fixed design tokens."
+      "Don't treat screenshot fixture counts, source-image colors or automation cursor glow as design tokens."
     ]
   }
 }

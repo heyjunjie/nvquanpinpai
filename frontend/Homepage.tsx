@@ -47,6 +47,7 @@ export function EventOverview({item}:{item:RecordItem}){
 export default function Homepage(p:Props){
  const [allBrands,setAllBrands]=useState(false),[eventLimit,setEventLimit]=useState(6),[year,setYear]=useState('all');
  const events=recentRecords(p.shown),timeline=filterTimeline(p.shown,year);
+ const coverage=recentRecords(p.items),coverageYears=coverage.map((i:RecordItem)=>i.event_date?.slice(0,4)).filter((v:string)=>/^(19|20)\d{2}$/.test(v||'')).sort();
  const years=Array.from(new Set(events.map((i:RecordItem)=>i.event_date?.slice(0,4)).filter(Boolean))).sort().reverse() as string[];
  const corrections=p.shown.filter(i=>i.record_type==='correction'),opinions=p.shown.filter(i=>i.record_type==='opinion');
  const leads=p.matchingBrands.filter(b=>p.leadBrands.some(l=>l.name===b.name));
@@ -54,7 +55,7 @@ export default function Homepage(p:Props){
  const visible=allBrands||hasConditions?p.visible:p.visible.slice(0,8);
  const goToResults=(e:React.FormEvent)=>{e.preventDefault();document.getElementById('directory-results')?.focus({preventScroll:true});};
  return <main id="main-content" className="newspaper" tabIndex={-1}>
-  <section className="opening-note"><h1>拿男性当笑料，<br/>还想让我们买单？</h1><div><p>谁说了什么，谁发布的，证据在哪里。逐条留下记录，让男性消费者自己决定，这笔钱给谁。</p><a href="#principles">我们的立场与记录原则<ArrowRight size={16}/></a></div></section>
+  <section className="opening-note"><h1>拿男性当笑料，<br/>还想让我们买单？</h1><div><p>谁说了什么，谁发布的，证据在哪里。逐条留下记录，让男性消费者自己决定，这笔钱给谁。</p><a href="#principles">我们的立场与记录原则<ArrowRight size={16}/></a>{!p.loading&&!p.error&&coverageYears.length>0&&<div className="archive-span"><span>资料年份：<time>{coverageYears[0]} — {coverageYears[coverageYears.length-1]}</time></span><span>{coverage.length} 条公开事件</span></div>}</div></section>
   <div className="newspaper-layout"><div className="reading-column">
    <section id="brands" className="brand-directory">
     <div className="section-line"><h2>品牌观察目录</h2><span className="section-count">{p.loading?'—':p.brands.length} 个品牌 / 机构</span></div>

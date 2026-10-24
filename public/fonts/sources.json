@@ -1,0 +1,34 @@
+{
+  "purpose": "Self-hosted editorial type. Song includes interface headings and the known public archive title/brand glyphs. New glyphs retain readable serif fallback.",
+  "chinese_characters": 439,
+  "files": [
+    {
+      "file": "newsreader-1-6d0543f06b.woff2",
+      "origin": "https://fonts.gstatic.com/s/newsreader/v26/cY9AfjOCX1hbuyalUrK439HyjJBG.woff2",
+      "sha256": "6d0543f06b9d5393afe5baaeb040817e85af372bf5609d5d55746b1eb56b4010",
+      "bytes": 27248,
+      "license": "OFL-1.1"
+    },
+    {
+      "file": "newsreader-2-45683de03d.woff2",
+      "origin": "https://fonts.gstatic.com/s/newsreader/v26/cY9AfjOCX1hbuyalUrK439DyjJBG.woff2",
+      "sha256": "45683de03de37187604102316c0b42c0cb2d8dc9c4140a20ad471c3148cc1278",
+      "bytes": 86608,
+      "license": "OFL-1.1"
+    },
+    {
+      "file": "newsreader-3-6e4f2958c3.woff2",
+      "origin": "https://fonts.gstatic.com/s/newsreader/v26/cY9AfjOCX1hbuyalUrK4397yjA.woff2",
+      "sha256": "6e4f2958c3a7c4a80acde4e5a679abe7e01bc1e30b92be3c7a8b696ef401d101",
+      "bytes": 132000,
+      "license": "OFL-1.1"
+    },
+    {
+      "file": "song-1-f75dac314d.woff2",
+      "origin": "https://fonts.gstatic.com/l/font?kit=H4chBXePl9DZ0Xe7gG9cyOj7oqOEzjqPrln02zeuUI1LYQMNzadn-c0uONYvbWlg2yaNGsit9fL2UXvuw6uXxmzbCKg0uyBsYnKGU2yB5eC0Nb8BD_dOqT1_54OBvAgWQ4X1jftTgA6gp8fwpVzdqpEg3o_kdtlrVFvuT2gRfMUS4GFwB1tOQVNUvoDX6tFP-0O8VBFMtXSJQUv4zA0FUsM01Gn-xds6nz6xaKkRLYWAhqG1vdyTkF99DsbYom-MxQsramGGHnFSkqUAqWw3mwxI-6wzBq4mbc3lKfmNbb5eRnQFQF0YK13ayLTaCBvn6XRexDRCp4d0pZe93_Albb_9chHhVx4ld48jYXfHUi9zXmYvApHS-u2yDBINg89ULbikQmzVlxRjEE-7u17DQCU2LGvBFfg-ajNNm1qsina4x0Fqj2G46i418kl2pn2-S3nfCvmr7uMmWcrsWcfFtNTgLN9gF22_cgT8x_9bc919J4IEBYztJN6O3VjH7vMh8-oG7mjpgtivirOT_dsV1JtOECrO53WmZ5hvtBfG_j4vA3A-LwfWKoyn0-5rFzJKbe-J8mqSz4_G-O9i284MQQ3-sdYURnGotsxuxCxKZaJuWbpohPGbb4P-tOYsQpiPBTMd2WM30zv-1qfKdAU3xBXbzPCP0YbPaNXA9rndjHjS9NDK49JueotXLp3AtnVldDrzTWms8Li8WHx8yBh6dBo_qMQCvM4sDJLNloOkZRPrr5CX0NApCun46Rew_3-kaWab20gBcdPYMSikbkC3626llVdlxo3O0JhGE_y85oW5Bdh3SppREQPEx3tWNmeEUskr8CJFzsBBRuqHM-LWVznE3gzPByOe_qSm07RPwNPVcCnxZBSZr0hihLUWv9XJkpBOcm79KkdOvYEYrW3Ma63B-uN3md5FNFs5Fm7BwDPDO28IUJyIx9-CXnxSqBT1fCP6dk_S9qWCoNQnaBAsvI19PjJ50N1K-PQljhRRNWxDOB81TlBXkJmzhUHZio_RZY6gUT_sHTjpkZXBuAzVgIvzPah1cEF1ErhSAMJf-LKnkwiccBVJDuz0UPiNze59WYz-n6E0ogKFGh3ZVG0bw5beZbedPjjb8onYmqKtCyRzzJjpOo88DpfzGAwJQE0-i-kaulQtYOp1osMWkZn-F-rjPc_TQrhmPPI-dH49RqmSkg62f0NG0BwjhVqzppa9rujmRjsXH_PfKJMEtunONPWe3pgFkdt_Ea-C2uYuc1rrA08YmWhsukjfQ57vHImHkpa6l2ZmUlLsDDDLyXIu9RHep2muf1N3QxUB4q1Cg0ISqrBOgD7ogFHogr4HsU11IbkRDZHSNno26nEyIYnqhhSHE2orYZH9-XmqgtlHrNVnsYTeNs_5NhhXlRbDmrWlkqbRlSpV7Lrz-RiS5k58AnFDTYdLK63HwY9CmPtAngfLlpAoEcgKCFLUwcBy4ugJnTsNraj6-y2LqLhfg5UgzlnA6drUT-pjmzH_prordV30mZThJf6KRkxUwJFq9gi5b_OlI7IJ2l66OHiTE3mJoxjp5NX3Mqhr54cfPP0ITXegRvpOyRAPgf76NkyNS4bwWCnfWrHON0sMyo1pQH0vdGxopObK4evFUaVtxUfbR4jPyBcUQYu8n3s1lBbn8GstnGRufGFIbJrEQQmGFGusSgZHShxg3CxoTUPXv55X-6hA-feTE21cBXrCWA9oDb6FS7bsq1DvX3Gt_x1_A5CXf4Fziyvk5Y-i9WSr9ePy9eVrunbC4aixbvE1lcI&skey=37fe335b8fd815cc&v=v36",
+      "sha256": "f75dac314dd30d1a6fd79dff1f00164e61fa9762fc4e66aab9c1d229bfe0d89c",
+      "bytes": 164148,
+      "license": "OFL-1.1"
+    }
+  ]
+}
